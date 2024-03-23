@@ -36,8 +36,19 @@ public class Main extends JFrame {
         LeftPanel.add(BlueSlotMachine);
 
 
-        add (LeftPanel , BorderLayout.PAGE_START);
+        Icon BlackMachine = new ImageIcon("D:/programming projects/Amusement Park/image/BlackMachine.PNG");
+        JButton BlackSlotMachine = new JButton(BlackMachine);
+        BlackSlotMachine.setBackground(Color.WHITE);
+        LeftPanel.add(BlackSlotMachine);
 
+
+        Icon WhiteMachine = new ImageIcon("D:/programming projects/Amusement Park/image/WhiteMachine.PNG");
+        JButton WhiteSlotMachine = new JButton(WhiteMachine);
+        WhiteSlotMachine.setBackground(Color.BLACK);
+        LeftPanel.add(WhiteSlotMachine);
+
+
+        add (LeftPanel , BorderLayout.PAGE_START);
         setVisible(true);
 
 
