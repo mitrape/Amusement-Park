@@ -234,6 +234,12 @@ public class Main extends JFrame {
         JPanel CenterPanel = new JPanel(new BorderLayout(5,5));
         CenterPanel.setBackground(Color.pink);
 
+        String alerts = "";
+        JTextField Alerts = new JTextField(alerts);
+        Alerts.setFont(defaultFont2);
+        Alerts.setBackground(Color.LIGHT_GRAY);
+        CenterPanel.add(Alerts,BorderLayout.CENTER);
+
 
         JPanel Player1Table = new JPanel();
         Player1Table.setLayout(new BoxLayout(Player1Table, BoxLayout.Y_AXIS));
