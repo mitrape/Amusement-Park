@@ -1,5 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static javax.swing.JOptionPane.showMessageDialog;
+
 import PlayerPackage.Player;
 import CardsPackage.ZeroLevelCards;
 
@@ -8,7 +12,12 @@ public class Main extends JFrame {
     private final Font defaultFont2 = new Font ("tahome",Font.BOLD,10);
     private final Font CardFont = new Font("tahoma" , Font.BOLD ,15);
     private final Font defaultFont3 = new Font("tahoma" , Font.BOLD , 5);
+    public boolean PlayerTurn ; //true for player1 and false for player2
+
+
     GridBagConstraints gbc = new GridBagConstraints();
+    Player Player1 = new Player();
+    Player Player2 = new Player();
     public Main (){
         // initial designs
         setTitle("Amusement Park");
@@ -127,20 +136,52 @@ public class Main extends JFrame {
 
         ZeroLevelCards first = new ZeroLevelCards();
 
-        JLabel score1 = new JLabel(String.valueOf(first.score[ZeroLevelCards.count]));
+        JLabel score1 = new JLabel(String.valueOf(first.Score));
         score1.setFont(CardFont);
 
-        JLabel coin1 = new JLabel(first.ColorOfCoin[0][ZeroLevelCards.count]+"="+first.CountOfCoin[0][ZeroLevelCards.count]+
-                ","+first.ColorOfCoin[1][ZeroLevelCards.count]+"="+first.CountOfCoin[1][ZeroLevelCards.count]);
+        JLabel coin1 = new JLabel(first.Color1+"="+first.Count1+ ","+first.Color2+"="+first.Count2);
         coin1.setFont(defaultFont3);
-        ZeroLevelCards.count++;
-
 
         marks1.add(score1 , BorderLayout.NORTH);
         marks1.add (coin1 , BorderLayout.SOUTH);
         PrizeClaw1.add(marks1);
         RightPanel.add(PrizeClaw1,gbc);
 
+        PrizeClaw1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    //player1 turn
+                    if(Player1.SpecialRedCoin >= 4 && Player1.SpecialWhiteCoin >= 4){
+                        if (Coins.GoldCoin > 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin++;
+                        }
+                        Player1.Score += 3 ;
+                        PrizeClaw1.setEnabled(false);
+                        PlayerTurn=false;
+                    }
+                    else {
+                       showMessageDialog(null, "you can't buy this card");
+                    }
+                }
+                else{
+                    //player2 turn
+                    if(Player2.SpecialRedCoin >= 4 && Player2.SpecialWhiteCoin >= 4){
+                        if (Coins.GoldCoin > 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin++;
+                        }
+                        Player2.Score += 3 ;
+                        PrizeClaw1.setEnabled(false);
+                        PlayerTurn = true ;
+                    }
+                    else {
+                        showMessageDialog(null , "you can't buy this card");
+                    }
+                }
+            }
+        });
 
         JButton PrizeClaw2 = new JButton(PrizeClaw);
         gbc.gridx = 1;
@@ -153,18 +194,52 @@ public class Main extends JFrame {
 
         ZeroLevelCards second = new ZeroLevelCards();
 
-        JLabel score2 = new JLabel(String.valueOf(second.score[ZeroLevelCards.count]));
+        JLabel score2 = new JLabel(String.valueOf(second.Score));
         score2.setFont(CardFont);
 
-        JLabel coin2 = new JLabel(second.ColorOfCoin[0][ZeroLevelCards.count]+"="+second.CountOfCoin[0][ZeroLevelCards.count]+
-                ","+second.ColorOfCoin[1][ZeroLevelCards.count]+"="+second.CountOfCoin[1][ZeroLevelCards.count]);
+        JLabel coin2 = new JLabel(second.Color1+"="+second.Count1+","+second.Color2+"="+second.Count2);
         coin2.setFont(defaultFont3);
-        ZeroLevelCards.count++;
 
         marks2.add(score2 , BorderLayout.NORTH);
         marks2.add (coin2 , BorderLayout.SOUTH);
         PrizeClaw2.add(marks2);
         RightPanel.add(PrizeClaw2,gbc);
+
+        PrizeClaw2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    //player1 turn
+                    if(Player1.SpecialBlueCoin >= 5 && Player1.SpecialGreenCoin >= 5){
+                        if (Coins.GoldCoin > 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin++;
+                        }
+                        Player1.Score += 4 ;
+                        PrizeClaw2.setEnabled(false);
+                        PlayerTurn = false ;
+                    }
+                    else {
+                        showMessageDialog(null, "you can't buy this card");
+                    }
+                }
+                else{
+                    //player2 turn
+                    if(Player2.SpecialBlueCoin >= 5 && Player2.SpecialGreenCoin >= 5){
+                        if (Coins.GoldCoin > 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin++;
+                        }
+                        Player2.Score += 4 ;
+                        PrizeClaw2.setEnabled(false);
+                        PlayerTurn = true ;
+                    }
+                    else {
+                        showMessageDialog(null, "you can't buy this card");
+                    }
+                }
+            }
+        });
 
         JButton PrizeClaw3 = new JButton(PrizeClaw);
         gbc.gridx = 2;
@@ -177,11 +252,10 @@ public class Main extends JFrame {
 
         ZeroLevelCards third = new ZeroLevelCards();
 
-        JLabel score3 = new JLabel(String.valueOf(third.score[ZeroLevelCards.count]));
+        JLabel score3 = new JLabel(String.valueOf(third.Score));
         score3.setFont(CardFont);
 
-        JLabel coin3 = new JLabel(third.ColorOfCoin[0][ZeroLevelCards.count]+"="+third.CountOfCoin[0][ZeroLevelCards.count]+
-                ","+third.ColorOfCoin[1][ZeroLevelCards.count]+"="+third.CountOfCoin[1][ZeroLevelCards.count]);
+        JLabel coin3 = new JLabel(third.Color1+"="+third.Count1+","+third.Color2+"="+third.Count2);
         coin3.setFont(defaultFont3);
 
 
@@ -189,6 +263,42 @@ public class Main extends JFrame {
         marks3.add (coin3 , BorderLayout.SOUTH);
         PrizeClaw3.add(marks3);
         RightPanel.add(PrizeClaw3,gbc);
+
+        PrizeClaw3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    //player1 turn
+                    if(Player1.SpecialBlackCoin >= 6 && Player1.SpecialRedCoin >= 6){
+                        if (Coins.GoldCoin > 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin++;
+                        }
+                        Player1.Score += 3 ;
+                        PrizeClaw3.setEnabled(false);
+                        PlayerTurn = false ;
+                    }
+                    else {
+                        showMessageDialog(null, "you can't buy this card");
+                    }
+                }
+                else{
+                    //player2 turn
+                    if(Player2.SpecialBlackCoin >= 6 && Player2.SpecialRedCoin >= 6){
+                        if (Coins.GoldCoin > 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin++;
+                        }
+                        Player2.Score += 3 ;
+                        PrizeClaw3.setEnabled(false);
+                        PlayerTurn = true ;
+                    }
+                    else {
+                        showMessageDialog(null, "you can't buy this card");
+                    }
+                }
+            }
+        });
 
         Icon card1 = new ImageIcon("D:/programming projects/Amusement Park/image/cards1.PNG");
         Icon card2 = new ImageIcon("D:/programming projects/Amusement Park/image/cards2.PNG");
@@ -288,19 +398,18 @@ public class Main extends JFrame {
     }
     //adding player tables
     public void initCenterPanel (){
-        Player Player1 = new Player();
-        Player Player2 = new Player();
+
 
         JPanel CenterPanel = new JPanel(new BorderLayout(5,5));
         CenterPanel.setBackground(Color.pink);
 
-        String alerts = "";
-        JLabel Alerts = new JLabel(alerts);
-        Alerts.setFont(defaultFont2);
-        Alerts.setHorizontalAlignment(JLabel.CENTER);
-        Alerts.setOpaque(true);
-        Alerts.setBackground(Color.LIGHT_GRAY);
-        CenterPanel.add(Alerts,BorderLayout.CENTER);
+//        String alerts = "";
+//        JLabel Alerts = new JLabel(alerts);
+//        Alerts.setFont(defaultFont2);
+//        Alerts.setHorizontalAlignment(JLabel.CENTER);
+//        Alerts.setOpaque(true);
+//        Alerts.setBackground(Color.LIGHT_GRAY);
+//        CenterPanel.add(Alerts,BorderLayout.CENTER);
 
 
         JPanel Player1Table = new JPanel();
@@ -351,7 +460,7 @@ public class Main extends JFrame {
 
         String SpecialCoinState1 = "red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
                 + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
-                ",gold = " + Player1.GoldCoin;
+                ",gold = " + Player1.SpecialGoldCoin;
         JLabel Player1SpecialCoinCounter = new JLabel(SpecialCoinState1);
         Player1SpecialCoinCounter.setFont(defaultFont2);
         Player1SpecialCoinCounter.setPreferredSize(new Dimension(200, 30));
@@ -424,7 +533,7 @@ public class Main extends JFrame {
 
         String SpecialCoinState2 = "red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
                 + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
-                ",gold = " + Player2.GoldCoin;
+                ",gold = " + Player2.SpecialGoldCoin;
         JLabel Player2SpecialCoinCounter = new JLabel(SpecialCoinState2);
         Player2SpecialCoinCounter.setFont(defaultFont2);
         Player2SpecialCoinCounter.setPreferredSize(new Dimension(200, 30));
@@ -456,7 +565,6 @@ public class Main extends JFrame {
 
     }
     public static void main(String[] args) {
-
         new Main ();
 
 
