@@ -1,15 +1,18 @@
 import javax.swing.*;
 import java.awt.*;
 import PlayerPackage.Player;
+import CardsPackage.ZeroLevelCards;
 
 public class Main extends JFrame {
     private final Font defaultFont = new Font("Ink Free",Font.BOLD,15);
     private final Font defaultFont2 = new Font ("tahome",Font.BOLD,10);
+    private final Font CardFont = new Font("tahoma" , Font.BOLD ,15);
+    private final Font defaultFont3 = new Font("tahoma" , Font.BOLD , 5);
     GridBagConstraints gbc = new GridBagConstraints();
     public Main (){
         // initial designs
         setTitle("Amusement Park");
-        setSize(800,800);
+        setSize(1000,800);
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.pink);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -28,11 +31,12 @@ public class Main extends JFrame {
 
 
         //adding a title for this part of amusement park
-        JTextField SlotMachine = new JTextField("Slot Machines");
-        SlotMachine.setPreferredSize(new Dimension(100,5));
+        JLabel SlotMachine = new JLabel("Slot Machines");
         SlotMachine.setFont(defaultFont);
         SlotMachine.setMaximumSize(new Dimension(270,20));
-        SlotMachine.setHorizontalAlignment(JTextField.CENTER);
+        SlotMachine.setHorizontalAlignment(JLabel.CENTER);
+        SlotMachine.setOpaque(true);
+        SlotMachine.setBackground(Color.WHITE);
         LeftPanel.add(SlotMachine);
 
         LeftPanel.add(Box.createRigidArea(new Dimension(0, 5)));
@@ -100,11 +104,14 @@ public class Main extends JFrame {
         gbc.insets = new Insets(4,2,4,2);
         RightPanel.setBackground(Color.pink);
 
-        JTextField Store = new JTextField("Store");
+        JLabel Store = new JLabel("Store");
         Store.setFont(defaultFont);
         gbc.gridx = 1;
         gbc.gridy = 0;
-        Store.setHorizontalAlignment(JTextField.CENTER);
+        Store.setPreferredSize(new Dimension( 100 , 40));
+        Store.setHorizontalAlignment(JLabel.CENTER);
+        Store.setOpaque(true);
+        Store.setBackground(Color.WHITE);
         RightPanel.add(Store , gbc);
 
 
@@ -114,13 +121,49 @@ public class Main extends JFrame {
         gbc.gridy = 1;
         PrizeClaw1.setPreferredSize(new Dimension(80,100));
         PrizeClaw1.setBackground(Color.WHITE);
+
+        JPanel marks1 = new JPanel(new BorderLayout());
+        marks1.setOpaque(false);
+
+        ZeroLevelCards first = new ZeroLevelCards();
+
+        JLabel score1 = new JLabel(String.valueOf(first.score[ZeroLevelCards.count]));
+        score1.setFont(CardFont);
+
+        JLabel coin1 = new JLabel(first.ColorOfCoin[0][ZeroLevelCards.count]+"="+first.CountOfCoin[0][ZeroLevelCards.count]+
+                ","+first.ColorOfCoin[1][ZeroLevelCards.count]+"="+first.CountOfCoin[1][ZeroLevelCards.count]);
+        coin1.setFont(defaultFont3);
+        ZeroLevelCards.count++;
+
+
+        marks1.add(score1 , BorderLayout.NORTH);
+        marks1.add (coin1 , BorderLayout.SOUTH);
+        PrizeClaw1.add(marks1);
         RightPanel.add(PrizeClaw1,gbc);
+
 
         JButton PrizeClaw2 = new JButton(PrizeClaw);
         gbc.gridx = 1;
         gbc.gridy = 1;
         PrizeClaw2.setPreferredSize(new Dimension(80,100));
         PrizeClaw2.setBackground(Color.WHITE);
+
+        JPanel marks2 = new JPanel(new BorderLayout());
+        marks2.setOpaque(false);
+
+        ZeroLevelCards second = new ZeroLevelCards();
+
+        JLabel score2 = new JLabel(String.valueOf(second.score[ZeroLevelCards.count]));
+        score2.setFont(CardFont);
+
+        JLabel coin2 = new JLabel(second.ColorOfCoin[0][ZeroLevelCards.count]+"="+second.CountOfCoin[0][ZeroLevelCards.count]+
+                ","+second.ColorOfCoin[1][ZeroLevelCards.count]+"="+second.CountOfCoin[1][ZeroLevelCards.count]);
+        coin2.setFont(defaultFont3);
+        ZeroLevelCards.count++;
+
+        marks2.add(score2 , BorderLayout.NORTH);
+        marks2.add (coin2 , BorderLayout.SOUTH);
+        PrizeClaw2.add(marks2);
         RightPanel.add(PrizeClaw2,gbc);
 
         JButton PrizeClaw3 = new JButton(PrizeClaw);
@@ -128,6 +171,23 @@ public class Main extends JFrame {
         gbc.gridy = 1;
         PrizeClaw3.setPreferredSize(new Dimension(80,100));
         PrizeClaw3.setBackground(Color.WHITE);
+
+        JPanel marks3 = new JPanel(new BorderLayout());
+        marks3.setOpaque(false);
+
+        ZeroLevelCards third = new ZeroLevelCards();
+
+        JLabel score3 = new JLabel(String.valueOf(third.score[ZeroLevelCards.count]));
+        score3.setFont(CardFont);
+
+        JLabel coin3 = new JLabel(third.ColorOfCoin[0][ZeroLevelCards.count]+"="+third.CountOfCoin[0][ZeroLevelCards.count]+
+                ","+third.ColorOfCoin[1][ZeroLevelCards.count]+"="+third.CountOfCoin[1][ZeroLevelCards.count]);
+        coin3.setFont(defaultFont3);
+
+
+        marks3.add(score3 , BorderLayout.NORTH);
+        marks3.add (coin3 , BorderLayout.SOUTH);
+        PrizeClaw3.add(marks3);
         RightPanel.add(PrizeClaw3,gbc);
 
         Icon card1 = new ImageIcon("D:/programming projects/Amusement Park/image/cards1.PNG");
@@ -235,51 +295,83 @@ public class Main extends JFrame {
         CenterPanel.setBackground(Color.pink);
 
         String alerts = "";
-        JTextField Alerts = new JTextField(alerts);
+        JLabel Alerts = new JLabel(alerts);
         Alerts.setFont(defaultFont2);
+        Alerts.setHorizontalAlignment(JLabel.CENTER);
+        Alerts.setOpaque(true);
         Alerts.setBackground(Color.LIGHT_GRAY);
         CenterPanel.add(Alerts,BorderLayout.CENTER);
 
 
         JPanel Player1Table = new JPanel();
-        Player1Table.setLayout(new BoxLayout(Player1Table, BoxLayout.Y_AXIS));
+        Player1Table.setLayout(new GridLayout(7,1));
         Player1Table.setBackground(Color.pink);
 
 
-        JTextField Score1 = new JTextField("SCORE!");
+        JLabel player1 = new JLabel("<PLAYER ONE>");
+        player1.setHorizontalAlignment(SwingConstants.CENTER);
+        player1.setFont(defaultFont);
+        player1.setPreferredSize(new Dimension(200, 30));
+        player1.setHorizontalAlignment(SwingConstants.CENTER);
+        player1.setOpaque(true);
+        player1.setBackground(Color.YELLOW);
+
+        JLabel Score1 = new JLabel("SCORE!");
+        Score1.setHorizontalAlignment(SwingConstants.CENTER);
         Score1.setFont(defaultFont);
-        Score1.setHorizontalAlignment(JTextField.CENTER);
-        JTextField SpecialCoins1 = new JTextField("SPECIAL COIN'S COUNT");
+        Score1.setPreferredSize(new Dimension(200, 30));
+        Score1.setHorizontalAlignment(SwingConstants.CENTER);
+        Score1.setOpaque(true);
+        Score1.setBackground(Color.LIGHT_GRAY);
+
+        JLabel SpecialCoins1 = new JLabel("SPECIAL COIN'S COUNT");
         SpecialCoins1.setFont(defaultFont);
-        SpecialCoins1.setHorizontalAlignment(JTextField.CENTER);
-        JTextField Coins1 = new JTextField("NORMAL COIN'S COUNT");
+        SpecialCoins1.setPreferredSize(new Dimension(200, 30));
+        SpecialCoins1.setHorizontalAlignment(JLabel.CENTER);
+        SpecialCoins1.setOpaque(true);
+        SpecialCoins1.setBackground(Color.LIGHT_GRAY);
+
+        JLabel Coins1 = new JLabel("NORMAL COIN'S COUNT");
         Coins1.setFont(defaultFont);
-        Coins1.setHorizontalAlignment(JTextField.CENTER);
+        Coins1.setPreferredSize(new Dimension(200, 30));
+        Coins1.setHorizontalAlignment(JLabel.CENTER);
+        Coins1.setOpaque(true);
+        Coins1.setBackground(Color.LIGHT_GRAY);
 
 
         String CoinState1 = "red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
                 + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin;
-        JTextField Player1CoinCounter = new JTextField(CoinState1);
+        JLabel Player1CoinCounter = new JLabel(CoinState1);
         Player1CoinCounter.setFont(defaultFont2);
-        Player1CoinCounter.setHorizontalAlignment(JTextField.CENTER);
+        Player1CoinCounter.setPreferredSize(new Dimension(200, 30));
+        Player1CoinCounter.setHorizontalAlignment(JLabel.CENTER);
+        Player1CoinCounter.setOpaque(true);
+        Player1CoinCounter.setBackground(Color.WHITE);
 
 
         String SpecialCoinState1 = "red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
                 + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
                 ",gold = " + Player1.GoldCoin;
-        JTextField Player1SpecialCoinCounter = new JTextField(SpecialCoinState1);
+        JLabel Player1SpecialCoinCounter = new JLabel(SpecialCoinState1);
         Player1SpecialCoinCounter.setFont(defaultFont2);
-        Player1SpecialCoinCounter.setHorizontalAlignment(JTextField.CENTER);
+        Player1SpecialCoinCounter.setPreferredSize(new Dimension(200, 30));
+        Player1SpecialCoinCounter.setHorizontalAlignment(JLabel.CENTER);
+        Player1SpecialCoinCounter.setOpaque(true);
+        Player1SpecialCoinCounter.setBackground(Color.WHITE);
 
 
-        JTextField Player1Score = new JTextField(String.valueOf(Player1.Score));
-        Player1Score.setHorizontalAlignment(JTextField.CENTER);
+        JLabel Player1Score = new JLabel(String.valueOf(Player1.Score));
+        Player1Score.setPreferredSize(new Dimension(200, 30));
+        Player1Score.setHorizontalAlignment(JLabel.CENTER);
+        Player1Score.setOpaque(true);
+        Player1Score.setBackground(Color.WHITE);
 
+        Player1Table.add(player1);
         Player1Table.add(Score1);
         Player1Table.add(Player1Score);
-        Player1Table.add(Coins1);
-        Player1Table.add(Player1CoinCounter);
-        Player1Table.add(SpecialCoins1);
+        Player1Table.add(Coins1 );
+        Player1Table.add(Player1CoinCounter );
+        Player1Table.add(SpecialCoins1 );
         Player1Table.add(Player1SpecialCoinCounter);
 
         CenterPanel.add(Player1Table , BorderLayout.NORTH);
@@ -287,39 +379,67 @@ public class Main extends JFrame {
 
 
         JPanel Player2Table = new JPanel();
-        Player2Table.setLayout(new BoxLayout(Player2Table, BoxLayout.Y_AXIS));
+        Player2Table.setLayout(new GridLayout(7,1));
         Player2Table.setBackground(Color.pink);
 
 
-        JTextField Score2 = new JTextField("SCORE!");
+        JLabel player2 = new JLabel("<PLAYER TWO>");
+        player2.setHorizontalAlignment(SwingConstants.CENTER);
+        player2.setFont(defaultFont);
+        player2.setPreferredSize(new Dimension(200, 30));
+        player2.setHorizontalAlignment(SwingConstants.CENTER);
+        player2.setOpaque(true);
+        player2.setBackground(Color.YELLOW);
+
+        JLabel Score2 = new JLabel("SCORE!");
         Score2.setFont(defaultFont);
-        Score2.setHorizontalAlignment(JTextField.CENTER);
-        JTextField SpecialCoins2 = new JTextField("SPECIAL COIN'S COUNT");
+        Score2.setPreferredSize(new Dimension(200, 30));
+        Score2.setHorizontalAlignment(JLabel.CENTER);
+        Score2.setOpaque(true);
+        Score2.setBackground(Color.LIGHT_GRAY);
+
+        JLabel SpecialCoins2 = new JLabel("SPECIAL COIN'S COUNT");
         SpecialCoins2.setFont(defaultFont);
-        SpecialCoins2.setHorizontalAlignment(JTextField.CENTER);
-        JTextField Coins2 = new JTextField("NORMAL COIN'S COUNT");
+        SpecialCoins2.setPreferredSize(new Dimension(200, 30));
+        SpecialCoins2.setHorizontalAlignment(JLabel.CENTER);
+        SpecialCoins2.setOpaque(true);
+        SpecialCoins2.setBackground(Color.LIGHT_GRAY);
+
+        JLabel Coins2 = new JLabel("NORMAL COIN'S COUNT");
         Coins2.setFont(defaultFont);
-        Coins2.setHorizontalAlignment(JTextField.CENTER);
+        Coins2.setPreferredSize(new Dimension(200, 30));
+        Coins2.setHorizontalAlignment(JLabel.CENTER);
+        Coins2.setOpaque(true);
+        Coins2.setBackground(Color.LIGHT_GRAY);
 
 
         String CoinState2 = "red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
                 + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin;
-        JTextField Player2CoinCounter = new JTextField(CoinState2);
+        JLabel Player2CoinCounter = new JLabel(CoinState2);
         Player2CoinCounter.setFont(defaultFont2);
-        Player2CoinCounter.setHorizontalAlignment(JTextField.CENTER);
+        Player2CoinCounter.setPreferredSize(new Dimension(200, 30));
+        Player2CoinCounter.setHorizontalAlignment(JLabel.CENTER);
+        Player2CoinCounter.setOpaque(true);
+        Player2CoinCounter.setBackground(Color.WHITE);
 
         String SpecialCoinState2 = "red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
                 + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
                 ",gold = " + Player2.GoldCoin;
-        JTextField Player2SpecialCoinCounter = new JTextField(SpecialCoinState2);
+        JLabel Player2SpecialCoinCounter = new JLabel(SpecialCoinState2);
         Player2SpecialCoinCounter.setFont(defaultFont2);
-        Player2SpecialCoinCounter.setHorizontalAlignment(JTextField.CENTER);
+        Player2SpecialCoinCounter.setPreferredSize(new Dimension(200, 30));
+        Player2SpecialCoinCounter.setHorizontalAlignment(JLabel.CENTER);
+        Player2SpecialCoinCounter.setOpaque(true);
+        Player2SpecialCoinCounter.setBackground(Color.WHITE);
 
 
-        JTextField Player2Score = new JTextField(String.valueOf(Player2.Score));
-        Player2Score.setHorizontalAlignment(JTextField.CENTER);
+        JLabel Player2Score = new JLabel(String.valueOf(Player2.Score));
+        Player2Score.setHorizontalAlignment(JLabel.CENTER);
+        Player2Score.setPreferredSize(new Dimension(200, 30));
+        Player2Score.setOpaque(true);
+        Player2Score.setBackground(Color.WHITE);
 
-
+        Player2Table.add(player2);
         Player2Table.add(Score2);
         Player2Table.add(Player2Score);
         Player2Table.add(Coins2);
