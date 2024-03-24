@@ -10,7 +10,7 @@ public class Player {
     public int SpecialBlueCoin ;
     public int SpecialWhiteCoin ;
     public int SpecialBlackCoin ;
-    public int GoldCoin ;
+    public int SpecialGoldCoin ;
     public int Score ;
 
 
