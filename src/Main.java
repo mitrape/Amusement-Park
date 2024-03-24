@@ -4,14 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static javax.swing.JOptionPane.showMessageDialog;
 
+import CardsPackage.FirstLevelCards;
 import PlayerPackage.Player;
 import CardsPackage.ZeroLevelCards;
 
 public class Main extends JFrame {
     private final Font defaultFont = new Font("Ink Free",Font.BOLD,15);
     private final Font defaultFont2 = new Font ("tahome",Font.BOLD,10);
-    private final Font CardFont = new Font("tahoma" , Font.BOLD ,15);
+    private final Font CardFont = new Font("tahoma" , Font.BOLD ,10);
     private final Font defaultFont3 = new Font("tahoma" , Font.BOLD , 5);
+    private final Font defaultFont4 = new Font ("tahoma" , Font.PLAIN , 6);
     public boolean PlayerTurn ; //true for player1 and false for player2
 
 
@@ -241,6 +243,7 @@ public class Main extends JFrame {
             }
         });
 
+
         JButton PrizeClaw3 = new JButton(PrizeClaw);
         gbc.gridx = 2;
         gbc.gridy = 1;
@@ -310,7 +313,42 @@ public class Main extends JFrame {
         gbc.gridy = 2;
         FirstLevel1.setPreferredSize(new Dimension(80,130));
         FirstLevel1.setBackground(Color.WHITE);
+
+        JPanel marksFirst1 = new JPanel(new BorderLayout());
+        marksFirst1.setOpaque(false);
+
+        FirstLevelCards First1  = new FirstLevelCards();
+
+        JLabel scoreFirst1 = new JLabel(First1.ScoreFirst+"    "+First1.ColorSpecialCoinFirst);
+        scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
+        scoreFirst1.setFont(CardFont);
+        JLabel coinFirst1 = new JLabel(First1.CardFirst);
+        coinFirst1.setFont(defaultFont4);
+
+
+        marksFirst1.add (coinFirst1 , BorderLayout.SOUTH);
+        marksFirst1.add (scoreFirst1 , BorderLayout.NORTH);
+        FirstLevel1.add(marksFirst1);
         RightPanel.add(FirstLevel1,gbc);
+
+        FirstLevel1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    //player one turn
+                    for(int i = 0 ; i<)
+
+
+                }
+                else {
+                    //player two turn
+
+                }
+            }
+        });
+
+
+
 
         JButton FirstLevel2 = new JButton(card1);
         gbc.gridx = 1;
