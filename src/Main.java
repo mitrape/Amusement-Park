@@ -111,6 +111,12 @@ public class Main extends JFrame {
     }
     // design store
     public void initRightPanel (){
+
+        FirstLevelCards [] First = new FirstLevelCards[15] ;
+        SecondLevelCards [] Second = new SecondLevelCards[15] ;
+        ThirdLevelCards [] Third = new ThirdLevelCards[15] ;
+
+
         JPanel RightPanel = new JPanel(new GridBagLayout());
         gbc.insets = new Insets(4,2,4,2);
         RightPanel.setBackground(Color.pink);
@@ -307,7 +313,6 @@ public class Main extends JFrame {
         Icon card2 = new ImageIcon("D:/programming projects/Amusement Park/image/cards2.PNG");
         Icon card3 = new ImageIcon("D:/programming projects/Amusement Park/image/cards3.PNG");
 
-
         JButton FirstLevel1 = new JButton(card1);
         gbc.gridx = 0;
         gbc.gridy = 2;
@@ -317,12 +322,13 @@ public class Main extends JFrame {
         JPanel marksFirst1 = new JPanel(new BorderLayout());
         marksFirst1.setOpaque(false);
 
-        FirstLevelCards First1  = new FirstLevelCards();
+        FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
+        First [FirstLevelCards.CountFirst] = new FirstLevelCards() ;
 
-        JLabel scoreFirst1 = new JLabel(First1.ScoreFirst+"    "+First1.ColorSpecialCoinFirst);
+        JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst+"    "+First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
         scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
         scoreFirst1.setFont(CardFont);
-        JLabel coinFirst1 = new JLabel(First1.CardFirst);
+        JLabel coinFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].CardFirst);
         coinFirst1.setFont(defaultFont4);
 
 
@@ -334,16 +340,305 @@ public class Main extends JFrame {
         FirstLevel1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (PlayerTurn){
-                    //player one turn
-                    for(int i = 0 ; i<)
+                if (PlayerTurn) {
+                    //player2 turn
+                    boolean sw = true;
+                    int CountGoldCoinFirst1 = 0;
+                    if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] != 0) {
+                        if (Player1.RedCoin + Player1.SpecialGoldCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0]) {
+                            sw = false;
+                        }
+                        if (Player1.RedCoin + Player1.SpecialGoldCoin >= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] &&
+                                Player1.RedCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0]) {
+                            CountGoldCoinFirst1 += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] - Player1.RedCoin);
+                        }
+                    }
+
+                    if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] != 0) {
+                        if (Player1.BlueCoin + Player1.SpecialGoldCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1]) {
+                            sw = false;
+                        }
+                        if (Player1.BlueCoin + Player1.SpecialGoldCoin >= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] &&
+                                Player1.BlueCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1]) {
+                            CountGoldCoinFirst1 += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] - Player1.BlueCoin);
+                        }
+                    }
+
+                    if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] != 0) {
+                        if (Player1.WhiteCoin + Player1.SpecialGoldCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2]) {
+                            sw = false;
+                        }
+                        if (Player1.WhiteCoin + Player1.SpecialGoldCoin >= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] &&
+                                Player1.WhiteCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2]) {
+                            CountGoldCoinFirst1 += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] - Player1.WhiteCoin);
+                        }
+                    }
+
+                    if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] != 0) {
+                        if (Player1.GreenCoin + Player1.SpecialGoldCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3]) {
+                            sw = false;
+                        }
+                        if (Player1.GreenCoin + Player1.SpecialGoldCoin >= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] &&
+                                Player1.GreenCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3]) {
+                            CountGoldCoinFirst1 += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] - Player1.GreenCoin);
+                        }
+                    }
+
+                    if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] != 0) {
+                        if (Player1.BlackCoin + Player1.SpecialGoldCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4]) {
+                            sw = false;
+                        }
+                        if (Player1.BlackCoin + Player1.SpecialGoldCoin >= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] &&
+                                Player1.BlackCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4]) {
+                            CountGoldCoinFirst1 += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] - Player1.BlackCoin);
+                        }
+                    }
 
 
+                    if (!sw || CountGoldCoinFirst1 > Player1.SpecialGoldCoin) {
+                        showMessageDialog(null, "you can't buy this card");
+                    }
+
+                    else {
+                        if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] != 0) {
+                            if ((Player1.RedCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0]) >= 0) {
+                                Player1.RedCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0];
+                                Coins.RedCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0];
+                            } else {
+                                Player1.SpecialGoldCoin -= (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] - Player1.RedCoin);
+                                Coins.GoldCoin += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] - Player1.RedCoin);
+                                Coins.RedCoin += Player1.RedCoin;
+                                Player1.RedCoin = 0;
+                            }
+                        }
+
+                        if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] != 0) {
+                            if ((Player1.BlueCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1]) >= 0) {
+                                Player1.BlueCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1];
+                                Coins.BlueCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1];
+                            } else {
+                                Player1.SpecialGoldCoin -= (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] - Player1.BlueCoin);
+                                Coins.GoldCoin += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] - Player1.BlueCoin);
+                                Coins.BlueCoin += Player1.BlueCoin;
+                                Player1.BlueCoin = 0;
+                            }
+                        }
+
+                        if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] != 0) {
+                            if ((Player1.WhiteCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2]) >= 0) {
+                                Player1.WhiteCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2];
+                                Coins.WhiteCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2];
+                            } else {
+                                Player1.SpecialGoldCoin -= (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] - Player1.WhiteCoin);
+                                Coins.GoldCoin += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] - Player1.WhiteCoin);
+                                Coins.WhiteCoin += Player1.WhiteCoin;
+                                Player1.WhiteCoin = 0;
+                            }
+                        }
+
+                        if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] != 0) {
+                            if ((Player1.GreenCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3]) >= 0) {
+                                Player1.GreenCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3];
+                                Coins.GreenCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3];
+                            } else {
+                                Player1.SpecialGoldCoin -= (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] - Player1.GreenCoin);
+                                Coins.GoldCoin += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] - Player1.GreenCoin);
+                                Coins.GreenCoin += Player1.GreenCoin;
+                                Player1.GreenCoin = 0;
+                            }
+                        }
+
+                        if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] != 0) {
+                            if ((Player1.BlackCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4]) >= 0) {
+                                Player1.BlackCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4];
+                                Coins.BlackCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4];
+                            } else {
+                                Player1.SpecialGoldCoin -= (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] - Player1.BlackCoin);
+                                Coins.GoldCoin += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] - Player1.BlackCoin);
+                                Coins.BlackCoin += Player1.BlackCoin;
+                                Player1.BlackCoin = 0;
+                            }
+                        }
+
+                        Player1.Score += First[FirstLevelCards.CounterFirst1].ScoreFirst;
+
+                        if (First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst == "Blue")
+                            Player1.SpecialBlueCoin++;
+                        else
+                            Player1.SpecialGreenCoin++;
+
+
+                        FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
+                        First[FirstLevelCards.CountFirst] = new FirstLevelCards();
+
+                        JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst + "    " +
+                                First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
+                        scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
+                        scoreFirst1.setFont(CardFont);
+                        JLabel coinFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].CardFirst);
+                        coinFirst1.setFont(defaultFont4);
+
+                        marksFirst1.add(coinFirst1, BorderLayout.SOUTH);
+                        marksFirst1.add(scoreFirst1, BorderLayout.NORTH);
+                        PlayerTurn = false;
+
+
+                    }
                 }
                 else {
-                    //player two turn
+                    // player2 turn
+                    boolean sw = true ;
+                    int CountGoldCoinFirst1 = 0;
+                    if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] != 0){
+                        if(Player2.RedCoin + Player2.SpecialGoldCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0]){
+                            sw=false;
+                        }
+                        if(Player2.RedCoin + Player2.SpecialGoldCoin >= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] &&
+                                Player2.RedCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0]){
+                            CountGoldCoinFirst1 += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] - Player2.RedCoin);
+                        }
+                    }
+
+                    if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] != 0){
+                        if(Player2.BlueCoin + Player2.SpecialGoldCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1]){
+                            sw=false;
+                        }
+                        if(Player2.BlueCoin + Player2.SpecialGoldCoin >= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] &&
+                                Player2.BlueCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1]){
+                            CountGoldCoinFirst1 += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] - Player2.BlueCoin);
+                        }
+                    }
+
+                    if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] != 0){
+                        if(Player2.WhiteCoin + Player2.SpecialGoldCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2]){
+                            sw=false;
+                        }
+                        if(Player2.WhiteCoin + Player2.SpecialGoldCoin >= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] &&
+                                Player2.WhiteCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2]){
+                            CountGoldCoinFirst1 += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] - Player2.WhiteCoin);
+                        }
+                    }
+
+                    if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] != 0){
+                        if(Player2.GreenCoin + Player2.SpecialGoldCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3]){
+                            sw=false;
+                        }
+                        if(Player2.GreenCoin + Player2.SpecialGoldCoin >= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] &&
+                                Player2.GreenCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3]){
+                            CountGoldCoinFirst1 += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] - Player2.GreenCoin);
+                        }
+                    }
+
+                    if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] != 0){
+                        if(Player2.BlackCoin + Player2.SpecialGoldCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4]){
+                            sw=false;
+                        }
+                        if(Player2.BlackCoin + Player2.SpecialGoldCoin >= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] &&
+                                Player2.BlackCoin < First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4]){
+                            CountGoldCoinFirst1 += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] - Player2.BlackCoin);
+                        }
+                    }
+
+
+
+
+                    if (!sw || CountGoldCoinFirst1>Player2.SpecialGoldCoin){
+                        showMessageDialog(null,"you can't buy this card");
+                    }
+
+
+
+                    else {
+                        if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] != 0){
+                            if ((Player2.RedCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] ) >= 0) {
+                                Player2.RedCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0];
+                                Coins.RedCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0];
+                            }
+                            else {
+                                Player2.SpecialGoldCoin -= (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] - Player2.RedCoin);
+                                Coins.GoldCoin += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] - Player2.RedCoin);
+                                Coins.RedCoin += Player2.RedCoin ;
+                                Player2.RedCoin = 0 ;
+                            }
+                        }
+
+                        if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] != 0){
+                            if ((Player2.BlueCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] ) >= 0) {
+                                Player2.BlueCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1];
+                                Coins.BlueCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1];
+                            }
+                            else {
+                                Player2.SpecialGoldCoin -= (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] - Player2.BlueCoin);
+                                Coins.GoldCoin += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] - Player2.BlueCoin);
+                                Coins.BlueCoin += Player2.BlueCoin ;
+                                Player2.BlueCoin = 0 ;
+                            }
+                        }
+
+                        if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] != 0){
+                            if ((Player2.WhiteCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] ) >= 0) {
+                                Player2.WhiteCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2];
+                                Coins.WhiteCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2];
+                            }
+                            else {
+                                Player2.SpecialGoldCoin -= (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] - Player2.WhiteCoin);
+                                Coins.GoldCoin += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] - Player2.WhiteCoin);
+                                Coins.WhiteCoin += Player2.WhiteCoin ;
+                                Player2.WhiteCoin = 0 ;
+                            }
+                        }
+
+                        if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] != 0){
+                            if ((Player2.GreenCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] ) >= 0) {
+                                Player2.GreenCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3];
+                                Coins.GreenCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3];
+                            }
+                            else {
+                                Player2.SpecialGoldCoin -= (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] - Player2.GreenCoin);
+                                Coins.GoldCoin += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] - Player2.GreenCoin);
+                                Coins.GreenCoin += Player2.GreenCoin ;
+                                Player2.GreenCoin = 0 ;
+                            }
+                        }
+
+                        if (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] != 0){
+                            if ((Player2.BlackCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] ) >= 0) {
+                                Player2.BlackCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4];
+                                Coins.BlackCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4];
+                            }
+                            else {
+                                Player2.SpecialGoldCoin -= (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] - Player2.BlackCoin);
+                                Coins.GoldCoin += (First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] - Player2.BlackCoin);
+                                Coins.BlackCoin += Player2.BlackCoin ;
+                                Player2.BlackCoin = 0 ;
+                            }
+                        }
+
+                        Player2.Score += First[FirstLevelCards.CounterFirst1].ScoreFirst;
+
+                        if (First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst == "Blue")
+                            Player2.SpecialBlueCoin ++;
+                        else
+                            Player2.SpecialGreenCoin ++;
+
+
+                        FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
+                        First [FirstLevelCards.CountFirst] = new FirstLevelCards() ;
+
+                        JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst+"    "+
+                                First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
+                        scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
+                        scoreFirst1.setFont(CardFont);
+                        JLabel coinFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].CardFirst);
+                        coinFirst1.setFont(defaultFont4);
+
+                        marksFirst1.add (coinFirst1 , BorderLayout.SOUTH);
+                        marksFirst1.add (scoreFirst1 , BorderLayout.NORTH);
+                        PlayerTurn = true ;
+                    }
 
                 }
+
             }
         });
 
