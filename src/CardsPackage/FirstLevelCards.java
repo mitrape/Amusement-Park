@@ -1,16 +1,23 @@
 package CardsPackage;
+
+import javax.swing.*;
+import java.awt.*;
+
+import static javax.swing.JOptionPane.showMessageDialog;
+
 public class FirstLevelCards {
     public final String [][]  ColorOfCoinFirst  = {{"RED","BLUE"},{"BLACK","WHITE"},{"GREEN","BLUE"},{"WHITE","RED"},{"GREEN","BLACK"},{"RED","BLUE"},
             {"BLUE","GREEN"},{"RED","BLUE"},{"BLACK","WHITE"},{"GREEN","BLUE"},{"WHITE","RED"},{"GREEN","BLACK"},{"RED","BLUE"},{"BLUE","GREEN"},{"BLUE","WHITE"}};
 
     public final int [][] CountOfCoinFirst = {{2,2},{3,2},{2,3},{1,3},{3,1},{1,4},{4,1},{2,4},{4,2},{3,3},{2,2},{3,2},{2,3},{1,3},{3,1}};
 
-    public final int [] Score = {0,1,0,1,0,1,0,1,0,1,0,1,0,1,0};
+    public final int [] Score = {0,1,1,0,0,0,0,1,0,1,0,1,1,1,1};
     public int  [] ColorAndCountFirst = new int [5]; // red = 0 , blue = 1 , white = 2 , green = 3 , black = 4
     public int ScoreFirst ;
     public String CardFirst ;
     public String ColorSpecialCoinFirst; // for odd numbers is Green and for even numbers is blue
     public static int CountFirst = 0;
+    public static int CounterFirst1,CounterFirst2, CounterFirst3, CounterFirst4 ;
 
     public FirstLevelCards (){
         if ( ColorOfCoinFirst [CountFirst][0] == "RED") {

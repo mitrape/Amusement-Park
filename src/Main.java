@@ -12,8 +12,8 @@ public class Main extends JFrame {
     private final Font defaultFont = new Font("Ink Free",Font.BOLD,15);
     private final Font defaultFont2 = new Font ("tahome",Font.BOLD,10);
     private final Font CardFont = new Font("tahoma" , Font.BOLD ,10);
-    private final Font defaultFont3 = new Font("tahoma" , Font.BOLD , 5);
-    private final Font defaultFont4 = new Font ("tahoma" , Font.PLAIN , 6);
+    private final Font defaultFont3 = new Font("tahoma" , Font.BOLD , 8);
+    private final Font defaultFont4 = new Font ("tahoma" , Font.PLAIN , 10);
     public boolean PlayerTurn ; //true for player1 and false for player2
 
 
@@ -136,7 +136,7 @@ public class Main extends JFrame {
         JButton PrizeClaw1 = new JButton(PrizeClaw);
         gbc.gridx = 0;
         gbc.gridy = 1;
-        PrizeClaw1.setPreferredSize(new Dimension(80,100));
+        PrizeClaw1.setPreferredSize(new Dimension(110,100));
         PrizeClaw1.setBackground(Color.WHITE);
 
         JPanel marks1 = new JPanel(new BorderLayout());
@@ -194,7 +194,7 @@ public class Main extends JFrame {
         JButton PrizeClaw2 = new JButton(PrizeClaw);
         gbc.gridx = 1;
         gbc.gridy = 1;
-        PrizeClaw2.setPreferredSize(new Dimension(80,100));
+        PrizeClaw2.setPreferredSize(new Dimension(110,100));
         PrizeClaw2.setBackground(Color.WHITE);
 
         JPanel marks2 = new JPanel(new BorderLayout());
@@ -253,7 +253,7 @@ public class Main extends JFrame {
         JButton PrizeClaw3 = new JButton(PrizeClaw);
         gbc.gridx = 2;
         gbc.gridy = 1;
-        PrizeClaw3.setPreferredSize(new Dimension(80,100));
+        PrizeClaw3.setPreferredSize(new Dimension(110,100));
         PrizeClaw3.setBackground(Color.WHITE);
 
         JPanel marks3 = new JPanel(new BorderLayout());
@@ -316,7 +316,7 @@ public class Main extends JFrame {
         JButton FirstLevel1 = new JButton(card1);
         gbc.gridx = 0;
         gbc.gridy = 2;
-        FirstLevel1.setPreferredSize(new Dimension(80,130));
+        FirstLevel1.setPreferredSize(new Dimension(130,130));
         FirstLevel1.setBackground(Color.WHITE);
 
         JPanel marksFirst1 = new JPanel(new BorderLayout());
@@ -325,11 +325,12 @@ public class Main extends JFrame {
         FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
         First [FirstLevelCards.CountFirst] = new FirstLevelCards() ;
 
-        JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst+"    "+First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
+        JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst+"                  "+First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
         scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
         scoreFirst1.setFont(CardFont);
         JLabel coinFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].CardFirst);
         coinFirst1.setFont(defaultFont4);
+        coinFirst1.setHorizontalAlignment(JLabel.CENTER);
 
 
         marksFirst1.add (coinFirst1 , BorderLayout.SOUTH);
@@ -467,19 +468,25 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialGreenCoin++;
 
+                        if (FirstLevelCards.CountFirst == 15){
+                            FirstLevel1.setEnabled(false);
+                        }
+                        else {
+                            FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
+                            First[FirstLevelCards.CountFirst] = new FirstLevelCards();
 
-                        FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
-                        First[FirstLevelCards.CountFirst] = new FirstLevelCards();
+                            JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst + "    " +
+                                    First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
+                            scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
+                            scoreFirst1.setFont(CardFont);
+                            JLabel coinFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].CardFirst);
+                            coinFirst1.setFont(defaultFont4);
 
-                        JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst + "    " +
-                                First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
-                        scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
-                        scoreFirst1.setFont(CardFont);
-                        JLabel coinFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].CardFirst);
-                        coinFirst1.setFont(defaultFont4);
-
-                        marksFirst1.add(coinFirst1, BorderLayout.SOUTH);
-                        marksFirst1.add(scoreFirst1, BorderLayout.NORTH);
+                            marksFirst1.add(coinFirst1, BorderLayout.SOUTH);
+                            marksFirst1.add(scoreFirst1, BorderLayout.NORTH);
+                            FirstLevel1.add(marksFirst1);
+                            RightPanel.add(FirstLevel1,gbc);
+                        }
                         PlayerTurn = false;
 
 
@@ -622,18 +629,25 @@ public class Main extends JFrame {
                             Player2.SpecialGreenCoin ++;
 
 
-                        FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
-                        First [FirstLevelCards.CountFirst] = new FirstLevelCards() ;
+                        if (FirstLevelCards.CountFirst == 15){
+                            FirstLevel1.setEnabled(false);
+                        }
+                        else {
+                            FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
+                            First[FirstLevelCards.CountFirst] = new FirstLevelCards();
 
-                        JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst+"    "+
-                                First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
-                        scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
-                        scoreFirst1.setFont(CardFont);
-                        JLabel coinFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].CardFirst);
-                        coinFirst1.setFont(defaultFont4);
+                            JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst + "    " +
+                                    First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
+                            scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
+                            scoreFirst1.setFont(CardFont);
+                            JLabel coinFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].CardFirst);
+                            coinFirst1.setFont(defaultFont4);
 
-                        marksFirst1.add (coinFirst1 , BorderLayout.SOUTH);
-                        marksFirst1.add (scoreFirst1 , BorderLayout.NORTH);
+                            marksFirst1.add(coinFirst1, BorderLayout.SOUTH);
+                            marksFirst1.add(scoreFirst1, BorderLayout.NORTH);
+                            FirstLevel1.add(marksFirst1);
+                            RightPanel.add(FirstLevel1, gbc);
+                        }
                         PlayerTurn = true ;
                     }
 
@@ -642,83 +656,143 @@ public class Main extends JFrame {
             }
         });
 
-
-
-
         JButton FirstLevel2 = new JButton(card1);
         gbc.gridx = 1;
         gbc.gridy = 2;
-        FirstLevel2.setPreferredSize(new Dimension(80,130));
+        FirstLevel2.setPreferredSize(new Dimension(130,130));
         FirstLevel2.setBackground(Color.WHITE);
+
+        JPanel marksFirst2 = new JPanel(new BorderLayout());
+        marksFirst2.setOpaque(false);
+
+        FirstLevelCards.CounterFirst2 = FirstLevelCards.CountFirst;
+        First [FirstLevelCards.CountFirst] = new FirstLevelCards() ;
+
+        JLabel scoreFirst2 = new JLabel(First[FirstLevelCards.CounterFirst2].ScoreFirst+"                  "+
+                First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst);
+        scoreFirst2.setHorizontalAlignment(JLabel.CENTER);
+        scoreFirst2.setFont(CardFont);
+        JLabel coinFirst2 = new JLabel(First[FirstLevelCards.CounterFirst2].CardFirst);
+        coinFirst2.setFont(defaultFont4);
+        coinFirst2.setHorizontalAlignment(JLabel.CENTER);
+
+
+        marksFirst2.add (coinFirst2 , BorderLayout.SOUTH);
+        marksFirst2.add (scoreFirst2 , BorderLayout.NORTH);
+        FirstLevel2.add(marksFirst2);
         RightPanel.add(FirstLevel2,gbc);
+
 
         JButton FirstLevel3 = new JButton(card1);
         gbc.gridx = 2;
         gbc.gridy = 2;
-        FirstLevel3.setPreferredSize(new Dimension(80,130));
+        FirstLevel3.setPreferredSize(new Dimension(130,130));
         FirstLevel3.setBackground(Color.WHITE);
+
+
+        JPanel marksFirst3 = new JPanel(new BorderLayout());
+        marksFirst3.setOpaque(false);
+
+        FirstLevelCards.CounterFirst3 = FirstLevelCards.CountFirst;
+        First [FirstLevelCards.CountFirst] = new FirstLevelCards() ;
+
+        JLabel scoreFirst3 = new JLabel(First[FirstLevelCards.CounterFirst3].ScoreFirst+"                  "+
+                First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst);
+        scoreFirst3.setHorizontalAlignment(JLabel.CENTER);
+        scoreFirst3.setFont(CardFont);
+        JLabel coinFirst3 = new JLabel(First[FirstLevelCards.CounterFirst3].CardFirst);
+        coinFirst3.setFont(defaultFont4);
+        coinFirst3.setHorizontalAlignment(JLabel.CENTER);
+
+
+        marksFirst3.add (coinFirst3 , BorderLayout.SOUTH);
+        marksFirst3.add (scoreFirst3 , BorderLayout.NORTH);
+        FirstLevel3.add(marksFirst3);
         RightPanel.add(FirstLevel3,gbc);
+
 
         JButton FirstLevel4 = new JButton(card1);
         gbc.gridx = 3;
         gbc.gridy = 2;
-        FirstLevel4.setPreferredSize(new Dimension(80,130));
+        FirstLevel4.setPreferredSize(new Dimension(130,130));
         FirstLevel4.setBackground(Color.WHITE);
         RightPanel.add(FirstLevel4,gbc);
+
+
+        JPanel marksFirst4 = new JPanel(new BorderLayout());
+        marksFirst4.setOpaque(false);
+
+        FirstLevelCards.CounterFirst4 = FirstLevelCards.CountFirst;
+        First [FirstLevelCards.CountFirst] = new FirstLevelCards() ;
+
+        JLabel scoreFirst4 = new JLabel(First[FirstLevelCards.CounterFirst4].ScoreFirst+"                  "+
+                First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst);
+        scoreFirst4.setHorizontalAlignment(JLabel.CENTER);
+        scoreFirst4.setFont(CardFont);
+        JLabel coinFirst4 = new JLabel(First[FirstLevelCards.CounterFirst4].CardFirst);
+        coinFirst4.setFont(defaultFont4);
+        coinFirst4.setHorizontalAlignment(JLabel.CENTER);
+
+
+        marksFirst4.add (coinFirst4 , BorderLayout.SOUTH);
+        marksFirst4.add (scoreFirst4 , BorderLayout.NORTH);
+        FirstLevel4.add(marksFirst4);
+        RightPanel.add(FirstLevel4,gbc);
+
 
         JButton SecondLevel1 = new JButton(card2);
         gbc.gridx = 0;
         gbc.gridy = 3;
-        SecondLevel1.setPreferredSize(new Dimension(80,130));
+        SecondLevel1.setPreferredSize(new Dimension(130,130));
         SecondLevel1.setBackground(Color.WHITE);
         RightPanel.add(SecondLevel1,gbc);
 
         JButton SecondLevel2 = new JButton(card2);
         gbc.gridx = 1;
         gbc.gridy = 3;
-        SecondLevel2.setPreferredSize(new Dimension(80,130));
+        SecondLevel2.setPreferredSize(new Dimension(130,130));
         SecondLevel2.setBackground(Color.WHITE);
         RightPanel.add(SecondLevel2,gbc);
 
         JButton SecondLevel3 = new JButton(card2);
         gbc.gridx = 2;
         gbc.gridy = 3;
-        SecondLevel3.setPreferredSize(new Dimension(80,130));
+        SecondLevel3.setPreferredSize(new Dimension(130,130));
         SecondLevel3.setBackground(Color.WHITE);
         RightPanel.add(SecondLevel3,gbc);
 
         JButton SecondLevel4 = new JButton(card2);
         gbc.gridx = 3;
         gbc.gridy = 3;
-        SecondLevel4.setPreferredSize(new Dimension(80,130));
+        SecondLevel4.setPreferredSize(new Dimension(130,130));
         SecondLevel4.setBackground(Color.WHITE);
         RightPanel.add(SecondLevel4,gbc);
 
         JButton ThirdLevel1 = new JButton(card3);
         gbc.gridx = 0;
         gbc.gridy = 4;
-        ThirdLevel1.setPreferredSize(new Dimension(80,130));
+        ThirdLevel1.setPreferredSize(new Dimension(130,130));
         ThirdLevel1.setBackground(Color.WHITE);
         RightPanel.add(ThirdLevel1,gbc);
 
         JButton ThirdLevel2 = new JButton(card3);
         gbc.gridx = 1;
         gbc.gridy = 4;
-        ThirdLevel2.setPreferredSize(new Dimension(80,130));
+        ThirdLevel2.setPreferredSize(new Dimension(130,130));
         ThirdLevel2.setBackground(Color.WHITE);
         RightPanel.add(ThirdLevel2,gbc);
 
         JButton ThirdLevel3 = new JButton(card3);
         gbc.gridx = 2;
         gbc.gridy = 4;
-        ThirdLevel3.setPreferredSize(new Dimension(80,130));
+        ThirdLevel3.setPreferredSize(new Dimension(130,130));
         ThirdLevel3.setBackground(Color.WHITE);
         RightPanel.add(ThirdLevel3,gbc);
 
         JButton ThirdLevel4 = new JButton(card3);
         gbc.gridx = 3;
         gbc.gridy = 4;
-        ThirdLevel4.setPreferredSize(new Dimension(80,130));
+        ThirdLevel4.setPreferredSize(new Dimension(130,130));
         ThirdLevel4.setBackground(Color.WHITE);
         RightPanel.add(ThirdLevel4,gbc);
 
@@ -729,7 +803,7 @@ public class Main extends JFrame {
 
 
     }
-    //adding player tables
+    //add player tables
     public void initCenterPanel (){
 
 
