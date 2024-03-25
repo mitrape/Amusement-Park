@@ -57,6 +57,8 @@ public class SecondLevelCards {
             CardSecond=CardSecond+"BLACK="+ColorAndCountSecond[4];
         }
 
+
+
         this.ScoreSecond = this.Score [CountSecond];
 
         if (CountSecond % 2 == 0){
