@@ -1346,7 +1346,7 @@ public class Main extends JFrame {
         gbc.gridy = 2;
         FirstLevel4.setPreferredSize(new Dimension(130,130));
         FirstLevel4.setBackground(Color.WHITE);
-        RightPanel.add(FirstLevel4,gbc);
+
 
 
         JPanel marksFirst4 = new JPanel(new BorderLayout());
@@ -1689,7 +1689,7 @@ public class Main extends JFrame {
         gbc.gridy = 3;
         SecondLevel1.setPreferredSize(new Dimension(130,130));
         SecondLevel1.setBackground(Color.WHITE);
-        RightPanel.add(SecondLevel1,gbc);
+
 
         JPanel marksSecond1 = new JPanel(new BorderLayout());
         marksSecond1.setOpaque(false);
@@ -2035,7 +2035,7 @@ public class Main extends JFrame {
         gbc.gridy = 3;
         SecondLevel2.setPreferredSize(new Dimension(130,130));
         SecondLevel2.setBackground(Color.WHITE);
-        RightPanel.add(SecondLevel2,gbc);
+
 
         JPanel marksSecond2 = new JPanel(new BorderLayout());
         marksSecond2.setOpaque(false);
@@ -2382,7 +2382,7 @@ public class Main extends JFrame {
         gbc.gridy = 3;
         SecondLevel3.setPreferredSize(new Dimension(130,130));
         SecondLevel3.setBackground(Color.WHITE);
-        RightPanel.add(SecondLevel3,gbc);
+
 
         JPanel marksSecond3 = new JPanel(new BorderLayout());
         marksSecond3.setOpaque(false);
@@ -2728,7 +2728,6 @@ public class Main extends JFrame {
         gbc.gridy = 3;
         SecondLevel4.setPreferredSize(new Dimension(130,130));
         SecondLevel4.setBackground(Color.WHITE);
-        RightPanel.add(SecondLevel4,gbc);
 
         JPanel marksSecond4 = new JPanel(new BorderLayout());
         marksSecond4.setOpaque(false);
@@ -3073,15 +3072,53 @@ public class Main extends JFrame {
         gbc.gridy = 4;
         ThirdLevel1.setPreferredSize(new Dimension(130,130));
         ThirdLevel1.setBackground(Color.WHITE);
+
+
+        JPanel marksThird1 = new JPanel(new BorderLayout());
+        marksThird1.setOpaque(false);
+
+        ThirdLevelCards.CounterThird1 = ThirdLevelCards.CountThird;
+        Third [ThirdLevelCards.CountThird] = new ThirdLevelCards() ;
+
+        JLabel scoreThird1 = new JLabel(Third[ThirdLevelCards.CounterThird1].ScoreThird+"                  "+
+                Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird);
+        scoreThird1.setHorizontalAlignment(JLabel.CENTER);
+        scoreThird1.setFont(CardFont);
+        JLabel coinThird1 = new JLabel(Third[ThirdLevelCards.CounterThird1].CardThird);
+        coinThird1.setFont(defaultFont4);
+        coinThird1.setHorizontalAlignment(JLabel.CENTER);
+
+
+        marksThird1.add (coinThird1 , BorderLayout.SOUTH);
+        marksThird1.add (scoreThird1 , BorderLayout.NORTH);
+        ThirdLevel1.add(marksThird1);
         RightPanel.add(ThirdLevel1,gbc);
-
-
 
         JButton ThirdLevel2 = new JButton(card3);
         gbc.gridx = 1;
         gbc.gridy = 4;
         ThirdLevel2.setPreferredSize(new Dimension(130,130));
         ThirdLevel2.setBackground(Color.WHITE);
+
+
+        JPanel marksThird2 = new JPanel(new BorderLayout());
+        marksThird2.setOpaque(false);
+
+        ThirdLevelCards.CounterThird2 = ThirdLevelCards.CountThird;
+        Third [ThirdLevelCards.CountThird] = new ThirdLevelCards() ;
+
+        JLabel scoreThird2 = new JLabel(Third[ThirdLevelCards.CounterThird2].ScoreThird+"                  "+
+                Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird);
+        scoreThird2.setHorizontalAlignment(JLabel.CENTER);
+        scoreThird2.setFont(CardFont);
+        JLabel coinThird2 = new JLabel(Third[ThirdLevelCards.CounterThird2].CardThird);
+        coinThird2.setFont(defaultFont4);
+        coinThird2.setHorizontalAlignment(JLabel.CENTER);
+
+
+        marksThird2.add (coinThird2 , BorderLayout.SOUTH);
+        marksThird2.add (scoreThird2 , BorderLayout.NORTH);
+        ThirdLevel2.add(marksThird2);
         RightPanel.add(ThirdLevel2,gbc);
 
         JButton ThirdLevel3 = new JButton(card3);
@@ -3089,6 +3126,25 @@ public class Main extends JFrame {
         gbc.gridy = 4;
         ThirdLevel3.setPreferredSize(new Dimension(130,130));
         ThirdLevel3.setBackground(Color.WHITE);
+
+        JPanel marksThird3 = new JPanel(new BorderLayout());
+        marksThird3.setOpaque(false);
+
+        ThirdLevelCards.CounterThird3 = ThirdLevelCards.CountThird;
+        Third [ThirdLevelCards.CountThird] = new ThirdLevelCards() ;
+
+        JLabel scoreThird3 = new JLabel(Third[ThirdLevelCards.CounterThird3].ScoreThird+"                  "+
+                Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird);
+        scoreThird3.setHorizontalAlignment(JLabel.CENTER);
+        scoreThird3.setFont(CardFont);
+        JLabel coinThird3 = new JLabel(Third[ThirdLevelCards.CounterThird3].CardThird);
+        coinThird3.setFont(defaultFont4);
+        coinThird3.setHorizontalAlignment(JLabel.CENTER);
+
+
+        marksThird3.add (coinThird3 , BorderLayout.SOUTH);
+        marksThird3.add (scoreThird3 , BorderLayout.NORTH);
+        ThirdLevel3.add(marksThird3);
         RightPanel.add(ThirdLevel3,gbc);
 
         JButton ThirdLevel4 = new JButton(card3);
@@ -3096,7 +3152,29 @@ public class Main extends JFrame {
         gbc.gridy = 4;
         ThirdLevel4.setPreferredSize(new Dimension(130,130));
         ThirdLevel4.setBackground(Color.WHITE);
+
+        JPanel marksThird4 = new JPanel(new BorderLayout());
+        marksThird4.setOpaque(false);
+
+        ThirdLevelCards.CounterThird4 = ThirdLevelCards.CountThird;
+        Third [ThirdLevelCards.CountThird] = new ThirdLevelCards() ;
+
+        JLabel scoreThird4 = new JLabel(Third[ThirdLevelCards.CounterThird4].ScoreThird+"                  "+
+                Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird);
+        scoreThird4.setHorizontalAlignment(JLabel.CENTER);
+        scoreThird4.setFont(CardFont);
+        JLabel coinThird4 = new JLabel(Third[ThirdLevelCards.CounterThird4].CardThird);
+        coinThird4.setFont(defaultFont4);
+        coinThird4.setHorizontalAlignment(JLabel.CENTER);
+
+
+        marksThird4.add (coinThird4 , BorderLayout.SOUTH);
+        marksThird4.add (scoreThird4 , BorderLayout.NORTH);
+        ThirdLevel4.add(marksThird4);
         RightPanel.add(ThirdLevel4,gbc);
+
+
+
 
 
         add(RightPanel , BorderLayout.EAST);
