@@ -17,12 +17,42 @@ public class Main extends JFrame {
     private final Font CardFont = new Font("tahoma" , Font.BOLD ,10);
     private final Font defaultFont3 = new Font("tahoma" , Font.BOLD , 8);
     private final Font defaultFont4 = new Font ("tahoma" , Font.PLAIN , 10);
-    public boolean PlayerTurn ; //true for player1 and false for player2
+    public boolean PlayerTurn = true ; //true for player1 and false for player2
+
+
+
 
 
     GridBagConstraints gbc = new GridBagConstraints();
     Player Player1 = new Player();
     Player Player2 = new Player();
+
+    public String CoinState1 = "red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+            + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin;
+    public JLabel Player1CoinCounter = new JLabel(CoinState1);
+
+    public String SpecialCoinState1 = "red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+            + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+            ",gold = " + Player1.SpecialGoldCoin;
+    public JLabel Player1Score = new JLabel(String.valueOf(Player1.Score));
+
+    public JLabel Player1SpecialCoinCounter = new JLabel(SpecialCoinState1);
+
+
+    public String CoinState2 = "red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+            + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin;
+    public JLabel Player2CoinCounter = new JLabel(CoinState2);
+
+    public String SpecialCoinState2 = "red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+            + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+            ",gold = " + Player2.SpecialGoldCoin;
+    public JLabel Player2SpecialCoinCounter = new JLabel(SpecialCoinState2);
+
+    public JLabel Player2Score = new JLabel(String.valueOf(Player2.Score));
+
+
+
+
     public Main (){
         // initial designs
         setTitle("Amusement Park");
@@ -169,8 +199,18 @@ public class Main extends JFrame {
                             Player1.SpecialGoldCoin++;
                         }
                         Player1.Score += 3 ;
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
                         PrizeClaw1.setEnabled(false);
                         PlayerTurn=false;
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
                     }
                     else {
                        showMessageDialog(null, "you can't buy this card");
@@ -184,8 +224,18 @@ public class Main extends JFrame {
                             Player2.SpecialGoldCoin++;
                         }
                         Player2.Score += 3 ;
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
                         PrizeClaw1.setEnabled(false);
                         PlayerTurn = true ;
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
                     }
                     else {
                         showMessageDialog(null , "you can't buy this card");
@@ -227,8 +277,18 @@ public class Main extends JFrame {
                             Player1.SpecialGoldCoin++;
                         }
                         Player1.Score += 4 ;
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
                         PrizeClaw2.setEnabled(false);
                         PlayerTurn = false ;
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
                     }
                     else {
                         showMessageDialog(null, "you can't buy this card");
@@ -242,8 +302,18 @@ public class Main extends JFrame {
                             Player2.SpecialGoldCoin++;
                         }
                         Player2.Score += 4 ;
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
                         PrizeClaw2.setEnabled(false);
                         PlayerTurn = true ;
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
                     }
                     else {
                         showMessageDialog(null, "you can't buy this card");
@@ -287,8 +357,18 @@ public class Main extends JFrame {
                             Player1.SpecialGoldCoin++;
                         }
                         Player1.Score += 3 ;
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
                         PrizeClaw3.setEnabled(false);
                         PlayerTurn = false ;
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
                     }
                     else {
                         showMessageDialog(null, "you can't buy this card");
@@ -302,8 +382,18 @@ public class Main extends JFrame {
                             Player2.SpecialGoldCoin++;
                         }
                         Player2.Score += 3 ;
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
                         PrizeClaw3.setEnabled(false);
                         PlayerTurn = true ;
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
                     }
                     else {
                         showMessageDialog(null, "you can't buy this card");
@@ -471,6 +561,20 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialGreenCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
+
                         if (FirstLevelCards.CountFirst == 15){
                             FirstLevel1.setEnabled(false);
                         }
@@ -478,17 +582,12 @@ public class Main extends JFrame {
                             FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
                             First[FirstLevelCards.CountFirst] = new FirstLevelCards();
 
-                            JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst + "    " +
+                            scoreFirst1.setText(First[FirstLevelCards.CounterFirst1].ScoreFirst + "                  " +
                                     First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
                             scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
                             scoreFirst1.setFont(CardFont);
-                            JLabel coinFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].CardFirst);
+                            coinFirst1.setText(First[FirstLevelCards.CounterFirst1].CardFirst);
                             coinFirst1.setFont(defaultFont4);
-
-                            marksFirst1.add(coinFirst1, BorderLayout.SOUTH);
-                            marksFirst1.add(scoreFirst1, BorderLayout.NORTH);
-                            FirstLevel1.add(marksFirst1);
-                            RightPanel.add(FirstLevel1,gbc);
                         }
                         PlayerTurn = false;
 
@@ -631,6 +730,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialGreenCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (FirstLevelCards.CountFirst == 15){
                             FirstLevel1.setEnabled(false);
@@ -639,17 +750,13 @@ public class Main extends JFrame {
                             FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
                             First[FirstLevelCards.CountFirst] = new FirstLevelCards();
 
-                            JLabel scoreFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].ScoreFirst + "    " +
+                            scoreFirst1.setText(First[FirstLevelCards.CounterFirst1].ScoreFirst + "                  " +
                                     First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
                             scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
                             scoreFirst1.setFont(CardFont);
-                            JLabel coinFirst1 = new JLabel(First[FirstLevelCards.CounterFirst1].CardFirst);
+                            coinFirst1.setText(First[FirstLevelCards.CounterFirst1].CardFirst);
                             coinFirst1.setFont(defaultFont4);
 
-                            marksFirst1.add(coinFirst1, BorderLayout.SOUTH);
-                            marksFirst1.add(scoreFirst1, BorderLayout.NORTH);
-                            FirstLevel1.add(marksFirst1);
-                            RightPanel.add(FirstLevel1, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -815,6 +922,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialGreenCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (FirstLevelCards.CountFirst == 15){
                             FirstLevel2.setEnabled(false);
                         }
@@ -822,17 +941,13 @@ public class Main extends JFrame {
                             FirstLevelCards.CounterFirst2 = FirstLevelCards.CountFirst;
                             First[FirstLevelCards.CountFirst] = new FirstLevelCards();
 
-                            JLabel scoreFirst2 = new JLabel(First[FirstLevelCards.CounterFirst2].ScoreFirst + "    " +
+                            scoreFirst2.setText(First[FirstLevelCards.CounterFirst2].ScoreFirst + "                  " +
                                     First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst);
                             scoreFirst2.setHorizontalAlignment(JLabel.CENTER);
                             scoreFirst2.setFont(CardFont);
-                            JLabel coinFirst2 = new JLabel(First[FirstLevelCards.CounterFirst2].CardFirst);
+                            coinFirst2 .setText(First[FirstLevelCards.CounterFirst2].CardFirst);
                             coinFirst2.setFont(defaultFont4);
 
-                            marksFirst2.add(coinFirst2, BorderLayout.SOUTH);
-                            marksFirst2.add(scoreFirst2, BorderLayout.NORTH);
-                            FirstLevel2.add(marksFirst2);
-                            RightPanel.add(FirstLevel2,gbc);
                         }
                         PlayerTurn = false;
 
@@ -970,6 +1085,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialGreenCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (FirstLevelCards.CountFirst == 15){
                             FirstLevel2.setEnabled(false);
@@ -979,17 +1106,13 @@ public class Main extends JFrame {
                             FirstLevelCards.CounterFirst2 = FirstLevelCards.CountFirst;
                             First[FirstLevelCards.CountFirst] = new FirstLevelCards();
 
-                            JLabel scoreFirst2 = new JLabel(First[FirstLevelCards.CounterFirst2].ScoreFirst + "    " +
+                            scoreFirst2.setText(First[FirstLevelCards.CounterFirst2].ScoreFirst + "                  " +
                                     First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst);
                             scoreFirst2.setHorizontalAlignment(JLabel.CENTER);
                             scoreFirst2.setFont(CardFont);
-                            JLabel coinFirst2 = new JLabel(First[FirstLevelCards.CounterFirst2].CardFirst);
+                            coinFirst2.setText(First[FirstLevelCards.CounterFirst2].CardFirst);
                             coinFirst2.setFont(defaultFont4);
 
-                            marksFirst2.add(coinFirst2, BorderLayout.SOUTH);
-                            marksFirst2.add(scoreFirst2, BorderLayout.NORTH);
-                            FirstLevel2.add(marksFirst2);
-                            RightPanel.add(FirstLevel2, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -1156,6 +1279,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialGreenCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (FirstLevelCards.CountFirst == 15){
                             FirstLevel3.setEnabled(false);
                         }
@@ -1163,17 +1298,13 @@ public class Main extends JFrame {
                             FirstLevelCards.CounterFirst3 = FirstLevelCards.CountFirst;
                             First[FirstLevelCards.CountFirst] = new FirstLevelCards();
 
-                            JLabel scoreFirst3 = new JLabel(First[FirstLevelCards.CounterFirst3].ScoreFirst + "    " +
+                            scoreFirst3.setText(First[FirstLevelCards.CounterFirst3].ScoreFirst + "                  " +
                                     First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst);
                             scoreFirst3.setHorizontalAlignment(JLabel.CENTER);
                             scoreFirst3.setFont(CardFont);
-                            JLabel coinFirst3 = new JLabel(First[FirstLevelCards.CounterFirst3].CardFirst);
+                            coinFirst3.setText(First[FirstLevelCards.CounterFirst3].CardFirst);
                             coinFirst3.setFont(defaultFont4);
 
-                            marksFirst3.add(coinFirst3, BorderLayout.SOUTH);
-                            marksFirst3.add(scoreFirst3, BorderLayout.NORTH);
-                            FirstLevel3.add(marksFirst3);
-                            RightPanel.add(FirstLevel3,gbc);
                         }
                         PlayerTurn = false;
 
@@ -1311,6 +1442,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialGreenCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (FirstLevelCards.CountFirst == 15){
                             FirstLevel3.setEnabled(false);
@@ -1320,17 +1463,13 @@ public class Main extends JFrame {
                             FirstLevelCards.CounterFirst3 = FirstLevelCards.CountFirst;
                             First[FirstLevelCards.CountFirst] = new FirstLevelCards();
 
-                            JLabel scoreFirst3 = new JLabel(First[FirstLevelCards.CounterFirst3].ScoreFirst + "    " +
+                            scoreFirst3.setText(First[FirstLevelCards.CounterFirst3].ScoreFirst + "                  " +
                                     First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst);
                             scoreFirst3.setHorizontalAlignment(JLabel.CENTER);
                             scoreFirst3.setFont(CardFont);
-                            JLabel coinFirst3 = new JLabel(First[FirstLevelCards.CounterFirst3].CardFirst);
+                            coinFirst3.setText(First[FirstLevelCards.CounterFirst3].CardFirst);
                             coinFirst3.setFont(defaultFont4);
 
-                            marksFirst3.add(coinFirst3, BorderLayout.SOUTH);
-                            marksFirst3.add(scoreFirst3, BorderLayout.NORTH);
-                            FirstLevel3.add(marksFirst3);
-                            RightPanel.add(FirstLevel3, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -1499,6 +1638,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialGreenCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (FirstLevelCards.CountFirst == 15){
                             FirstLevel4.setEnabled(false);
                         }
@@ -1506,17 +1657,13 @@ public class Main extends JFrame {
                             FirstLevelCards.CounterFirst4 = FirstLevelCards.CountFirst;
                             First[FirstLevelCards.CountFirst] = new FirstLevelCards();
 
-                            JLabel scoreFirst4 = new JLabel(First[FirstLevelCards.CounterFirst4].ScoreFirst + "    " +
+                            scoreFirst4.setText(First[FirstLevelCards.CounterFirst4].ScoreFirst + "                  " +
                                     First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst);
                             scoreFirst4.setHorizontalAlignment(JLabel.CENTER);
                             scoreFirst4.setFont(CardFont);
-                            JLabel coinFirst4 = new JLabel(First[FirstLevelCards.CounterFirst4].CardFirst);
+                            coinFirst4.setText(First[FirstLevelCards.CounterFirst4].CardFirst);
                             coinFirst4.setFont(defaultFont4);
 
-                            marksFirst4.add(coinFirst4, BorderLayout.SOUTH);
-                            marksFirst4.add(scoreFirst4, BorderLayout.NORTH);
-                            FirstLevel4.add(marksFirst4);
-                            RightPanel.add(FirstLevel4,gbc);
                         }
                         PlayerTurn = false;
 
@@ -1654,6 +1801,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialGreenCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (FirstLevelCards.CountFirst == 15){
                             FirstLevel4.setEnabled(false);
@@ -1663,17 +1822,13 @@ public class Main extends JFrame {
                             FirstLevelCards.CounterFirst4 = FirstLevelCards.CountFirst;
                             First[FirstLevelCards.CountFirst] = new FirstLevelCards();
 
-                            JLabel scoreFirst4 = new JLabel(First[FirstLevelCards.CounterFirst4].ScoreFirst + "    " +
+                            scoreFirst4.setText(First[FirstLevelCards.CounterFirst4].ScoreFirst + "                  " +
                                     First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst);
                             scoreFirst4.setHorizontalAlignment(JLabel.CENTER);
                             scoreFirst4.setFont(CardFont);
-                            JLabel coinFirst4 = new JLabel(First[FirstLevelCards.CounterFirst4].CardFirst);
+                            coinFirst4.setText(First[FirstLevelCards.CounterFirst4].CardFirst);
                             coinFirst4.setFont(defaultFont4);
 
-                            marksFirst4.add(coinFirst4, BorderLayout.SOUTH);
-                            marksFirst4.add(scoreFirst4, BorderLayout.NORTH);
-                            FirstLevel4.add(marksFirst4);
-                            RightPanel.add(FirstLevel4, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -1841,6 +1996,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialRedCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (SecondLevelCards.CountSecond == 15){
                             SecondLevel1.setEnabled(false);
                         }
@@ -1848,17 +2015,13 @@ public class Main extends JFrame {
                             SecondLevelCards.CounterSecond1 = SecondLevelCards.CountSecond;
                             Second[SecondLevelCards.CountSecond] = new SecondLevelCards ();
 
-                            JLabel scoreSecond1 = new JLabel(Second[SecondLevelCards.CounterSecond1].ScoreSecond + "    " +
+                            scoreSecond1.setText(Second[SecondLevelCards.CounterSecond1].ScoreSecond + "                  " +
                                     Second[SecondLevelCards.CounterSecond1].ColorSpecialCoinSecond);
                             scoreSecond1.setHorizontalAlignment(JLabel.CENTER);
                             scoreSecond1.setFont(CardFont);
-                            JLabel coinSecond1 = new JLabel(Second[SecondLevelCards.CounterSecond1].CardSecond);
+                            coinSecond1.setText(Second[SecondLevelCards.CounterSecond1].CardSecond);
                             coinSecond1.setFont(defaultFont4);
 
-                            marksSecond1.add(coinSecond1, BorderLayout.SOUTH);
-                            marksSecond1.add(scoreSecond1, BorderLayout.NORTH);
-                            SecondLevel1.add(marksSecond1);
-                            RightPanel.add(SecondLevel1,gbc);
                         }
                         PlayerTurn = false;
 
@@ -2001,6 +2164,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialRedCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (SecondLevelCards.CountSecond == 15){
                             SecondLevel1.setEnabled(false);
@@ -2009,17 +2184,13 @@ public class Main extends JFrame {
                             SecondLevelCards.CounterSecond1 = SecondLevelCards.CountSecond;
                             Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
 
-                            JLabel scoreSecond1 = new JLabel(Second[SecondLevelCards.CounterSecond1].ScoreSecond + "    " +
+                            scoreSecond1.setText(Second[SecondLevelCards.CounterSecond1].ScoreSecond + "                  " +
                                     Second[SecondLevelCards.CounterSecond1].ColorSpecialCoinSecond);
                             scoreSecond1.setHorizontalAlignment(JLabel.CENTER);
                             scoreSecond1.setFont(CardFont);
-                            JLabel coinSecond1 = new JLabel(Second[SecondLevelCards.CounterSecond1].CardSecond);
+                            coinSecond1.setText(Second[SecondLevelCards.CounterSecond1].CardSecond);
                             coinSecond1.setFont(defaultFont4);
 
-                            marksSecond1.add(coinSecond1, BorderLayout.SOUTH);
-                            marksSecond1.add(scoreSecond1, BorderLayout.NORTH);
-                            SecondLevel1.add(marksSecond1);
-                            RightPanel.add(SecondLevel1, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -2188,6 +2359,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialRedCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (SecondLevelCards.CountSecond == 15){
                             SecondLevel2 . setEnabled(false);
                         }
@@ -2195,17 +2378,13 @@ public class Main extends JFrame {
                             SecondLevelCards.CounterSecond2 = SecondLevelCards.CountSecond;
                             Second[SecondLevelCards.CountSecond] = new SecondLevelCards ();
 
-                            JLabel scoreSecond2 = new JLabel(Second[SecondLevelCards.CounterSecond2].ScoreSecond + "    " +
+                            scoreSecond2.setText(Second[SecondLevelCards.CounterSecond2].ScoreSecond + "                  " +
                                     Second[SecondLevelCards.CounterSecond2].ColorSpecialCoinSecond);
                             scoreSecond2.setHorizontalAlignment(JLabel.CENTER);
                             scoreSecond2.setFont(CardFont);
-                            JLabel coinSecond2 = new JLabel(Second[SecondLevelCards.CounterSecond2].CardSecond);
+                            coinSecond2.setText(Second[SecondLevelCards.CounterSecond2].CardSecond);
                             coinSecond2.setFont(defaultFont4);
 
-                            marksSecond2.add(coinSecond2, BorderLayout.SOUTH);
-                            marksSecond2.add(scoreSecond2, BorderLayout.NORTH);
-                            SecondLevel2.add(marksSecond2);
-                            RightPanel.add(SecondLevel2,gbc);
                         }
                         PlayerTurn = false;
 
@@ -2348,6 +2527,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialRedCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (SecondLevelCards.CountSecond == 15){
                             SecondLevel2.setEnabled(false);
@@ -2356,17 +2547,13 @@ public class Main extends JFrame {
                             SecondLevelCards.CounterSecond2 = SecondLevelCards.CountSecond;
                             Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
 
-                            JLabel scoreSecond2 = new JLabel(Second[SecondLevelCards.CounterSecond2].ScoreSecond + "    " +
+                            scoreSecond2.setText(Second[SecondLevelCards.CounterSecond2].ScoreSecond + "                  " +
                                     Second[SecondLevelCards.CounterSecond2].ColorSpecialCoinSecond);
                             scoreSecond2.setHorizontalAlignment(JLabel.CENTER);
                             scoreSecond2.setFont(CardFont);
-                            JLabel coinSecond2 = new JLabel(Second[SecondLevelCards.CounterSecond2].CardSecond);
+                            coinSecond2.setText(Second[SecondLevelCards.CounterSecond2].CardSecond);
                             coinSecond2.setFont(defaultFont4);
 
-                            marksSecond2.add(coinSecond2, BorderLayout.SOUTH);
-                            marksSecond2.add(scoreSecond2, BorderLayout.NORTH);
-                            SecondLevel2.add(marksSecond2);
-                            RightPanel.add(SecondLevel2, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -2534,6 +2721,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialRedCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (SecondLevelCards.CountSecond == 15){
                             SecondLevel3 . setEnabled(false);
                         }
@@ -2541,17 +2740,13 @@ public class Main extends JFrame {
                             SecondLevelCards.CounterSecond3 = SecondLevelCards.CountSecond;
                             Second[SecondLevelCards.CountSecond] = new SecondLevelCards ();
 
-                            JLabel scoreSecond3 = new JLabel(Second[SecondLevelCards.CounterSecond3].ScoreSecond + "    " +
+                            scoreSecond3.setText(Second[SecondLevelCards.CounterSecond3].ScoreSecond + "                  " +
                                     Second[SecondLevelCards.CounterSecond3].ColorSpecialCoinSecond);
                             scoreSecond3.setHorizontalAlignment(JLabel.CENTER);
                             scoreSecond3.setFont(CardFont);
-                            JLabel coinSecond3 = new JLabel(Second[SecondLevelCards.CounterSecond3].CardSecond);
+                            coinSecond3.setText(Second[SecondLevelCards.CounterSecond3].CardSecond);
                             coinSecond3.setFont(defaultFont4);
 
-                            marksSecond3 .add(coinSecond3, BorderLayout.SOUTH);
-                            marksSecond3.add(scoreSecond3, BorderLayout.NORTH);
-                            SecondLevel3.add(marksSecond3);
-                            RightPanel.add(SecondLevel3,gbc);
                         }
                         PlayerTurn = false;
 
@@ -2694,6 +2889,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialRedCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (SecondLevelCards.CountSecond == 15){
                             SecondLevel3.setEnabled(false);
@@ -2702,17 +2909,13 @@ public class Main extends JFrame {
                             SecondLevelCards.CounterSecond3 = SecondLevelCards.CountSecond;
                             Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
 
-                            JLabel scoreSecond3 = new JLabel(Second[SecondLevelCards.CounterSecond3].ScoreSecond + "    " +
+                            scoreSecond3.setText(Second[SecondLevelCards.CounterSecond3].ScoreSecond + "                  " +
                                     Second[SecondLevelCards.CounterSecond3].ColorSpecialCoinSecond);
                             scoreSecond3.setHorizontalAlignment(JLabel.CENTER);
                             scoreSecond3.setFont(CardFont);
-                            JLabel coinSecond3 = new JLabel(Second[SecondLevelCards.CounterSecond3].CardSecond);
+                            coinSecond3.setText(Second[SecondLevelCards.CounterSecond3].CardSecond);
                             coinSecond3.setFont(defaultFont4);
 
-                            marksSecond3.add(coinSecond3, BorderLayout.SOUTH);
-                            marksSecond3.add(scoreSecond3, BorderLayout.NORTH);
-                            SecondLevel3.add(marksSecond3);
-                            RightPanel.add(SecondLevel3, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -2879,6 +3082,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialRedCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (SecondLevelCards.CountSecond == 15){
                             SecondLevel4.setEnabled(false);
                         }
@@ -2886,17 +3101,13 @@ public class Main extends JFrame {
                             SecondLevelCards.CounterSecond4 = SecondLevelCards.CountSecond;
                             Second[SecondLevelCards.CountSecond] = new SecondLevelCards ();
 
-                            JLabel scoreSecond4 = new JLabel(Second[SecondLevelCards.CounterSecond4].ScoreSecond + "    " +
+                            scoreSecond4.setText(Second[SecondLevelCards.CounterSecond4].ScoreSecond + "                  " +
                                     Second[SecondLevelCards.CounterSecond4].ColorSpecialCoinSecond);
                             scoreSecond4.setHorizontalAlignment(JLabel.CENTER);
                             scoreSecond4.setFont(CardFont);
-                            JLabel coinSecond4 = new JLabel(Second[SecondLevelCards.CounterSecond4].CardSecond);
+                            coinSecond4.setText(Second[SecondLevelCards.CounterSecond4].CardSecond);
                             coinSecond4.setFont(defaultFont4);
 
-                            marksSecond4.add(coinSecond4, BorderLayout.SOUTH);
-                            marksSecond4.add(scoreSecond4, BorderLayout.NORTH);
-                            SecondLevel4.add(marksSecond4);
-                            RightPanel.add(SecondLevel4,gbc);
                         }
                         PlayerTurn = false;
 
@@ -3039,6 +3250,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialRedCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (SecondLevelCards.CountSecond == 15){
                             SecondLevel4.setEnabled(false);
@@ -3047,17 +3270,13 @@ public class Main extends JFrame {
                             SecondLevelCards.CounterSecond4 = SecondLevelCards.CountSecond;
                             Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
 
-                            JLabel scoreSecond4 = new JLabel(Second[SecondLevelCards.CounterSecond4].ScoreSecond + "    " +
+                            scoreSecond4.setText(Second[SecondLevelCards.CounterSecond4].ScoreSecond + "                  " +
                                     Second[SecondLevelCards.CounterSecond4].ColorSpecialCoinSecond);
                             scoreSecond4.setHorizontalAlignment(JLabel.CENTER);
                             scoreSecond4.setFont(CardFont);
-                            JLabel coinSecond4 = new JLabel(Second[SecondLevelCards.CounterSecond4].CardSecond);
+                            coinSecond4.setText(Second[SecondLevelCards.CounterSecond4].CardSecond);
                             coinSecond4.setFont(defaultFont4);
 
-                            marksSecond4.add(coinSecond4, BorderLayout.SOUTH);
-                            marksSecond4.add(scoreSecond4, BorderLayout.NORTH);
-                            SecondLevel4.add(marksSecond4);
-                            RightPanel.add(SecondLevel4, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -3225,6 +3444,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialGreenCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (ThirdLevelCards.CountThird == 15){
                             ThirdLevel1.setEnabled(false);
                         }
@@ -3232,17 +3463,13 @@ public class Main extends JFrame {
                             ThirdLevelCards.CounterThird1 = ThirdLevelCards.CountThird;
                             Third[ThirdLevelCards.CountThird] = new ThirdLevelCards ();
 
-                            JLabel scoreThird1 = new JLabel(Third[ThirdLevelCards.CounterThird1].ScoreThird + "    " +
+                            scoreThird1.setText(Third[ThirdLevelCards.CounterThird1].ScoreThird + "                  " +
                                     Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird);
                             scoreThird1.setHorizontalAlignment(JLabel.CENTER);
                             scoreThird1.setFont(CardFont);
-                            JLabel coinThird1 = new JLabel(Third[ThirdLevelCards.CounterThird1].CardThird);
+                            coinThird1.setText(Third[ThirdLevelCards.CounterThird1].CardThird);
                             coinThird1.setFont(defaultFont4);
 
-                            marksThird1.add(coinThird1, BorderLayout.SOUTH);
-                            marksThird1.add(scoreThird1, BorderLayout.NORTH);
-                            ThirdLevel1.add(marksThird1);
-                            RightPanel.add(ThirdLevel1,gbc);
                         }
                         PlayerTurn = false;
 
@@ -3385,6 +3612,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialGreenCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (ThirdLevelCards.CountThird == 15){
                             ThirdLevel1.setEnabled(false);
@@ -3393,17 +3632,13 @@ public class Main extends JFrame {
                             ThirdLevelCards.CounterThird1 = ThirdLevelCards.CountThird;
                             Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
 
-                            JLabel scoreThird1 = new JLabel(Third[ThirdLevelCards.CounterThird1].ScoreThird + "    " +
+                            scoreThird1.setText(Third[ThirdLevelCards.CounterThird1].ScoreThird + "                  " +
                                     Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird);
                             scoreThird1.setHorizontalAlignment(JLabel.CENTER);
                             scoreThird1.setFont(CardFont);
-                            JLabel coinThird1 = new JLabel(Third[ThirdLevelCards.CounterThird1].CardThird);
+                            coinThird1.setText(Third[ThirdLevelCards.CounterThird1].CardThird);
                             coinThird1.setFont(defaultFont4);
 
-                            marksThird1.add(coinThird1, BorderLayout.SOUTH);
-                            marksThird1.add(scoreThird1, BorderLayout.NORTH);
-                            ThirdLevel1.add(marksThird1);
-                            RightPanel.add(ThirdLevel1, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -3571,6 +3806,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialGreenCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (ThirdLevelCards.CountThird == 15){
                             ThirdLevel2 . setEnabled(false);
                         }
@@ -3578,17 +3825,13 @@ public class Main extends JFrame {
                             ThirdLevelCards.CounterThird2 = ThirdLevelCards.CountThird;
                             Third[ThirdLevelCards.CountThird] = new ThirdLevelCards ();
 
-                            JLabel scoreThird2 = new JLabel(Third[ThirdLevelCards.CounterThird2].ScoreThird + "    " +
+                            scoreThird2.setText(Third[ThirdLevelCards.CounterThird2].ScoreThird + "                  " +
                                     Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird);
                             scoreThird2.setHorizontalAlignment(JLabel.CENTER);
                             scoreThird2.setFont(CardFont);
-                            JLabel coinThird2 = new JLabel(Third[ThirdLevelCards.CounterThird2].CardThird);
+                            coinThird2.setText(Third[ThirdLevelCards.CounterThird2].CardThird);
                             coinThird2.setFont(defaultFont4);
 
-                            marksThird2.add(coinThird2, BorderLayout.SOUTH);
-                            marksThird2.add(scoreThird2, BorderLayout.NORTH);
-                            ThirdLevel2.add(marksThird2);
-                            RightPanel.add(ThirdLevel2,gbc);
                         }
                         PlayerTurn = false;
 
@@ -3731,6 +3974,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialGreenCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (ThirdLevelCards.CountThird == 15){
                             ThirdLevel2.setEnabled(false);
@@ -3739,17 +3994,13 @@ public class Main extends JFrame {
                             ThirdLevelCards.CounterThird2 = ThirdLevelCards.CountThird;
                             Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
 
-                            JLabel scoreThird2 = new JLabel(Third[ThirdLevelCards.CounterThird2].ScoreThird + "    " +
+                            scoreThird2.setText(Third[ThirdLevelCards.CounterThird2].ScoreThird + "                  " +
                                     Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird);
                             scoreThird2.setHorizontalAlignment(JLabel.CENTER);
                             scoreThird2.setFont(CardFont);
-                            JLabel coinThird2 = new JLabel(Third[ThirdLevelCards.CounterThird2].CardThird);
+                            coinThird2.setText(Third[ThirdLevelCards.CounterThird2].CardThird);
                             coinThird2.setFont(defaultFont4);
 
-                            marksThird2.add(coinThird2, BorderLayout.SOUTH);
-                            marksThird2.add(scoreThird2, BorderLayout.NORTH);
-                            ThirdLevel2.add(marksThird2);
-                            RightPanel.add(ThirdLevel2, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -3916,6 +4167,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialGreenCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (ThirdLevelCards.CountThird == 15){
                             ThirdLevel3 . setEnabled(false);
                         }
@@ -3923,17 +4186,13 @@ public class Main extends JFrame {
                             ThirdLevelCards.CounterThird3 = ThirdLevelCards.CountThird;
                             Third[ThirdLevelCards.CountThird] = new ThirdLevelCards ();
 
-                            JLabel scoreThird3 = new JLabel(Third[ThirdLevelCards.CounterThird3].ScoreThird + "    " +
+                            scoreThird3.setText(Third[ThirdLevelCards.CounterThird3].ScoreThird + "                  " +
                                     Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird);
                             scoreThird3.setHorizontalAlignment(JLabel.CENTER);
                             scoreThird3.setFont(CardFont);
-                            JLabel coinThird3 = new JLabel(Third[ThirdLevelCards.CounterThird3].CardThird);
+                            coinThird3.setText(Third[ThirdLevelCards.CounterThird3].CardThird);
                             coinThird3.setFont(defaultFont4);
 
-                            marksThird3 .add(coinThird3, BorderLayout.SOUTH);
-                            marksThird3.add(scoreThird3, BorderLayout.NORTH);
-                            ThirdLevel3.add(marksThird3);
-                            RightPanel.add(ThirdLevel3,gbc);
                         }
                         PlayerTurn = false;
 
@@ -4076,6 +4335,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialGreenCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (ThirdLevelCards.CountThird == 15){
                             ThirdLevel3.setEnabled(false);
@@ -4084,17 +4355,13 @@ public class Main extends JFrame {
                             ThirdLevelCards.CounterThird3 = ThirdLevelCards.CountThird;
                             Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
 
-                            JLabel scoreThird3 = new JLabel(Third[ThirdLevelCards.CounterThird3].ScoreThird + "    " +
+                            scoreThird3.setText(Third[ThirdLevelCards.CounterThird3].ScoreThird + "                  " +
                                     Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird);
                             scoreThird3.setHorizontalAlignment(JLabel.CENTER);
                             scoreThird3.setFont(CardFont);
-                            JLabel coinThird3 = new JLabel(Third[ThirdLevelCards.CounterThird3].CardThird);
+                            coinThird3.setText(Third[ThirdLevelCards.CounterThird3].CardThird);
                             coinThird3.setFont(defaultFont4);
 
-                            marksThird3.add(coinThird3, BorderLayout.SOUTH);
-                            marksThird3.add(scoreThird3, BorderLayout.NORTH);
-                            ThirdLevel3.add(marksThird3);
-                            RightPanel.add(ThirdLevel3, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -4261,6 +4528,18 @@ public class Main extends JFrame {
                         else
                             Player1.SpecialGreenCoin++;
 
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+
                         if (ThirdLevelCards.CountThird == 15){
                             ThirdLevel4.setEnabled(false);
                         }
@@ -4268,17 +4547,13 @@ public class Main extends JFrame {
                             ThirdLevelCards.CounterThird4 = ThirdLevelCards.CountThird;
                             Third[ThirdLevelCards.CountThird] = new ThirdLevelCards ();
 
-                            JLabel scoreThird4 = new JLabel(Third[ThirdLevelCards.CounterThird4].ScoreThird + "    " +
+                            scoreThird4.setText(Third[ThirdLevelCards.CounterThird4].ScoreThird + "                  " +
                                     Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird);
                             scoreThird4.setHorizontalAlignment(JLabel.CENTER);
                             scoreThird4.setFont(CardFont);
-                            JLabel coinThird4 = new JLabel(Third[ThirdLevelCards.CounterThird4].CardThird);
+                            coinThird4.setText(Third[ThirdLevelCards.CounterThird4].CardThird);
                             coinThird4.setFont(defaultFont4);
 
-                            marksThird4.add(coinThird4, BorderLayout.SOUTH);
-                            marksThird4.add(scoreThird4, BorderLayout.NORTH);
-                            ThirdLevel4.add(marksThird4);
-                            RightPanel.add(ThirdLevel4,gbc);
                         }
                         PlayerTurn = false;
 
@@ -4421,6 +4696,18 @@ public class Main extends JFrame {
                         else
                             Player2.SpecialGreenCoin ++;
 
+                        Player2Score.setText(String.valueOf(Player2.Score));
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                ",gold = " + Player2.SpecialGoldCoin);
+
+                        if (Player2.Score >= 15){
+                            showMessageDialog(null,"PLAYER TWO WON!");
+                            System.exit(0);
+                        }
+
 
                         if (ThirdLevelCards.CountThird == 15){
                             ThirdLevel4.setEnabled(false);
@@ -4429,17 +4716,13 @@ public class Main extends JFrame {
                             ThirdLevelCards.CounterThird4 = ThirdLevelCards.CountThird;
                             Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
 
-                            JLabel scoreThird4 = new JLabel(Third[ThirdLevelCards.CounterThird4].ScoreThird + "    " +
+                            scoreThird4.setText(Third[ThirdLevelCards.CounterThird4].ScoreThird + "                  " +
                                     Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird);
                             scoreThird4.setHorizontalAlignment(JLabel.CENTER);
                             scoreThird4.setFont(CardFont);
-                            JLabel coinThird4 = new JLabel(Third[ThirdLevelCards.CounterThird4].CardThird);
+                            coinThird4 .setText(Third[ThirdLevelCards.CounterThird4].CardThird);
                             coinThird4.setFont(defaultFont4);
 
-                            marksThird4.add(coinThird4, BorderLayout.SOUTH);
-                            marksThird4.add(scoreThird4, BorderLayout.NORTH);
-                            ThirdLevel4.add(marksThird4);
-                            RightPanel.add(ThirdLevel4, gbc);
                         }
                         PlayerTurn = true ;
                     }
@@ -4509,9 +4792,8 @@ public class Main extends JFrame {
         Coins1.setBackground(Color.LIGHT_GRAY);
 
 
-        String CoinState1 = "red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
-                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin;
-        JLabel Player1CoinCounter = new JLabel(CoinState1);
+
+
         Player1CoinCounter.setFont(defaultFont2);
         Player1CoinCounter.setPreferredSize(new Dimension(200, 30));
         Player1CoinCounter.setHorizontalAlignment(JLabel.CENTER);
@@ -4519,10 +4801,8 @@ public class Main extends JFrame {
         Player1CoinCounter.setBackground(Color.WHITE);
 
 
-        String SpecialCoinState1 = "red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
-                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
-                ",gold = " + Player1.SpecialGoldCoin;
-        JLabel Player1SpecialCoinCounter = new JLabel(SpecialCoinState1);
+
+
         Player1SpecialCoinCounter.setFont(defaultFont2);
         Player1SpecialCoinCounter.setPreferredSize(new Dimension(200, 30));
         Player1SpecialCoinCounter.setHorizontalAlignment(JLabel.CENTER);
@@ -4530,7 +4810,7 @@ public class Main extends JFrame {
         Player1SpecialCoinCounter.setBackground(Color.WHITE);
 
 
-        JLabel Player1Score = new JLabel(String.valueOf(Player1.Score));
+
         Player1Score.setPreferredSize(new Dimension(200, 30));
         Player1Score.setHorizontalAlignment(JLabel.CENTER);
         Player1Score.setOpaque(true);
@@ -4583,19 +4863,14 @@ public class Main extends JFrame {
         Coins2.setBackground(Color.LIGHT_GRAY);
 
 
-        String CoinState2 = "red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
-                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin;
-        JLabel Player2CoinCounter = new JLabel(CoinState2);
+
         Player2CoinCounter.setFont(defaultFont2);
         Player2CoinCounter.setPreferredSize(new Dimension(200, 30));
         Player2CoinCounter.setHorizontalAlignment(JLabel.CENTER);
         Player2CoinCounter.setOpaque(true);
         Player2CoinCounter.setBackground(Color.WHITE);
 
-        String SpecialCoinState2 = "red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
-                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
-                ",gold = " + Player2.SpecialGoldCoin;
-        JLabel Player2SpecialCoinCounter = new JLabel(SpecialCoinState2);
+
         Player2SpecialCoinCounter.setFont(defaultFont2);
         Player2SpecialCoinCounter.setPreferredSize(new Dimension(200, 30));
         Player2SpecialCoinCounter.setHorizontalAlignment(JLabel.CENTER);
@@ -4603,7 +4878,7 @@ public class Main extends JFrame {
         Player2SpecialCoinCounter.setBackground(Color.WHITE);
 
 
-        JLabel Player2Score = new JLabel(String.valueOf(Player2.Score));
+
         Player2Score.setHorizontalAlignment(JLabel.CENTER);
         Player2Score.setPreferredSize(new Dimension(200, 30));
         Player2Score.setOpaque(true);
