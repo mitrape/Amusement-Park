@@ -2646,6 +2646,111 @@ public class Main extends JFrame {
             }
         });
 
+        ReserveCardSecond1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = Second[SecondLevelCards.CounterSecond1].ScoreSecond;
+                            Player1.SpecialCoinReserve1 = Second[SecondLevelCards.CounterSecond1].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = Second[SecondLevelCards.CounterSecond1].ScoreSecond;
+                            Player1.SpecialCoinReserve2 = Second[SecondLevelCards.CounterSecond1].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = Second[SecondLevelCards.CounterSecond1].ScoreSecond;
+                            Player1.SpecialCoinReserve3 = Second[SecondLevelCards.CounterSecond1].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (SecondLevelCards.CountSecond == 15){
+                            SecondLevel1.setEnabled(false);
+                        }
+                        else {
+                            SecondLevelCards.CounterSecond1 = SecondLevelCards.CountSecond;
+                            Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
+
+                            scoreSecond1.setText(Second[SecondLevelCards.CounterSecond1].ScoreSecond + "                  " +
+                                    Second[SecondLevelCards.CounterSecond1].ColorSpecialCoinSecond);
+                            scoreSecond1.setHorizontalAlignment(JLabel.CENTER);
+                            scoreSecond1.setFont(CardFont);
+                            coinSecond1.setText(Second[SecondLevelCards.CounterSecond1].CardSecond);
+                            coinSecond1.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = Second[SecondLevelCards.CounterSecond1].ScoreSecond;
+                            Player2.SpecialCoinReserve1 = Second[SecondLevelCards.CounterSecond1].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = Second[SecondLevelCards.CounterSecond1].ScoreSecond;
+                            Player2.SpecialCoinReserve2 = Second[SecondLevelCards.CounterSecond1].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = Second[SecondLevelCards.CounterSecond1].ScoreSecond;
+                            Player2.SpecialCoinReserve3 = Second[SecondLevelCards.CounterSecond1].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (SecondLevelCards.CountSecond == 15){
+                            SecondLevel1.setEnabled(false);
+                        }
+                        else {
+                            SecondLevelCards.CounterSecond1 = SecondLevelCards.CountSecond;
+                            Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
+
+                            scoreSecond1.setText(Second[SecondLevelCards.CounterSecond1].ScoreSecond + "                  " +
+                                    Second[SecondLevelCards.CounterSecond1].ColorSpecialCoinSecond);
+                            scoreSecond1.setHorizontalAlignment(JLabel.CENTER);
+                            scoreSecond1.setFont(CardFont);
+                            coinSecond1.setText(Second[SecondLevelCards.CounterSecond1].CardSecond);
+                            coinSecond1.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
+            }
+        });
+
+
 
 
         JButton SecondLevel2 = new JButton(card2);
@@ -3012,6 +3117,110 @@ public class Main extends JFrame {
 
                 }
 
+            }
+        });
+
+        ReserveCardSecond2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = Second[SecondLevelCards.CounterSecond2].ScoreSecond;
+                            Player1.SpecialCoinReserve1 = Second[SecondLevelCards.CounterSecond2].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = Second[SecondLevelCards.CounterSecond2].ScoreSecond;
+                            Player1.SpecialCoinReserve2 = Second[SecondLevelCards.CounterSecond2].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = Second[SecondLevelCards.CounterSecond2].ScoreSecond;
+                            Player1.SpecialCoinReserve3 = Second[SecondLevelCards.CounterSecond2].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (SecondLevelCards.CountSecond == 15){
+                            SecondLevel2.setEnabled(false);
+                        }
+                        else {
+                            SecondLevelCards.CounterSecond2 = SecondLevelCards.CountSecond;
+                            Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
+
+                            scoreSecond2.setText(Second[SecondLevelCards.CounterSecond2].ScoreSecond + "                  " +
+                                    Second[SecondLevelCards.CounterSecond2].ColorSpecialCoinSecond);
+                            scoreSecond2.setHorizontalAlignment(JLabel.CENTER);
+                            scoreSecond2.setFont(CardFont);
+                            coinSecond2.setText(Second[SecondLevelCards.CounterSecond2].CardSecond);
+                            coinSecond2.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = Second[SecondLevelCards.CounterSecond2].ScoreSecond;
+                            Player2.SpecialCoinReserve1 = Second[SecondLevelCards.CounterSecond2].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = Second[SecondLevelCards.CounterSecond2].ScoreSecond;
+                            Player2.SpecialCoinReserve2 = Second[SecondLevelCards.CounterSecond2].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = Second[SecondLevelCards.CounterSecond2].ScoreSecond;
+                            Player2.SpecialCoinReserve3 = Second[SecondLevelCards.CounterSecond2].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (SecondLevelCards.CountSecond == 15){
+                            SecondLevel2.setEnabled(false);
+                        }
+                        else {
+                            SecondLevelCards.CounterSecond2 = SecondLevelCards.CountSecond;
+                            Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
+
+                            scoreSecond2.setText(Second[SecondLevelCards.CounterSecond2].ScoreSecond + "                  " +
+                                    Second[SecondLevelCards.CounterSecond2].ColorSpecialCoinSecond);
+                            scoreSecond2.setHorizontalAlignment(JLabel.CENTER);
+                            scoreSecond2.setFont(CardFont);
+                            coinSecond2.setText(Second[SecondLevelCards.CounterSecond2].CardSecond);
+                            coinSecond2.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
             }
         });
 
@@ -3382,6 +3591,110 @@ public class Main extends JFrame {
             }
         });
 
+        ReserveCardSecond3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = Second[SecondLevelCards.CounterSecond3].ScoreSecond;
+                            Player1.SpecialCoinReserve1 = Second[SecondLevelCards.CounterSecond3].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = Second[SecondLevelCards.CounterSecond3].ScoreSecond;
+                            Player1.SpecialCoinReserve2 = Second[SecondLevelCards.CounterSecond3].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = Second[SecondLevelCards.CounterSecond3].ScoreSecond;
+                            Player1.SpecialCoinReserve3 = Second[SecondLevelCards.CounterSecond3].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (SecondLevelCards.CountSecond == 15){
+                            SecondLevel3.setEnabled(false);
+                        }
+                        else {
+                            SecondLevelCards.CounterSecond3 = SecondLevelCards.CountSecond;
+                            Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
+
+                            scoreSecond3.setText(Second[SecondLevelCards.CounterSecond3].ScoreSecond + "                  " +
+                                    Second[SecondLevelCards.CounterSecond3].ColorSpecialCoinSecond);
+                            scoreSecond3.setHorizontalAlignment(JLabel.CENTER);
+                            scoreSecond3.setFont(CardFont);
+                            coinSecond3.setText(Second[SecondLevelCards.CounterSecond3].CardSecond);
+                            coinSecond3.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = Second[SecondLevelCards.CounterSecond3].ScoreSecond;
+                            Player2.SpecialCoinReserve1 = Second[SecondLevelCards.CounterSecond3].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = Second[SecondLevelCards.CounterSecond3].ScoreSecond;
+                            Player2.SpecialCoinReserve2 = Second[SecondLevelCards.CounterSecond3].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = Second[SecondLevelCards.CounterSecond3].ScoreSecond;
+                            Player2.SpecialCoinReserve3 = Second[SecondLevelCards.CounterSecond3].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (SecondLevelCards.CountSecond == 15){
+                            SecondLevel3.setEnabled(false);
+                        }
+                        else {
+                            SecondLevelCards.CounterSecond3 = SecondLevelCards.CountSecond;
+                            Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
+
+                            scoreSecond3.setText(Second[SecondLevelCards.CounterSecond3].ScoreSecond + "                  " +
+                                    Second[SecondLevelCards.CounterSecond3].ColorSpecialCoinSecond);
+                            scoreSecond3.setHorizontalAlignment(JLabel.CENTER);
+                            scoreSecond3.setFont(CardFont);
+                            coinSecond3.setText(Second[SecondLevelCards.CounterSecond3].CardSecond);
+                            coinSecond3.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
+            }
+        });
+
 
         JButton SecondLevel4 = new JButton(card2);
         gbc.gridx = 3;
@@ -3745,6 +4058,110 @@ public class Main extends JFrame {
 
                 }
 
+            }
+        });
+
+        ReserveCardSecond4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = Second[SecondLevelCards.CounterSecond4].ScoreSecond;
+                            Player1.SpecialCoinReserve1 = Second[SecondLevelCards.CounterSecond4].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = Second[SecondLevelCards.CounterSecond4].ScoreSecond;
+                            Player1.SpecialCoinReserve2 = Second[SecondLevelCards.CounterSecond4].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = Second[SecondLevelCards.CounterSecond4].ScoreSecond;
+                            Player1.SpecialCoinReserve3 = Second[SecondLevelCards.CounterSecond4].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (SecondLevelCards.CountSecond == 15){
+                            SecondLevel4.setEnabled(false);
+                        }
+                        else {
+                            SecondLevelCards.CounterSecond4 = SecondLevelCards.CountSecond;
+                            Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
+
+                            scoreSecond4.setText(Second[SecondLevelCards.CounterSecond4].ScoreSecond + "                  " +
+                                    Second[SecondLevelCards.CounterSecond4].ColorSpecialCoinSecond);
+                            scoreSecond4.setHorizontalAlignment(JLabel.CENTER);
+                            scoreSecond4.setFont(CardFont);
+                            coinSecond4.setText(Second[SecondLevelCards.CounterSecond4].CardSecond);
+                            coinSecond4.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = Second[SecondLevelCards.CounterSecond4].ScoreSecond;
+                            Player2.SpecialCoinReserve1 = Second[SecondLevelCards.CounterSecond4].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = Second[SecondLevelCards.CounterSecond4].ScoreSecond;
+                            Player2.SpecialCoinReserve2 = Second[SecondLevelCards.CounterSecond4].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = Second[SecondLevelCards.CounterSecond4].ScoreSecond;
+                            Player2.SpecialCoinReserve3 = Second[SecondLevelCards.CounterSecond4].ColorSpecialCoinSecond;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (SecondLevelCards.CountSecond == 15){
+                            SecondLevel4.setEnabled(false);
+                        }
+                        else {
+                            SecondLevelCards.CounterSecond4 = SecondLevelCards.CountSecond;
+                            Second[SecondLevelCards.CountSecond] = new SecondLevelCards();
+
+                            scoreSecond4.setText(Second[SecondLevelCards.CounterSecond4].ScoreSecond + "                  " +
+                                    Second[SecondLevelCards.CounterSecond4].ColorSpecialCoinSecond);
+                            scoreSecond4.setHorizontalAlignment(JLabel.CENTER);
+                            scoreSecond4.setFont(CardFont);
+                            coinSecond4.setText(Second[SecondLevelCards.CounterSecond4].CardSecond);
+                            coinSecond4.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
             }
         });
 
@@ -4115,6 +4532,110 @@ public class Main extends JFrame {
             }
         });
 
+        ReserveCardThird1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = Third[ThirdLevelCards.CounterThird1].ScoreThird;
+                            Player1.SpecialCoinReserve1 = Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = Third[ThirdLevelCards.CounterThird1].ScoreThird;
+                            Player1.SpecialCoinReserve2 = Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = Third[ThirdLevelCards.CounterThird1].ScoreThird;
+                            Player1.SpecialCoinReserve3 = Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (ThirdLevelCards.CountThird == 15){
+                            ThirdLevel1.setEnabled(false);
+                        }
+                        else {
+                            ThirdLevelCards.CounterThird1 = ThirdLevelCards.CountThird;
+                            Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
+
+                            scoreThird1.setText(Third[ThirdLevelCards.CounterThird1].ScoreThird + "                  " +
+                                    Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird);
+                            scoreThird1.setHorizontalAlignment(JLabel.CENTER);
+                            scoreThird1.setFont(CardFont);
+                            coinThird1.setText(Third[ThirdLevelCards.CounterThird1].CardThird);
+                            coinThird1.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = Third[ThirdLevelCards.CounterThird1].ScoreThird;
+                            Player2.SpecialCoinReserve1 = Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = Third[ThirdLevelCards.CounterThird1].ScoreThird;
+                            Player2.SpecialCoinReserve2 = Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = Third[ThirdLevelCards.CounterThird1].ScoreThird;
+                            Player2.SpecialCoinReserve3 = Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (ThirdLevelCards.CountThird == 15){
+                            ThirdLevel1.setEnabled(false);
+                        }
+                        else {
+                            ThirdLevelCards.CounterThird1 = ThirdLevelCards.CountThird;
+                            Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
+
+                            scoreThird1.setText(Third[ThirdLevelCards.CounterThird1].ScoreThird + "                  " +
+                                    Third[ThirdLevelCards.CounterThird1].ColorSpecialCoinThird);
+                            scoreThird1.setHorizontalAlignment(JLabel.CENTER);
+                            scoreThird1.setFont(CardFont);
+                            coinThird1.setText(Third[ThirdLevelCards.CounterThird1].CardThird);
+                            coinThird1.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
+            }
+        });
+
 
         JButton ThirdLevel2 = new JButton(card3);
         gbc.gridx = 1;
@@ -4479,6 +5000,110 @@ public class Main extends JFrame {
 
                 }
 
+            }
+        });
+
+        ReserveCardThird2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = Third[ThirdLevelCards.CounterThird2].ScoreThird;
+                            Player1.SpecialCoinReserve1 = Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = Third[ThirdLevelCards.CounterThird2].ScoreThird;
+                            Player1.SpecialCoinReserve2 = Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = Third[ThirdLevelCards.CounterThird2].ScoreThird;
+                            Player1.SpecialCoinReserve3 = Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (ThirdLevelCards.CountThird == 15){
+                            ThirdLevel2.setEnabled(false);
+                        }
+                        else {
+                            ThirdLevelCards.CounterThird2 = ThirdLevelCards.CountThird;
+                            Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
+
+                            scoreThird2.setText(Third[ThirdLevelCards.CounterThird2].ScoreThird + "                  " +
+                                    Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird);
+                            scoreThird2.setHorizontalAlignment(JLabel.CENTER);
+                            scoreThird2.setFont(CardFont);
+                            coinThird2.setText(Third[ThirdLevelCards.CounterThird2].CardThird);
+                            coinThird2.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = Third[ThirdLevelCards.CounterThird2].ScoreThird;
+                            Player2.SpecialCoinReserve1 = Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = Third[ThirdLevelCards.CounterThird2].ScoreThird;
+                            Player2.SpecialCoinReserve2 = Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = Third[ThirdLevelCards.CounterThird2].ScoreThird;
+                            Player2.SpecialCoinReserve3 = Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (ThirdLevelCards.CountThird == 15){
+                            ThirdLevel2.setEnabled(false);
+                        }
+                        else {
+                            ThirdLevelCards.CounterThird2 = ThirdLevelCards.CountThird;
+                            Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
+
+                            scoreThird2.setText(Third[ThirdLevelCards.CounterThird2].ScoreThird + "                  " +
+                                    Third[ThirdLevelCards.CounterThird2].ColorSpecialCoinThird);
+                            scoreThird2.setHorizontalAlignment(JLabel.CENTER);
+                            scoreThird2.setFont(CardFont);
+                            coinThird2.setText(Third[ThirdLevelCards.CounterThird2].CardThird);
+                            coinThird2.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
             }
         });
 
@@ -4848,6 +5473,110 @@ public class Main extends JFrame {
             }
         });
 
+        ReserveCardThird3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = Third[ThirdLevelCards.CounterThird3].ScoreThird;
+                            Player1.SpecialCoinReserve1 = Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = Third[ThirdLevelCards.CounterThird3].ScoreThird;
+                            Player1.SpecialCoinReserve2 = Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = Third[ThirdLevelCards.CounterThird3].ScoreThird;
+                            Player1.SpecialCoinReserve3 = Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (ThirdLevelCards.CountThird == 15){
+                            ThirdLevel3.setEnabled(false);
+                        }
+                        else {
+                            ThirdLevelCards.CounterThird3 = ThirdLevelCards.CountThird;
+                            Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
+
+                            scoreThird3.setText(Third[ThirdLevelCards.CounterThird3].ScoreThird + "                  " +
+                                    Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird);
+                            scoreThird3.setHorizontalAlignment(JLabel.CENTER);
+                            scoreThird3.setFont(CardFont);
+                            coinThird3.setText(Third[ThirdLevelCards.CounterThird3].CardThird);
+                            coinThird3.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = Third[ThirdLevelCards.CounterThird3].ScoreThird;
+                            Player2.SpecialCoinReserve1 = Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = Third[ThirdLevelCards.CounterThird3].ScoreThird;
+                            Player2.SpecialCoinReserve2 = Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = Third[ThirdLevelCards.CounterThird3].ScoreThird;
+                            Player2.SpecialCoinReserve3 = Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (ThirdLevelCards.CountThird == 15){
+                            ThirdLevel3.setEnabled(false);
+                        }
+                        else {
+                            ThirdLevelCards.CounterThird3 = ThirdLevelCards.CountThird;
+                            Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
+
+                            scoreThird3.setText(Third[ThirdLevelCards.CounterThird3].ScoreThird + "                  " +
+                                    Third[ThirdLevelCards.CounterThird3].ColorSpecialCoinThird);
+                            scoreThird3.setHorizontalAlignment(JLabel.CENTER);
+                            scoreThird3.setFont(CardFont);
+                            coinThird3.setText(Third[ThirdLevelCards.CounterThird3].CardThird);
+                            coinThird3.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
+            }
+        });
+
 
         JButton ThirdLevel4 = new JButton(card3);
         gbc.gridx = 3;
@@ -5214,6 +5943,109 @@ public class Main extends JFrame {
             }
         });
 
+        ReserveCardThird4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = Third[ThirdLevelCards.CounterThird4].ScoreThird;
+                            Player1.SpecialCoinReserve1 = Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = Third[ThirdLevelCards.CounterThird4].ScoreThird;
+                            Player1.SpecialCoinReserve2 = Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = Third[ThirdLevelCards.CounterThird4].ScoreThird;
+                            Player1.SpecialCoinReserve3 = Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (ThirdLevelCards.CountThird == 15){
+                            ThirdLevel4.setEnabled(false);
+                        }
+                        else {
+                            ThirdLevelCards.CounterThird4 = ThirdLevelCards.CountThird;
+                            Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
+
+                            scoreThird4.setText(Third[ThirdLevelCards.CounterThird4].ScoreThird + "                  " +
+                                    Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird);
+                            scoreThird4.setHorizontalAlignment(JLabel.CENTER);
+                            scoreThird4.setFont(CardFont);
+                            coinThird4.setText(Third[ThirdLevelCards.CounterThird4].CardThird);
+                            coinThird4.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = Third[ThirdLevelCards.CounterThird4].ScoreThird;
+                            Player2.SpecialCoinReserve1 = Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = Third[ThirdLevelCards.CounterThird4].ScoreThird;
+                            Player2.SpecialCoinReserve2 = Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = Third[ThirdLevelCards.CounterThird4].ScoreThird;
+                            Player2.SpecialCoinReserve3 = Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (ThirdLevelCards.CountThird == 15){
+                            ThirdLevel4.setEnabled(false);
+                        }
+                        else {
+                            ThirdLevelCards.CounterThird4 = ThirdLevelCards.CountThird;
+                            Third[ThirdLevelCards.CountThird] = new ThirdLevelCards();
+
+                            scoreThird4.setText(Third[ThirdLevelCards.CounterThird4].ScoreThird + "                  " +
+                                    Third[ThirdLevelCards.CounterThird4].ColorSpecialCoinThird);
+                            scoreThird4.setHorizontalAlignment(JLabel.CENTER);
+                            scoreThird4.setFont(CardFont);
+                            coinThird4.setText(Third[ThirdLevelCards.CounterThird4].CardThird);
+                            coinThird4.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
+            }
+        });
 
 
         add(RightPanel , BorderLayout.EAST);
