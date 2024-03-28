@@ -17,6 +17,7 @@ public class Main extends JFrame {
     private final Font CardFont = new Font("tahoma" , Font.BOLD ,10);
     private final Font defaultFont3 = new Font("tahoma" , Font.BOLD , 8);
     private final Font defaultFont4 = new Font ("tahoma" , Font.PLAIN , 10);
+    private final Font reserveFont = new Font("tahoma" , Font.PLAIN , 5);
     public boolean PlayerTurn = true ; //true for player1 and false for player2
 
 
@@ -49,6 +50,8 @@ public class Main extends JFrame {
     public JLabel Player2SpecialCoinCounter = new JLabel(SpecialCoinState2);
 
     public JLabel Player2Score = new JLabel(String.valueOf(Player2.Score));
+
+
 
 
 
@@ -425,9 +428,15 @@ public class Main extends JFrame {
         coinFirst1.setFont(defaultFont4);
         coinFirst1.setHorizontalAlignment(JLabel.CENTER);
 
+        JButton ReserveCardFirst1 = new JButton("");
+        ReserveCardFirst1.setPreferredSize( new Dimension(15,10));
+        ReserveCardFirst1.setBackground(Color.red);
+
+
 
         marksFirst1.add (coinFirst1 , BorderLayout.SOUTH);
         marksFirst1.add (scoreFirst1 , BorderLayout.NORTH);
+        marksFirst1.add (ReserveCardFirst1 , BorderLayout.WEST);
         FirstLevel1.add(marksFirst1);
         RightPanel.add(FirstLevel1,gbc);
 
@@ -765,6 +774,109 @@ public class Main extends JFrame {
 
             }
         });
+        ReserveCardFirst1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = First[FirstLevelCards.CounterFirst1].ScoreFirst;
+                            Player1.SpecialCoinReserve1 = First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = First[FirstLevelCards.CounterFirst1].ScoreFirst;
+                            Player1.SpecialCoinReserve2 = First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = First[FirstLevelCards.CounterFirst1].ScoreFirst;
+                            Player1.SpecialCoinReserve3 = First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (FirstLevelCards.CountFirst == 15){
+                            FirstLevel1.setEnabled(false);
+                        }
+                        else {
+                            FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
+                            First[FirstLevelCards.CountFirst] = new FirstLevelCards();
+
+                            scoreFirst1.setText(First[FirstLevelCards.CounterFirst1].ScoreFirst + "                  " +
+                                    First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
+                            scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
+                            scoreFirst1.setFont(CardFont);
+                            coinFirst1.setText(First[FirstLevelCards.CounterFirst1].CardFirst);
+                            coinFirst1.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = First[FirstLevelCards.CounterFirst1].ScoreFirst;
+                            Player2.SpecialCoinReserve1 = First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = First[FirstLevelCards.CounterFirst1].ScoreFirst;
+                            Player2.SpecialCoinReserve2 = First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = First[FirstLevelCards.CounterFirst1].ScoreFirst;
+                            Player2.SpecialCoinReserve3 = First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (FirstLevelCards.CountFirst == 15){
+                            FirstLevel1.setEnabled(false);
+                        }
+                        else {
+                            FirstLevelCards.CounterFirst1 = FirstLevelCards.CountFirst;
+                            First[FirstLevelCards.CountFirst] = new FirstLevelCards();
+
+                            scoreFirst1.setText(First[FirstLevelCards.CounterFirst1].ScoreFirst + "                  " +
+                                    First[FirstLevelCards.CounterFirst1].ColorSpecialCoinFirst);
+                            scoreFirst1.setHorizontalAlignment(JLabel.CENTER);
+                            scoreFirst1.setFont(CardFont);
+                            coinFirst1.setText(First[FirstLevelCards.CounterFirst1].CardFirst);
+                            coinFirst1.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
+            }
+        });
 
         JButton FirstLevel2 = new JButton(card1);
         gbc.gridx = 1;
@@ -786,9 +898,14 @@ public class Main extends JFrame {
         coinFirst2.setFont(defaultFont4);
         coinFirst2.setHorizontalAlignment(JLabel.CENTER);
 
+        JButton ReserveCardFirst2 = new JButton("");
+        ReserveCardFirst2.setPreferredSize( new Dimension(15,10));
+        ReserveCardFirst2.setBackground(Color.red);
+
 
         marksFirst2.add (coinFirst2 , BorderLayout.SOUTH);
         marksFirst2.add (scoreFirst2 , BorderLayout.NORTH);
+        marksFirst2.add (ReserveCardFirst2 , BorderLayout.WEST);
         FirstLevel2.add(marksFirst2);
         RightPanel.add(FirstLevel2,gbc);
 
@@ -1122,6 +1239,110 @@ public class Main extends JFrame {
             }
         });
 
+        ReserveCardFirst2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = First[FirstLevelCards.CounterFirst2].ScoreFirst;
+                            Player1.SpecialCoinReserve1 = First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = First[FirstLevelCards.CounterFirst2].ScoreFirst;
+                            Player1.SpecialCoinReserve2 = First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = First[FirstLevelCards.CounterFirst2].ScoreFirst;
+                            Player1.SpecialCoinReserve3 = First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (FirstLevelCards.CountFirst == 15){
+                            FirstLevel2.setEnabled(false);
+                        }
+                        else {
+                            FirstLevelCards.CounterFirst2 = FirstLevelCards.CountFirst;
+                            First[FirstLevelCards.CountFirst] = new FirstLevelCards();
+
+                            scoreFirst2.setText(First[FirstLevelCards.CounterFirst2].ScoreFirst + "                  " +
+                                    First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst);
+                            scoreFirst2.setHorizontalAlignment(JLabel.CENTER);
+                            scoreFirst2.setFont(CardFont);
+                            coinFirst2.setText(First[FirstLevelCards.CounterFirst2].CardFirst);
+                            coinFirst2.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = First[FirstLevelCards.CounterFirst2].ScoreFirst;
+                            Player2.SpecialCoinReserve1 = First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = First[FirstLevelCards.CounterFirst2].ScoreFirst;
+                            Player2.SpecialCoinReserve2 = First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = First[FirstLevelCards.CounterFirst2].ScoreFirst;
+                            Player2.SpecialCoinReserve3 = First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (FirstLevelCards.CountFirst == 15){
+                            FirstLevel2.setEnabled(false);
+                        }
+                        else {
+                            FirstLevelCards.CounterFirst2 = FirstLevelCards.CountFirst;
+                            First[FirstLevelCards.CountFirst] = new FirstLevelCards();
+
+                            scoreFirst2.setText(First[FirstLevelCards.CounterFirst2].ScoreFirst + "                  " +
+                                    First[FirstLevelCards.CounterFirst2].ColorSpecialCoinFirst);
+                            scoreFirst2.setHorizontalAlignment(JLabel.CENTER);
+                            scoreFirst2.setFont(CardFont);
+                            coinFirst2.setText(First[FirstLevelCards.CounterFirst2].CardFirst);
+                            coinFirst2.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
+            }
+        });
+
         JButton FirstLevel3 = new JButton(card1);
         gbc.gridx = 2;
         gbc.gridy = 2;
@@ -1144,8 +1365,14 @@ public class Main extends JFrame {
         coinFirst3.setHorizontalAlignment(JLabel.CENTER);
 
 
+        JButton ReserveCardFirst3 = new JButton("");
+        ReserveCardFirst3.setPreferredSize( new Dimension(15,10));
+        ReserveCardFirst3.setBackground(Color.red);
+
+
         marksFirst3.add (coinFirst3 , BorderLayout.SOUTH);
         marksFirst3.add (scoreFirst3 , BorderLayout.NORTH);
+        marksFirst3.add (ReserveCardFirst3 , BorderLayout.WEST);
         FirstLevel3.add(marksFirst3);
         RightPanel.add(FirstLevel3,gbc);
 
@@ -1479,6 +1706,110 @@ public class Main extends JFrame {
             }
         });
 
+        ReserveCardFirst3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = First[FirstLevelCards.CounterFirst3].ScoreFirst;
+                            Player1.SpecialCoinReserve1 = First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = First[FirstLevelCards.CounterFirst3].ScoreFirst;
+                            Player1.SpecialCoinReserve2 = First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = First[FirstLevelCards.CounterFirst3].ScoreFirst;
+                            Player1.SpecialCoinReserve3 = First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (FirstLevelCards.CountFirst == 15){
+                            FirstLevel3.setEnabled(false);
+                        }
+                        else {
+                            FirstLevelCards.CounterFirst3 = FirstLevelCards.CountFirst;
+                            First[FirstLevelCards.CountFirst] = new FirstLevelCards();
+
+                            scoreFirst3.setText(First[FirstLevelCards.CounterFirst3].ScoreFirst + "                  " +
+                                    First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst);
+                            scoreFirst3.setHorizontalAlignment(JLabel.CENTER);
+                            scoreFirst3.setFont(CardFont);
+                            coinFirst3.setText(First[FirstLevelCards.CounterFirst3].CardFirst);
+                            coinFirst3.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = First[FirstLevelCards.CounterFirst3].ScoreFirst;
+                            Player2.SpecialCoinReserve1 = First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = First[FirstLevelCards.CounterFirst3].ScoreFirst;
+                            Player2.SpecialCoinReserve2 = First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = First[FirstLevelCards.CounterFirst3].ScoreFirst;
+                            Player2.SpecialCoinReserve3 = First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (FirstLevelCards.CountFirst == 15){
+                            FirstLevel3.setEnabled(false);
+                        }
+                        else {
+                            FirstLevelCards.CounterFirst3 = FirstLevelCards.CountFirst;
+                            First[FirstLevelCards.CountFirst] = new FirstLevelCards();
+
+                            scoreFirst3.setText(First[FirstLevelCards.CounterFirst3].ScoreFirst + "                  " +
+                                    First[FirstLevelCards.CounterFirst3].ColorSpecialCoinFirst);
+                            scoreFirst3.setHorizontalAlignment(JLabel.CENTER);
+                            scoreFirst3.setFont(CardFont);
+                            coinFirst3.setText(First[FirstLevelCards.CounterFirst3].CardFirst);
+                            coinFirst3.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
+            }
+        });
+
 
         JButton FirstLevel4 = new JButton(card1);
         gbc.gridx = 3;
@@ -1503,8 +1834,14 @@ public class Main extends JFrame {
         coinFirst4.setHorizontalAlignment(JLabel.CENTER);
 
 
+        JButton ReserveCardFirst4 = new JButton("");
+        ReserveCardFirst4.setPreferredSize( new Dimension(15,10));
+        ReserveCardFirst4.setBackground(Color.red);
+
+
         marksFirst4.add (coinFirst4 , BorderLayout.SOUTH);
         marksFirst4.add (scoreFirst4 , BorderLayout.NORTH);
+        marksFirst4.add (ReserveCardFirst4 , BorderLayout.WEST);
         FirstLevel4.add(marksFirst4);
         RightPanel.add(FirstLevel4,gbc);
 
@@ -1838,6 +2175,110 @@ public class Main extends JFrame {
             }
         });
 
+        ReserveCardFirst4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PlayerTurn){
+                    if(Player1.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player1.CountReserveCard++;
+                        if(Player1.CountReserveCard == 1) {
+                            Player1.ScoreReserve1 = First[FirstLevelCards.CounterFirst4].ScoreFirst;
+                            Player1.SpecialCoinReserve1 = First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve1[i] = First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[i];
+                            }
+                        }
+                        else if (Player1.CountReserveCard == 2 ){
+                            Player1.ScoreReserve2 = First[FirstLevelCards.CounterFirst4].ScoreFirst;
+                            Player1.SpecialCoinReserve2 = First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve2[i] = First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[i];
+                            }
+                        }
+                        else {
+                            Player1.ScoreReserve3 = First[FirstLevelCards.CounterFirst4].ScoreFirst;
+                            Player1.SpecialCoinReserve3 = First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player1.CoinReserve3[i] = First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player1.SpecialGoldCoin ++ ;
+                        }
+                        if (FirstLevelCards.CountFirst == 15){
+                            FirstLevel4.setEnabled(false);
+                        }
+                        else {
+                            FirstLevelCards.CounterFirst4 = FirstLevelCards.CountFirst;
+                            First[FirstLevelCards.CountFirst] = new FirstLevelCards();
+
+                            scoreFirst4.setText(First[FirstLevelCards.CounterFirst4].ScoreFirst + "                  " +
+                                    First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst);
+                            scoreFirst4.setHorizontalAlignment(JLabel.CENTER);
+                            scoreFirst4.setFont(CardFont);
+                            coinFirst4.setText(First[FirstLevelCards.CounterFirst4].CardFirst);
+                            coinFirst4.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = false ;
+                    }
+                }
+                else{
+                    if(Player2.CountReserveCard == 3){
+                        showMessageDialog(null,"you can't reserve this card!");
+                    }
+                    else {
+                        Player2.CountReserveCard++;
+                        if (Player2.CountReserveCard == 1) {
+                            Player2.ScoreReserve1 = First[FirstLevelCards.CounterFirst4].ScoreFirst;
+                            Player2.SpecialCoinReserve1 = First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve1[i] = First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[i];
+                            }
+                        }
+                        else if (Player2.CountReserveCard == 2){
+                            Player2.ScoreReserve2 = First[FirstLevelCards.CounterFirst4].ScoreFirst;
+                            Player2.SpecialCoinReserve2 = First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve2[i] = First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[i];
+                            }
+                        }
+                        else {
+                            Player2.ScoreReserve3 = First[FirstLevelCards.CounterFirst4].ScoreFirst;
+                            Player2.SpecialCoinReserve3 = First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst;
+                            for (int i = 0; i < 5; i++) {
+                                Player2.CoinReserve3[i] = First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[i];
+                            }
+                        }
+                        if( Coins.GoldCoin != 0){
+                            Coins.GoldCoin -- ;
+                            Player2.SpecialGoldCoin ++ ;
+                        }
+                        if (FirstLevelCards.CountFirst == 15){
+                            FirstLevel4.setEnabled(false);
+                        }
+                        else {
+                            FirstLevelCards.CounterFirst4 = FirstLevelCards.CountFirst;
+                            First[FirstLevelCards.CountFirst] = new FirstLevelCards();
+
+                            scoreFirst4.setText(First[FirstLevelCards.CounterFirst4].ScoreFirst + "                  " +
+                                    First[FirstLevelCards.CounterFirst4].ColorSpecialCoinFirst);
+                            scoreFirst4.setHorizontalAlignment(JLabel.CENTER);
+                            scoreFirst4.setFont(CardFont);
+                            coinFirst4.setText(First[FirstLevelCards.CounterFirst4].CardFirst);
+                            coinFirst4.setFont(defaultFont4);
+
+                        }
+                        PlayerTurn = true ;
+                    }
+                }
+            }
+        });
+
 
         JButton SecondLevel1 = new JButton(card2);
         gbc.gridx = 0;
@@ -1860,9 +2301,14 @@ public class Main extends JFrame {
         coinSecond1.setFont(defaultFont4);
         coinSecond1.setHorizontalAlignment(JLabel.CENTER);
 
+        JButton ReserveCardSecond1 = new JButton("");
+        ReserveCardSecond1.setPreferredSize( new Dimension(15,10));
+        ReserveCardSecond1.setBackground(Color.red);
+
 
         marksSecond1.add (coinSecond1 , BorderLayout.SOUTH);
         marksSecond1.add (scoreSecond1 , BorderLayout.NORTH);
+        marksSecond1.add (ReserveCardSecond1 , BorderLayout.WEST);
         SecondLevel1.add(marksSecond1);
         RightPanel.add(SecondLevel1,gbc);
 
@@ -2201,6 +2647,7 @@ public class Main extends JFrame {
         });
 
 
+
         JButton SecondLevel2 = new JButton(card2);
         gbc.gridx = 1;
         gbc.gridy = 3;
@@ -2222,9 +2669,14 @@ public class Main extends JFrame {
         coinSecond2.setFont(defaultFont4);
         coinSecond2.setHorizontalAlignment(JLabel.CENTER);
 
+        JButton ReserveCardSecond2 = new JButton("");
+        ReserveCardSecond2.setPreferredSize( new Dimension(15,10));
+        ReserveCardSecond2.setBackground(Color.red);
+
 
         marksSecond2.add (coinSecond2 , BorderLayout.SOUTH);
         marksSecond2.add (scoreSecond2 , BorderLayout.NORTH);
+        marksSecond2.add (ReserveCardSecond2 , BorderLayout.WEST);
         SecondLevel2.add(marksSecond2);
         RightPanel.add(SecondLevel2,gbc);
 
@@ -2585,9 +3037,14 @@ public class Main extends JFrame {
         coinSecond3.setFont(defaultFont4);
         coinSecond3.setHorizontalAlignment(JLabel.CENTER);
 
+        JButton ReserveCardSecond3 = new JButton("");
+        ReserveCardSecond3.setPreferredSize( new Dimension(15,10));
+        ReserveCardSecond3.setBackground(Color.red);
+
 
         marksSecond3.add (coinSecond3 , BorderLayout.SOUTH);
         marksSecond3.add (scoreSecond3 , BorderLayout.NORTH);
+        marksSecond3.add (ReserveCardSecond3 , BorderLayout.WEST);
         SecondLevel3.add(marksSecond3);
         RightPanel.add(SecondLevel3,gbc);
 
@@ -2946,9 +3403,14 @@ public class Main extends JFrame {
         coinSecond4.setFont(defaultFont4);
         coinSecond4.setHorizontalAlignment(JLabel.CENTER);
 
+        JButton ReserveCardSecond4 = new JButton("");
+        ReserveCardSecond4.setPreferredSize( new Dimension(15,10));
+        ReserveCardSecond4.setBackground(Color.red);
+
 
         marksSecond4.add (coinSecond4 , BorderLayout.SOUTH);
         marksSecond4.add (scoreSecond4 , BorderLayout.NORTH);
+        marksSecond4.add (ReserveCardSecond4 , BorderLayout.WEST);
         SecondLevel4.add(marksSecond4);
         RightPanel.add(SecondLevel4,gbc);
 
@@ -3307,9 +3769,14 @@ public class Main extends JFrame {
         coinThird1.setFont(defaultFont4);
         coinThird1.setHorizontalAlignment(JLabel.CENTER);
 
+        JButton ReserveCardThird1 = new JButton("");
+        ReserveCardThird1.setPreferredSize( new Dimension(15,10));
+        ReserveCardThird1.setBackground(Color.red);
+
 
         marksThird1.add (coinThird1 , BorderLayout.SOUTH);
         marksThird1.add (scoreThird1 , BorderLayout.NORTH);
+        marksThird1.add (ReserveCardThird1 , BorderLayout.WEST);
         ThirdLevel1.add(marksThird1);
         RightPanel.add(ThirdLevel1,gbc);
 
@@ -3670,9 +4137,14 @@ public class Main extends JFrame {
         coinThird2.setFont(defaultFont4);
         coinThird2.setHorizontalAlignment(JLabel.CENTER);
 
+        JButton ReserveCardThird2 = new JButton("");
+        ReserveCardThird2.setPreferredSize( new Dimension(15,10));
+        ReserveCardThird2.setBackground(Color.red);
+
 
         marksThird2.add (coinThird2 , BorderLayout.SOUTH);
         marksThird2.add (scoreThird2 , BorderLayout.NORTH);
+        marksThird2.add (ReserveCardThird2 , BorderLayout.WEST);
         ThirdLevel2.add(marksThird2);
         RightPanel.add(ThirdLevel2,gbc);
 
@@ -4030,9 +4502,14 @@ public class Main extends JFrame {
         coinThird3.setFont(defaultFont4);
         coinThird3.setHorizontalAlignment(JLabel.CENTER);
 
+        JButton ReserveCardThird3 = new JButton("");
+        ReserveCardThird3.setPreferredSize( new Dimension(15,10));
+        ReserveCardThird3.setBackground(Color.red);
+
 
         marksThird3.add (coinThird3 , BorderLayout.SOUTH);
         marksThird3.add (scoreThird3 , BorderLayout.NORTH);
+        marksThird3.add (ReserveCardThird3 , BorderLayout.WEST);
         ThirdLevel3.add(marksThird3);
         RightPanel.add(ThirdLevel3,gbc);
 
@@ -4392,9 +4869,14 @@ public class Main extends JFrame {
         coinThird4.setFont(defaultFont4);
         coinThird4.setHorizontalAlignment(JLabel.CENTER);
 
+        JButton ReserveCardThird4 = new JButton("");
+        ReserveCardThird4.setPreferredSize( new Dimension(15,10));
+        ReserveCardThird4.setBackground(Color.red);
+
 
         marksThird4.add (coinThird4 , BorderLayout.SOUTH);
         marksThird4.add (scoreThird4 , BorderLayout.NORTH);
+        marksThird4.add (ReserveCardThird4 , BorderLayout.WEST);
         ThirdLevel4.add(marksThird4);
         RightPanel.add(ThirdLevel4,gbc);
 
@@ -4743,21 +5225,11 @@ public class Main extends JFrame {
     //add player tables
     public void initCenterPanel (){
 
-
         JPanel CenterPanel = new JPanel(new BorderLayout(5,5));
         CenterPanel.setBackground(Color.pink);
 
-//        String alerts = "";
-//        JLabel Alerts = new JLabel(alerts);
-//        Alerts.setFont(defaultFont2);
-//        Alerts.setHorizontalAlignment(JLabel.CENTER);
-//        Alerts.setOpaque(true);
-//        Alerts.setBackground(Color.LIGHT_GRAY);
-//        CenterPanel.add(Alerts,BorderLayout.CENTER);
-
-
         JPanel Player1Table = new JPanel();
-        Player1Table.setLayout(new GridLayout(7,1));
+        Player1Table.setLayout(new GridLayout(9,1));
         Player1Table.setBackground(Color.pink);
 
 
@@ -4791,6 +5263,12 @@ public class Main extends JFrame {
         Coins1.setOpaque(true);
         Coins1.setBackground(Color.LIGHT_GRAY);
 
+        JLabel ReserveCards1 = new JLabel("RESERVE CARDS");
+        ReserveCards1.setFont(defaultFont);
+        ReserveCards1.setPreferredSize(new Dimension(200, 30));
+        ReserveCards1.setHorizontalAlignment(JLabel.CENTER);
+        ReserveCards1.setOpaque(true);
+        ReserveCards1.setBackground(Color.LIGHT_GRAY);
 
 
 
@@ -4816,6 +5294,12 @@ public class Main extends JFrame {
         Player1Score.setOpaque(true);
         Player1Score.setBackground(Color.WHITE);
 
+        JPanel PlayerOneReserveCards = new JPanel(new FlowLayout());
+        PlayerOneReserveCards.add(Player1.ReserveCard1);
+        PlayerOneReserveCards.add(Player1.ReserveCard2);
+        PlayerOneReserveCards.add(Player1.ReserveCard3);
+
+
         Player1Table.add(player1);
         Player1Table.add(Score1);
         Player1Table.add(Player1Score);
@@ -4823,13 +5307,15 @@ public class Main extends JFrame {
         Player1Table.add(Player1CoinCounter );
         Player1Table.add(SpecialCoins1 );
         Player1Table.add(Player1SpecialCoinCounter);
+        Player1Table.add(ReserveCards1);
+        Player1Table.add(PlayerOneReserveCards);
 
         CenterPanel.add(Player1Table , BorderLayout.NORTH);
 
 
 
         JPanel Player2Table = new JPanel();
-        Player2Table.setLayout(new GridLayout(7,1));
+        Player2Table.setLayout(new GridLayout(9,1));
         Player2Table.setBackground(Color.pink);
 
 
@@ -4862,6 +5348,13 @@ public class Main extends JFrame {
         Coins2.setOpaque(true);
         Coins2.setBackground(Color.LIGHT_GRAY);
 
+        JLabel ReserveCards2 = new JLabel("RESERVE CARDS");
+        ReserveCards2.setFont(defaultFont);
+        ReserveCards2.setPreferredSize(new Dimension(200, 30));
+        ReserveCards2.setHorizontalAlignment(JLabel.CENTER);
+        ReserveCards2.setOpaque(true);
+        ReserveCards2.setBackground(Color.LIGHT_GRAY);
+
 
 
         Player2CoinCounter.setFont(defaultFont2);
@@ -4884,6 +5377,14 @@ public class Main extends JFrame {
         Player2Score.setOpaque(true);
         Player2Score.setBackground(Color.WHITE);
 
+
+        JPanel PlayerTwoReserveCards = new JPanel(new FlowLayout());
+        PlayerTwoReserveCards.add(Player2.ReserveCard1);
+        PlayerTwoReserveCards.add(Player2.ReserveCard2);
+        PlayerTwoReserveCards.add(Player2.ReserveCard3);
+
+
+
         Player2Table.add(player2);
         Player2Table.add(Score2);
         Player2Table.add(Player2Score);
@@ -4891,6 +5392,8 @@ public class Main extends JFrame {
         Player2Table.add(Player2CoinCounter);
         Player2Table.add(SpecialCoins2);
         Player2Table.add(Player2SpecialCoinCounter);
+        Player2Table.add(ReserveCards2);
+        Player2Table.add(PlayerTwoReserveCards);
 
         CenterPanel.add(Player2Table , BorderLayout.SOUTH);
 
