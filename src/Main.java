@@ -19,9 +19,8 @@ public class Main extends JFrame {
     private final Font defaultFont4 = new Font ("tahoma" , Font.PLAIN , 10);
     private final Font reserveFont = new Font("tahoma" , Font.PLAIN , 5);
     public boolean PlayerTurn = true ; //true for player1 and false for player2
-    public boolean SwForTwoCoin = false  ;
-    public boolean SwForThreeCoin = false ;
-
+    public int count;
+    public boolean sw;
 
 
 
@@ -137,7 +136,8 @@ public class Main extends JFrame {
         TwoCoin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SwForTwoCoin = true;
+                ThreeCoin.setEnabled(false);
+                TwoCoin.setEnabled(false);
                 Red1.setEnabled(true);
                 Blue1.setEnabled(true);
                 Green1.setEnabled(true);
@@ -161,6 +161,8 @@ public class Main extends JFrame {
                         Green1.setEnabled(false);
                         Black1.setEnabled(false);
                         White1.setEnabled(false);
+                        ThreeCoin.setEnabled(true);
+                        TwoCoin.setEnabled(true);
 
                     }
                     else{
@@ -174,6 +176,8 @@ public class Main extends JFrame {
                         Green1.setEnabled(false);
                         Black1.setEnabled(false);
                         White1.setEnabled(false);
+                        ThreeCoin.setEnabled(true);
+                        TwoCoin.setEnabled(true);
                     }
                 }
                 else {
@@ -184,6 +188,8 @@ public class Main extends JFrame {
                     Green1.setEnabled(false);
                     Black1.setEnabled(false);
                     White1.setEnabled(false);
+                    ThreeCoin.setEnabled(true);
+                    TwoCoin.setEnabled(true);
 
                 }
             }
@@ -206,6 +212,8 @@ public class Main extends JFrame {
                         Green1.setEnabled(false);
                         Black1.setEnabled(false);
                         White1.setEnabled(false);
+                        ThreeCoin.setEnabled(true);
+                        TwoCoin.setEnabled(true);
 
                     }
                     else{
@@ -219,6 +227,8 @@ public class Main extends JFrame {
                         Green1.setEnabled(false);
                         Black1.setEnabled(false);
                         White1.setEnabled(false);
+                        ThreeCoin.setEnabled(true);
+                        TwoCoin.setEnabled(true);
                     }
                 }
                 else {
@@ -229,6 +239,8 @@ public class Main extends JFrame {
                     Green1.setEnabled(false);
                     Black1.setEnabled(false);
                     White1.setEnabled(false);
+                    ThreeCoin.setEnabled(true);
+                    TwoCoin.setEnabled(true);
 
                 }
             }
@@ -250,6 +262,8 @@ public class Main extends JFrame {
                         Green1.setEnabled(false);
                         Black1.setEnabled(false);
                         White1.setEnabled(false);
+                        ThreeCoin.setEnabled(true);
+                        TwoCoin.setEnabled(true);
 
                     }
                     else{
@@ -263,6 +277,8 @@ public class Main extends JFrame {
                         Green1.setEnabled(false);
                         Black1.setEnabled(false);
                         White1.setEnabled(false);
+                        ThreeCoin.setEnabled(true);
+                        TwoCoin.setEnabled(true);
                     }
                 }
                 else {
@@ -273,6 +289,8 @@ public class Main extends JFrame {
                     Green1.setEnabled(false);
                     Black1.setEnabled(false);
                     White1.setEnabled(false);
+                    ThreeCoin.setEnabled(true);
+                    TwoCoin.setEnabled(true);
 
                 }
             }
@@ -294,6 +312,8 @@ public class Main extends JFrame {
                        Green1.setEnabled(false);
                        Black1.setEnabled(false);
                        White1.setEnabled(false);
+                       ThreeCoin.setEnabled(true);
+                       TwoCoin.setEnabled(true);
 
                    }
                    else{
@@ -307,6 +327,8 @@ public class Main extends JFrame {
                        Green1.setEnabled(false);
                        Black1.setEnabled(false);
                        White1.setEnabled(false);
+                       ThreeCoin.setEnabled(true);
+                       TwoCoin.setEnabled(true);
                    }
                }
                else {
@@ -317,6 +339,8 @@ public class Main extends JFrame {
                    Green1.setEnabled(false);
                    Black1.setEnabled(false);
                    White1.setEnabled(false);
+                   ThreeCoin.setEnabled(true);
+                   TwoCoin.setEnabled(true);
 
                }
            }
@@ -338,6 +362,8 @@ public class Main extends JFrame {
                        Green1.setEnabled(false);
                        Black1.setEnabled(false);
                        White1.setEnabled(false);
+                       ThreeCoin.setEnabled(true);
+                       TwoCoin.setEnabled(true);
 
                    }
                    else{
@@ -351,6 +377,8 @@ public class Main extends JFrame {
                        Green1.setEnabled(false);
                        Black1.setEnabled(false);
                        White1.setEnabled(false);
+                       ThreeCoin.setEnabled(true);
+                       TwoCoin.setEnabled(true);
                    }
                }
                else {
@@ -361,6 +389,8 @@ public class Main extends JFrame {
                    Green1.setEnabled(false);
                    Black1.setEnabled(false);
                    White1.setEnabled(false);
+                   ThreeCoin.setEnabled(true);
+                   TwoCoin.setEnabled(true);
 
                }
            }
@@ -372,13 +402,13 @@ public class Main extends JFrame {
 
         JPanel ThreeCoinSelection = new JPanel();
         ThreeCoinSelection.setLayout(new BoxLayout(ThreeCoinSelection, BoxLayout.Y_AXIS));
-        ThreeCoinSelection.setEnabled(false);
 
-        JRadioButton Red2 = new JRadioButton("Red Slot Machine");
-        JRadioButton Blue2 = new JRadioButton("Blue Slot Machine");
-        JRadioButton Green2 = new JRadioButton("Green Slot Machine");
-        JRadioButton Black2 = new JRadioButton("Black Slot Machine");
-        JRadioButton White2 = new JRadioButton("White Slot Machine");
+
+        JCheckBox Red2 = new JCheckBox("Red Slot Machine");
+        JCheckBox Blue2 = new JCheckBox("Blue Slot Machine");
+        JCheckBox Green2 = new JCheckBox("Green Slot Machine");
+        JCheckBox Black2 = new JCheckBox("Black Slot Machine");
+        JCheckBox White2 = new JCheckBox("White Slot Machine");
 
         Red2.setEnabled(false);
         Blue2.setEnabled(false);
@@ -397,14 +427,150 @@ public class Main extends JFrame {
         ThreeCoin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SwForThreeCoin = true ;
+                ThreeCoin.setEnabled(false);
+                TwoCoin.setEnabled(false);
+                Red2.setEnabled(true);
+                Blue2.setEnabled(true);
+                Green2.setEnabled(true);
+                Black2.setEnabled(true);
+                White2.setEnabled(true);
+                count = 0;
+                Red2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        count++;
+                    }
+                });
+                Blue2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        count++;
+                    }
+                });
+                Green2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        count++;
+                    }
+                });
+                Black2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        count++;
+                    }
+                });
+                White2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        count++;
+                    }
+                });
+                sw = true ;
+                if(count!=3) {
+                    showMessageDialog(null, "you can't pick these coins");
+                    ThreeCoin.setEnabled(true);
+                    TwoCoin.setEnabled(true);
+                    Red2.setEnabled(false);
+                    Blue2.setEnabled(false);
+                    Green2.setEnabled(false);
+                    Black2.setEnabled(false);
+                    White2.setEnabled(false);
+                }
+                else {
+                    if(Red2.isSelected() && Coins.RedCoin == 0){
+                        sw = false;
+                    }
+                    if(Blue2.isSelected() && Coins.BlueCoin == 0){
+                        sw = false;
+                    }
+                    if(Green2.isSelected() && Coins.GreenCoin == 0){
+                        sw = false;
+                    }
+                    if(Black2.isSelected() && Coins.BlackCoin == 0){
+                        sw = false;
+                    }
+                    if(White2.isSelected() && Coins.WhiteCoin == 0){
+                        sw = false;
+                    }
+                    if(!sw){
+                        showMessageDialog(null, "you can't pick these coins");
+                        ThreeCoin.setEnabled(true);
+                        TwoCoin.setEnabled(true);
+                        Red2.setEnabled(false);
+                        Blue2.setEnabled(false);
+                        Green2.setEnabled(false);
+                        Black2.setEnabled(false);
+                        White2.setEnabled(false);
+                    }
+                    else {
+                        if(Red2.isSelected()){
+                            Coins.RedCoin --;
+                            if(PlayerTurn){
+                                Player1.RedCoin++;
+                            }
+                            else{
+                                Player2.RedCoin++;
+                            }
+                        }
+                        if(Blue2.isSelected()){
+                            Coins.BlueCoin --;
+                            if(PlayerTurn){
+                                Player1.BlueCoin++;
+                            }
+                            else{
+                                Player2.BlueCoin++;
+                            }
+                        }
+                        if(Green2.isSelected()){
+                            Coins.GreenCoin --;
+                            if(PlayerTurn){
+                                Player1.GreenCoin++;
+                            }
+                            else{
+                                Player2.GreenCoin++;
+                            }
+                        }
+                        if(Black2.isSelected()){
+                            Coins.BlackCoin --;
+                            if(PlayerTurn){
+                                Player1.BlackCoin++;
+                            }
+                            else{
+                                Player2.BlackCoin++;
+                            }
+                        }
+                        if(White2.isSelected()){
+                            Coins.WhiteCoin --;
+                            if(PlayerTurn){
+                                Player1.WhiteCoin++;
+                            }
+                            else{
+                                Player2.WhiteCoin++;
+                            }
+                        }
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+
+                        Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+
+                        ThreeCoin.setEnabled(true);
+                        TwoCoin.setEnabled(true);
+                        Red2.setEnabled(false);
+                        Blue2.setEnabled(false);
+                        Green2.setEnabled(false);
+                        Black2.setEnabled(false);
+                        White2.setEnabled(false);
+                        if (PlayerTurn) {
+                            PlayerTurn = false;
+                        }
+                        else {
+                            PlayerTurn = true;
+                        }
+                    }
+                }
             }
         });
-        boolean isSelectedRed2 = Red1.isSelected();
-        boolean isSelectedBlue2 = Blue1.isSelected();
-        boolean isSelectedGreen2 = Green1.isSelected();
-        boolean isSelectedWhite2 = White1.isSelected();
-        boolean isSelectedBlack2 = Black1.isSelected();
 
 
 
