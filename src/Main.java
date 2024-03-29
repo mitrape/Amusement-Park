@@ -570,22 +570,6 @@ public class Main extends JFrame {
             }
         });
 
-
-
-        TwoCoin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        ThreeCoin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-
         add (LeftPanel , BorderLayout.WEST);
         setVisible(true);
 
@@ -923,9 +907,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] >= 0){
                                 Player1.RedCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] ;
+                                Coins.RedCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0];
@@ -936,9 +922,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] >= 0){
                                 Player1.BlueCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] ;
+                                Coins.BlueCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1];
@@ -949,9 +937,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] >= 0){
                                 Player1.WhiteCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] ;
+                                Coins.WhiteCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2];
@@ -963,9 +953,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] >= 0){
                                 Player1.GreenCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] ;
+                                Coins.GreenCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3];
@@ -976,9 +968,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] >= 0){
                                 Player1.BlackCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] ;
+                                Coins.BlackCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4];
@@ -1093,9 +1087,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] >= 0){
                                 Player2.RedCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] ;
+                                Coins.RedCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[0];
@@ -1106,9 +1102,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] >= 0){
                                 Player2.BlueCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] ;
+                                Coins.BlueCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[1];
@@ -1119,9 +1117,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] >= 0){
                                 Player2.WhiteCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] ;
+                                Coins.WhiteCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[2];
@@ -1133,9 +1133,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] >= 0){
                                 Player2.GreenCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] ;
+                                Coins.GreenCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin ;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[3];
@@ -1146,9 +1148,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] >= 0){
                                 Player2.BlackCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] ;
+                                Coins.BlackCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst1].ColorAndCountFirst[4];
@@ -1399,9 +1403,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0] >= 0){
                                 Player1.RedCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0] ;
+                                Coins.RedCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0];
@@ -1412,9 +1418,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1] >= 0){
                                 Player1.BlueCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1] ;
+                                Coins.BlueCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1];
@@ -1425,9 +1433,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] >= 0){
                                 Player1.WhiteCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] ;
+                                Coins.WhiteCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2];
@@ -1439,9 +1449,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] >= 0){
                                 Player1.GreenCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] ;
+                                Coins.GreenCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3];
@@ -1452,9 +1464,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4] >= 0){
                                 Player1.BlackCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4] ;
+                                Coins.BlackCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4];
@@ -1563,9 +1577,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0] >= 0){
                                 Player2.RedCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0] ;
+                                Coins.RedCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0];
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[0];
@@ -1576,9 +1592,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1] >= 0){
                                 Player2.BlueCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1] ;
+                                Coins.BlueCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[1];
@@ -1589,9 +1607,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] >= 0){
                                 Player2.WhiteCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] ;
+                                Coins.WhiteCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[2];
@@ -1603,9 +1623,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] >= 0){
                                 Player2.GreenCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] ;
+                                Coins.GreenCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[3];
@@ -1616,9 +1638,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4] >= 0){
                                 Player2.BlackCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4] ;
+                                Coins.BlackCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst2].ColorAndCountFirst[4];
@@ -1873,9 +1897,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0] >= 0){
                                 Player1.RedCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0] ;
+                                Coins.RedCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0];
@@ -1886,9 +1912,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1] >= 0){
                                 Player1.BlueCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1] ;
+                                Coins.BlueCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin ;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1];
@@ -1899,9 +1927,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] >= 0){
                                 Player1.WhiteCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] ;
+                                Coins.WhiteCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2];
@@ -1913,9 +1943,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] >= 0){
                                 Player1.GreenCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] ;
+                                Coins.GreenCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3];
@@ -1926,9 +1958,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4] >= 0){
                                 Player1.BlackCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4] ;
+                                Coins.BlackCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4];
@@ -2038,9 +2072,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0] >= 0){
                                 Player2.RedCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0] ;
+                                Coins.RedCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[0];
@@ -2051,9 +2087,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1] >= 0){
                                 Player2.BlueCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1] ;
+                                Coins.BlueCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[1];
@@ -2064,9 +2102,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] >= 0){
                                 Player2.WhiteCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] ;
+                                Coins.WhiteCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[2];
@@ -2078,9 +2118,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] >= 0){
                                 Player2.GreenCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] ;
+                                Coins.GreenCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[3];
@@ -2091,9 +2133,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4] >= 0){
                                 Player2.BlackCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4] ;
+                                Coins.BlackCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst3].ColorAndCountFirst[4];
@@ -2350,9 +2394,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0] >= 0){
                                 Player1.RedCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0] ;
+                                Coins.RedCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0];
@@ -2363,9 +2409,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1] >= 0){
                                 Player1.BlueCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1] ;
+                                Coins.BlueCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin ;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1];
@@ -2376,9 +2424,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] >= 0){
                                 Player1.WhiteCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] ;
+                                Coins.WhiteCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2];
@@ -2390,9 +2440,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] >= 0){
                                 Player1.GreenCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] ;
+                                Coins.GreenCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3];
@@ -2403,9 +2455,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4] >= 0){
                                 Player1.BlackCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4] ;
+                                Coins.BlackCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4];
@@ -2514,9 +2568,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0] >= 0){
                                 Player2.RedCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0] ;
+                                Coins.RedCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[0];
@@ -2527,9 +2583,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1] >= 0){
                                 Player2.BlueCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1] ;
+                                Coins.BlueCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[1];
@@ -2540,9 +2598,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] >= 0){
                                 Player2.WhiteCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] ;
+                                Coins.WhiteCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[2];
@@ -2554,9 +2614,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] >= 0){
                                 Player2.GreenCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] ;
+                                Coins.GreenCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3] ;
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[3];
@@ -2567,9 +2629,11 @@ public class Main extends JFrame {
                             First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4] >= 0){
                                 Player2.BlackCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4] ;
+                                Coins.BlackCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4] ;
                             }
                             else {
                                 First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4];
                                 Coins.GoldCoin += First[FirstLevelCards.CounterFirst4].ColorAndCountFirst[4];
@@ -2825,9 +2889,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0] >= 0){
                                 Player1.RedCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0] ;
+                                Coins.RedCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0];
@@ -2838,9 +2904,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1] >= 0){
                                 Player1.BlueCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1] ;
+                                Coins.BlueCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin ;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1];
@@ -2851,9 +2919,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] >= 0){
                                 Player1.WhiteCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] ;
+                                Coins.WhiteCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2];
@@ -2865,9 +2935,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] >= 0){
                                 Player1.GreenCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] ;
+                                Coins.GreenCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3];
@@ -2878,9 +2950,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4] >= 0){
                                 Player1.BlackCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4] ;
+                                Coins.BlackCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4];
@@ -2995,9 +3069,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0] >= 0){
                                 Player2.RedCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0] ;
+                                Coins.RedCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[0];
@@ -3008,9 +3084,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1] >= 0){
                                 Player2.BlueCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1] ;
+                                Coins.BlueCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[1];
@@ -3021,9 +3099,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] >= 0){
                                 Player2.WhiteCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] ;
+                                Coins.WhiteCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[2];
@@ -3035,9 +3115,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] >= 0){
                                 Player2.GreenCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] ;
+                                Coins.GreenCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[3];
@@ -3048,9 +3130,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4] >= 0){
                                 Player2.BlackCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4] ;
+                                Coins.BlackCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond1].ColorAndCountSecond[4];
@@ -3307,9 +3391,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0] >= 0){
                                 Player1.RedCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0] ;
+                                Coins.RedCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0];
@@ -3320,9 +3406,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1] >= 0){
                                 Player1.BlueCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1] ;
+                                Coins.BlueCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin ;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1];
@@ -3333,9 +3421,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] >= 0){
                                 Player1.WhiteCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] ;
+                                Coins.WhiteCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2];
@@ -3347,9 +3437,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] >= 0){
                                 Player1.GreenCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] ;
+                                Coins.GreenCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3];
@@ -3360,9 +3452,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4] >= 0){
                                 Player1.BlackCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4] ;
+                                Coins.BlackCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4];
@@ -3477,9 +3571,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0] >= 0){
                                 Player2.RedCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0] ;
+                                Coins.RedCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[0];
@@ -3490,9 +3586,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1] >= 0){
                                 Player2.BlueCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1] ;
+                                Coins.BlueCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[1];
@@ -3503,9 +3601,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] >= 0){
                                 Player2.WhiteCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] ;
+                                Coins.WhiteCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[2];
@@ -3517,9 +3617,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] >= 0){
                                 Player2.GreenCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] ;
+                                Coins.GreenCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[3];
@@ -3530,9 +3632,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4] >= 0){
                                 Player2.BlackCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4] ;
+                                Coins.BlackCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond2].ColorAndCountSecond[4];
@@ -3786,9 +3890,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0] >= 0){
                                 Player1.RedCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0] ;
+                                Coins.RedCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0];
@@ -3799,9 +3905,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1] >= 0){
                                 Player1.BlueCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1] ;
+                                Coins.BlueCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin ;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1];
@@ -3812,9 +3920,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] >= 0){
                                 Player1.WhiteCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] ;
+                                Coins.WhiteCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2];
@@ -3826,9 +3936,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] >= 0){
                                 Player1.GreenCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] ;
+                                Coins.GreenCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3];
@@ -3839,9 +3951,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4] >= 0){
                                 Player1.BlackCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4] ;
+                                Coins.BlackCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4];
@@ -3956,9 +4070,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0] >= 0){
                                 Player2.RedCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0] ;
+                                Coins.RedCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[0];
@@ -3969,9 +4085,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1] >= 0){
                                 Player2.BlueCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1] ;
+                                Coins.BlueCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[1];
@@ -3982,9 +4100,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] >= 0){
                                 Player2.WhiteCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] ;
+                                Coins.WhiteCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[2];
@@ -3996,9 +4116,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] >= 0){
                                 Player2.GreenCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] ;
+                                Coins.GreenCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[3];
@@ -4009,9 +4131,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4] >= 0){
                                 Player2.BlackCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4] ;
+                                Coins.BlackCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond3].ColorAndCountSecond[4];
@@ -4264,9 +4388,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0] >= 0){
                                 Player1.RedCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0] ;
+                                Coins.RedCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0];
@@ -4277,9 +4403,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1] >= 0){
                                 Player1.BlueCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1] ;
+                                Coins.BlueCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin ;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1];
@@ -4290,9 +4418,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] >= 0){
                                 Player1.WhiteCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] ;
+                                Coins.WhiteCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2];
@@ -4304,9 +4434,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] >= 0){
                                 Player1.GreenCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] ;
+                                Coins.GreenCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3];
@@ -4317,9 +4449,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4] >= 0){
                                 Player1.BlackCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4] ;
+                                Coins.BlackCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4];
@@ -4434,9 +4568,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0] >= 0){
                                 Player2.RedCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0] ;
+                                Coins.RedCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[0];
@@ -4447,9 +4583,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1] >= 0){
                                 Player2.BlueCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1] ;
+                                Coins.BlueCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[1];
@@ -4460,9 +4598,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] >= 0){
                                 Player2.WhiteCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] ;
+                                Coins.WhiteCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[2];
@@ -4474,9 +4614,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] >= 0){
                                 Player2.GreenCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] ;
+                                Coins.GreenCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3] ;
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[3];
@@ -4487,9 +4629,11 @@ public class Main extends JFrame {
                             Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4] >= 0){
                                 Player2.BlackCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4] ;
+                                Coins.BlackCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4] ;
                             }
                             else {
                                 Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4];
                                 Coins.GoldCoin += Second[SecondLevelCards.CounterSecond4].ColorAndCountSecond[4];
@@ -4743,9 +4887,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0] >= 0){
                                 Player1.RedCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0] ;
+                                Coins.RedCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0];
@@ -4756,9 +4902,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1] >= 0){
                                 Player1.BlueCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1] ;
+                                Coins.BlueCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin ;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1];
@@ -4769,9 +4917,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] >= 0){
                                 Player1.WhiteCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] ;
+                                Coins.WhiteCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2];
@@ -4783,9 +4933,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] >= 0){
                                 Player1.GreenCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] ;
+                                Coins.GreenCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3];
@@ -4796,9 +4948,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4] >= 0){
                                 Player1.BlackCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4] ;
+                                Coins.BlackCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4];
@@ -4913,9 +5067,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0] >= 0){
                                 Player2.RedCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0] ;
+                                Coins.RedCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[0];
@@ -4926,9 +5082,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1] >= 0){
                                 Player2.BlueCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1] ;
+                                Coins.BlueCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[1];
@@ -4939,9 +5097,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] >= 0){
                                 Player2.WhiteCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] ;
+                                Coins.WhiteCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[2];
@@ -4953,9 +5113,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] >= 0){
                                 Player2.GreenCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] ;
+                                Coins.GreenCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[3];
@@ -4966,9 +5128,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4] >= 0){
                                 Player2.BlackCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4] ;
+                                Coins.BlackCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird1].ColorAndCountThird[4];
@@ -5222,9 +5386,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0] >= 0){
                                 Player1.RedCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0] ;
+                                Coins.RedCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0];
@@ -5235,9 +5401,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1] >= 0){
                                 Player1.BlueCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1] ;
+                                Coins.BlueCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin ;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1];
@@ -5248,9 +5416,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] >= 0){
                                 Player1.WhiteCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] ;
+                                Coins.WhiteCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2];
@@ -5262,9 +5432,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] >= 0){
                                 Player1.GreenCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] ;
+                                Coins.GreenCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3];
@@ -5275,9 +5447,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4] >= 0){
                                 Player1.BlackCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4] ;
+                                Coins.BlackCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4];
@@ -5392,9 +5566,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0] >= 0){
                                 Player2.RedCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0] ;
+                                Coins.RedCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[0];
@@ -5405,9 +5581,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1] >= 0){
                                 Player2.BlueCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1] ;
+                                Coins.BlueCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[1];
@@ -5418,9 +5596,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] >= 0){
                                 Player2.WhiteCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] ;
+                                Coins.WhiteCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[2];
@@ -5432,9 +5612,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] >= 0){
                                 Player2.GreenCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] ;
+                                Coins.GreenCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[3];
@@ -5445,9 +5627,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4] >= 0){
                                 Player2.BlackCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4] ;
+                                Coins.BlackCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird2].ColorAndCountThird[4];
@@ -5700,9 +5884,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0] >= 0){
                                 Player1.RedCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0] ;
+                                Coins.RedCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0];
@@ -5713,9 +5899,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1] >= 0){
                                 Player1.BlueCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1] ;
+                                Coins.BlueCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin ;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1];
@@ -5726,9 +5914,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] >= 0){
                                 Player1.WhiteCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] ;
+                                Coins.WhiteCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2];
@@ -5740,9 +5930,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] >= 0){
                                 Player1.GreenCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] ;
+                                Coins.GreenCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3];
@@ -5753,9 +5945,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4] >= 0){
                                 Player1.BlackCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4] ;
+                                Coins.BlackCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4];
@@ -5870,9 +6064,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0] >= 0){
                                 Player2.RedCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0] ;
+                                Coins.RedCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[0];
@@ -5883,9 +6079,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1] >= 0){
                                 Player2.BlueCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1] ;
+                                Coins.BlueCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[1];
@@ -5896,9 +6094,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] >= 0){
                                 Player2.WhiteCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] ;
+                                Coins.WhiteCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[2];
@@ -5910,9 +6110,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] >= 0){
                                 Player2.GreenCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] ;
+                                Coins.GreenCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[3];
@@ -5923,9 +6125,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4] >= 0){
                                 Player2.BlackCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4] ;
+                                Coins.BlackCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird3].ColorAndCountThird[4];
@@ -6178,9 +6382,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0] >= 0){
                                 Player1.RedCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0] ;
+                                Coins.RedCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0];
@@ -6191,9 +6397,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1] -= Player1.SpecialBlueCoin ;
                             if (Player1.BlueCoin - Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1] >= 0){
                                 Player1.BlueCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1] ;
+                                Coins.BlueCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1] -= Player1.BlueCoin ;
+                                Coins.BlueCoin += Player1.BlueCoin ;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1];
@@ -6204,9 +6412,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] -= Player1.SpecialWhiteCoin ;
                             if (Player1.WhiteCoin - Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] >= 0){
                                 Player1.WhiteCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] ;
+                                Coins.WhiteCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2];
@@ -6218,9 +6428,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] -= Player1.SpecialGreenCoin;
                             if(Player1.GreenCoin - Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] >= 0){
                                 Player1.GreenCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] ;
+                                Coins.GreenCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3];
@@ -6231,9 +6443,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4] -= Player1.SpecialBlackCoin ;
                             if(Player1.BlackCoin - Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4] >= 0){
                                 Player1.BlackCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4] ;
+                                Coins.BlackCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4];
@@ -6348,9 +6562,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0] >= 0){
                                 Player2.RedCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0] ;
+                                Coins.RedCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[0];
@@ -6361,9 +6577,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1] -= Player2.SpecialBlueCoin ;
                             if (Player2.BlueCoin - Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1] >= 0){
                                 Player2.BlueCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1] ;
+                                Coins.BlueCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1] -= Player2.BlueCoin ;
+                                Coins.BlueCoin += Player2.BlueCoin ;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[1];
@@ -6374,9 +6592,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] -= Player2.SpecialWhiteCoin ;
                             if (Player2.WhiteCoin - Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] >= 0){
                                 Player2.WhiteCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] ;
+                                Coins.WhiteCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[2];
@@ -6388,9 +6608,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] -= Player2.SpecialGreenCoin;
                             if(Player2.GreenCoin - Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] >= 0){
                                 Player2.GreenCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] ;
+                                Coins.GreenCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3] ;
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[3];
@@ -6401,9 +6623,11 @@ public class Main extends JFrame {
                             Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4] -= Player2.SpecialBlackCoin ;
                             if(Player2.BlackCoin - Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4] >= 0){
                                 Player2.BlackCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4] ;
+                                Coins.BlackCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4] ;
                             }
                             else {
                                 Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4];
                                 Coins.GoldCoin += Third[ThirdLevelCards.CounterThird4].ColorAndCountThird[4];
@@ -6708,8 +6932,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve1[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Player1.CoinReserve1[0] >= 0) {
                                 Player1.RedCoin -= Player1.CoinReserve1[0];
+                                Coins.RedCoin += Player1.CoinReserve1[0];
                             } else {
                                 Player1.CoinReserve1[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve1[0];
                                 Coins.GoldCoin += Player1.CoinReserve1[0];
@@ -6720,8 +6946,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve1[1] -= Player1.SpecialBlueCoin;
                             if (Player1.BlueCoin - Player1.CoinReserve1[1] >= 0) {
                                 Player1.BlueCoin -= Player1.CoinReserve1[1];
+                                Coins.BlueCoin += Player1.CoinReserve1[1];
                             } else {
                                 Player1.CoinReserve1[1] -= Player1.BlueCoin;
+                                Coins.BlueCoin += Player1.BlueCoin;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve1[1];
                                 Coins.GoldCoin += Player1.CoinReserve1[1];
@@ -6732,8 +6960,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve1[2] -= Player1.SpecialWhiteCoin;
                             if (Player1.WhiteCoin - Player1.CoinReserve1[2] >= 0) {
                                 Player1.WhiteCoin -= Player1.CoinReserve1[2];
+                                Coins.WhiteCoin += Player1.CoinReserve1[2];
                             } else {
                                 Player1.CoinReserve1[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve1[2];
                                 Coins.GoldCoin += Player1.CoinReserve1[2];
@@ -6745,8 +6975,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve1[3] -= Player1.SpecialGreenCoin;
                             if (Player1.GreenCoin - Player1.CoinReserve1[3] >= 0) {
                                 Player1.GreenCoin -= Player1.CoinReserve1[3];
+                                Coins.GreenCoin += Player1.CoinReserve1[3];
                             } else {
                                 Player1.CoinReserve1[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve1[3];
                                 Coins.GoldCoin += Player1.CoinReserve1[3];
@@ -6757,8 +6989,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve1[4] -= Player1.SpecialBlackCoin;
                             if (Player1.BlackCoin - Player1.CoinReserve1[4] >= 0) {
                                 Player1.BlackCoin -= Player1.CoinReserve1[4];
+                                Coins.BlackCoin += Player1.CoinReserve1[4];
                             } else {
                                 Player1.CoinReserve1[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve1[4];
                                 Coins.GoldCoin += Player1.CoinReserve1[4];
@@ -6860,8 +7094,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve2[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Player1.CoinReserve2[0] >= 0) {
                                 Player1.RedCoin -= Player1.CoinReserve2[0];
+                                Coins.RedCoin += Player1.CoinReserve2[0];
                             } else {
                                 Player1.CoinReserve2[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve2[0];
                                 Coins.GoldCoin += Player1.CoinReserve2[0];
@@ -6872,8 +7108,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve2[1] -= Player1.SpecialBlueCoin;
                             if (Player1.BlueCoin - Player1.CoinReserve2[1] >= 0) {
                                 Player1.BlueCoin -= Player1.CoinReserve2[1];
+                                Coins.BlueCoin += Player1.CoinReserve2[1];
                             } else {
                                 Player1.CoinReserve2[1] -= Player1.BlueCoin;
+                                Coins.BlueCoin += Player1.BlueCoin;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve2[1];
                                 Coins.GoldCoin += Player1.CoinReserve2[1];
@@ -6884,8 +7122,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve2[2] -= Player1.SpecialWhiteCoin;
                             if (Player1.WhiteCoin - Player1.CoinReserve2[2] >= 0) {
                                 Player1.WhiteCoin -= Player1.CoinReserve2[2];
+                                Coins.WhiteCoin += Player1.CoinReserve2[2];
                             } else {
                                 Player1.CoinReserve2[2] -= Player1.WhiteCoin;
+                                Coins.WhiteCoin += Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve2[2];
                                 Coins.GoldCoin += Player1.CoinReserve2[2];
@@ -6897,8 +7137,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve2[3] -= Player1.SpecialGreenCoin;
                             if (Player1.GreenCoin - Player1.CoinReserve2[3] >= 0) {
                                 Player1.GreenCoin -= Player1.CoinReserve2[3];
+                                Coins.GreenCoin += Player1.CoinReserve2[3];
                             } else {
                                 Player1.CoinReserve2[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve2[3];
                                 Coins.GoldCoin += Player1.CoinReserve2[3];
@@ -6909,8 +7151,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve2[4] -= Player1.SpecialBlackCoin;
                             if (Player1.BlackCoin - Player1.CoinReserve2[4] >= 0) {
                                 Player1.BlackCoin -= Player1.CoinReserve2[4];
+                                Coins.BlackCoin += Player1.CoinReserve2[4];
                             } else {
                                 Player1.CoinReserve2[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve2[4];
                                 Coins.GoldCoin += Player1.CoinReserve2[4];
@@ -7012,8 +7256,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve3[0] -= Player1.SpecialRedCoin;
                             if (Player1.RedCoin - Player1.CoinReserve3[0] >= 0) {
                                 Player1.RedCoin -= Player1.CoinReserve3[0];
+                                Coins.RedCoin += Player1.CoinReserve3[0];
                             } else {
                                 Player1.CoinReserve3[0] -= Player1.RedCoin;
+                                Coins.RedCoin += Player1.RedCoin;
                                 Player1.RedCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve3[0];
                                 Coins.GoldCoin += Player1.CoinReserve3[0];
@@ -7024,8 +7270,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve3[1] -= Player1.SpecialBlueCoin;
                             if (Player1.BlueCoin - Player1.CoinReserve3[1] >= 0) {
                                 Player1.BlueCoin -= Player1.CoinReserve3[1];
+                                Coins.BlueCoin += Player1.CoinReserve3[1];
                             } else {
                                 Player1.CoinReserve3[1] -= Player1.BlueCoin;
+                                Coins.BlueCoin += Player1.BlueCoin;
                                 Player1.BlueCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve3[1];
                                 Coins.GoldCoin += Player1.CoinReserve3[1];
@@ -7036,6 +7284,7 @@ public class Main extends JFrame {
                             Player1.CoinReserve3[2] -= Player1.SpecialWhiteCoin;
                             if (Player1.WhiteCoin - Player1.CoinReserve3[2] >= 0) {
                                 Player1.WhiteCoin -= Player1.CoinReserve3[2];
+                                Coins.WhiteCoin += Player1.CoinReserve3[2];
                             } else {
                                 Player1.CoinReserve3[2] -= Player1.WhiteCoin;
                                 Player1.WhiteCoin = 0;
@@ -7049,8 +7298,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve3[3] -= Player1.SpecialGreenCoin;
                             if (Player1.GreenCoin - Player1.CoinReserve3[3] >= 0) {
                                 Player1.GreenCoin -= Player1.CoinReserve3[3];
+                                Coins.GreenCoin = Player1.CoinReserve3[3];
                             } else {
                                 Player1.CoinReserve3[3] -= Player1.GreenCoin;
+                                Coins.GreenCoin += Player1.GreenCoin;
                                 Player1.GreenCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve3[3];
                                 Coins.GoldCoin += Player1.CoinReserve3[3];
@@ -7061,8 +7312,10 @@ public class Main extends JFrame {
                             Player1.CoinReserve3[4] -= Player1.SpecialBlackCoin;
                             if (Player1.BlackCoin - Player1.CoinReserve3[4] >= 0) {
                                 Player1.BlackCoin -= Player1.CoinReserve3[4];
+                                Coins.BlackCoin += Player1.CoinReserve3[4];
                             } else {
                                 Player1.CoinReserve3[4] -= Player1.BlackCoin;
+                                Coins.BlackCoin += Player1.BlackCoin;
                                 Player1.BlackCoin = 0;
                                 Player1.SpecialGoldCoin -= Player1.CoinReserve3[4];
                                 Coins.GoldCoin += Player1.CoinReserve3[4];
@@ -7249,8 +7502,10 @@ public class Main extends JFrame {
                                 Player2.CoinReserve1[0] -= Player2.SpecialRedCoin;
                                 if (Player2.RedCoin - Player2.CoinReserve1[0] >= 0) {
                                     Player2.RedCoin -= Player2.CoinReserve1[0];
+                                    Coins.RedCoin += Player2.CoinReserve1[0];
                                 } else {
                                     Player2.CoinReserve1[0] -= Player2.RedCoin;
+                                    Coins.RedCoin += Player2.RedCoin;
                                     Player2.RedCoin = 0;
                                     Player2.SpecialGoldCoin -= Player2.CoinReserve1[0];
                                     Coins.GoldCoin += Player2.CoinReserve1[0];
@@ -7261,8 +7516,10 @@ public class Main extends JFrame {
                                 Player2.CoinReserve1[1] -= Player2.SpecialBlueCoin;
                                 if (Player2.BlueCoin - Player2.CoinReserve1[1] >= 0) {
                                     Player2.BlueCoin -= Player2.CoinReserve1[1];
+                                    Coins.BlueCoin += Player2.CoinReserve1[1];
                                 } else {
                                     Player2.CoinReserve1[1] -= Player2.BlueCoin;
+                                    Coins.BlueCoin += Player2.BlueCoin;
                                     Player2.BlueCoin = 0;
                                     Player2.SpecialGoldCoin -= Player2.CoinReserve1[1];
                                     Coins.GoldCoin += Player2.CoinReserve1[1];
@@ -7273,8 +7530,10 @@ public class Main extends JFrame {
                                 Player2.CoinReserve1[2] -= Player2.SpecialWhiteCoin;
                                 if (Player2.WhiteCoin - Player2.CoinReserve1[2] >= 0) {
                                     Player2.WhiteCoin -= Player2.CoinReserve1[2];
+                                    Coins.WhiteCoin += Player2.CoinReserve1[2];
                                 } else {
                                     Player2.CoinReserve1[2] -= Player2.WhiteCoin;
+                                    Coins.WhiteCoin += Player2.WhiteCoin;
                                     Player2.WhiteCoin = 0;
                                     Player2.SpecialGoldCoin -= Player2.CoinReserve1[2];
                                     Coins.GoldCoin += Player2.CoinReserve1[2];
@@ -7286,8 +7545,10 @@ public class Main extends JFrame {
                                 Player2.CoinReserve1[3] -= Player2.SpecialGreenCoin;
                                 if (Player2.GreenCoin - Player2.CoinReserve1[3] >= 0) {
                                     Player2.GreenCoin -= Player2.CoinReserve1[3];
+                                    Coins.GreenCoin += Player2.CoinReserve1[3];
                                 } else {
                                     Player2.CoinReserve1[3] -= Player2.GreenCoin;
+                                    Coins.GreenCoin += Player2.GreenCoin;
                                     Player2.GreenCoin = 0;
                                     Player2.SpecialGoldCoin -= Player2.CoinReserve1[3];
                                     Coins.GoldCoin += Player2.CoinReserve1[3];
@@ -7298,8 +7559,10 @@ public class Main extends JFrame {
                                 Player2.CoinReserve1[4] -= Player2.SpecialBlackCoin;
                                 if (Player2.BlackCoin - Player2.CoinReserve1[4] >= 0) {
                                     Player2.BlackCoin -= Player2.CoinReserve1[4];
+                                    Coins.BlackCoin += Player2.CoinReserve1[4];
                                 } else {
                                     Player2.CoinReserve1[4] -= Player2.BlackCoin;
+                                    Coins.BlackCoin += Player2.BlackCoin;
                                     Player2.BlackCoin = 0;
                                     Player2.SpecialGoldCoin -= Player2.CoinReserve1[4];
                                     Coins.GoldCoin += Player2.CoinReserve1[4];
@@ -7401,8 +7664,10 @@ public class Main extends JFrame {
                             Player2.CoinReserve2[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - Player2.CoinReserve2[0] >= 0) {
                                 Player2.RedCoin -= Player2.CoinReserve2[0];
+                                Coins.RedCoin += Player2.CoinReserve2[0];
                             } else {
                                 Player2.CoinReserve2[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= Player2.CoinReserve2[0];
                                 Coins.GoldCoin += Player2.CoinReserve2[0];
@@ -7413,8 +7678,10 @@ public class Main extends JFrame {
                             Player2.CoinReserve2[1] -= Player2.SpecialBlueCoin;
                             if (Player2.BlueCoin - Player2.CoinReserve2[1] >= 0) {
                                 Player2.BlueCoin -= Player2.CoinReserve2[1];
+                                Coins.BlueCoin += Player2.CoinReserve2[1];
                             } else {
                                 Player2.CoinReserve2[1] -= Player2.BlueCoin;
+                                Coins.BlueCoin += Player2.BlueCoin;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= Player2.CoinReserve2[1];
                                 Coins.GoldCoin += Player2.CoinReserve2[1];
@@ -7425,8 +7692,10 @@ public class Main extends JFrame {
                             Player2.CoinReserve2[2] -= Player2.SpecialWhiteCoin;
                             if (Player2.WhiteCoin - Player2.CoinReserve2[2] >= 0) {
                                 Player2.WhiteCoin -= Player2.CoinReserve2[2];
+                                Coins.WhiteCoin += Player2.CoinReserve2[2];
                             } else {
                                 Player2.CoinReserve2[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= Player2.CoinReserve2[2];
                                 Coins.GoldCoin += Player2.CoinReserve2[2];
@@ -7438,8 +7707,10 @@ public class Main extends JFrame {
                             Player2.CoinReserve2[3] -= Player2.SpecialGreenCoin;
                             if (Player2.GreenCoin - Player2.CoinReserve2[3] >= 0) {
                                 Player2.GreenCoin -= Player2.CoinReserve2[3];
+                                Coins.GreenCoin += Player2.CoinReserve2[3];
                             } else {
                                 Player2.CoinReserve2[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= Player2.CoinReserve2[3];
                                 Coins.GoldCoin += Player2.CoinReserve2[3];
@@ -7450,8 +7721,10 @@ public class Main extends JFrame {
                             Player2.CoinReserve2[4] -= Player2.SpecialBlackCoin;
                             if (Player2.BlackCoin - Player2.CoinReserve2[4] >= 0) {
                                 Player2.BlackCoin -= Player2.CoinReserve2[4];
+                                Coins.BlackCoin += Player2.CoinReserve2[4];
                             } else {
                                 Player2.CoinReserve2[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= Player2.CoinReserve2[4];
                                 Coins.GoldCoin += Player2.CoinReserve2[4];
@@ -7553,8 +7826,10 @@ public class Main extends JFrame {
                             Player2.CoinReserve3[0] -= Player2.SpecialRedCoin;
                             if (Player2.RedCoin - Player2.CoinReserve3[0] >= 0) {
                                 Player2.RedCoin -= Player2.CoinReserve3[0];
+                                Coins.RedCoin += Player2.CoinReserve3[0];
                             } else {
                                 Player2.CoinReserve3[0] -= Player2.RedCoin;
+                                Coins.RedCoin += Player2.RedCoin;
                                 Player2.RedCoin = 0;
                                 Player2.SpecialGoldCoin -= Player2.CoinReserve3[0];
                                 Coins.GoldCoin += Player2.CoinReserve3[0];
@@ -7565,8 +7840,10 @@ public class Main extends JFrame {
                             Player2.CoinReserve3[1] -= Player2.SpecialBlueCoin;
                             if (Player2.BlueCoin - Player2.CoinReserve3[1] >= 0) {
                                 Player2.BlueCoin -= Player2.CoinReserve3[1];
+                                Coins.BlueCoin += Player2.CoinReserve3[1];
                             } else {
                                 Player2.CoinReserve3[1] -= Player2.BlueCoin;
+                                Coins.BlueCoin += Player2.BlueCoin;
                                 Player2.BlueCoin = 0;
                                 Player2.SpecialGoldCoin -= Player2.CoinReserve3[1];
                                 Coins.GoldCoin += Player2.CoinReserve3[1];
@@ -7577,8 +7854,10 @@ public class Main extends JFrame {
                             Player2.CoinReserve3[2] -= Player2.SpecialWhiteCoin;
                             if (Player2.WhiteCoin - Player2.CoinReserve3[2] >= 0) {
                                 Player2.WhiteCoin -= Player2.CoinReserve3[2];
+                                Coins.WhiteCoin += Player2.CoinReserve3[2];
                             } else {
                                 Player2.CoinReserve3[2] -= Player2.WhiteCoin;
+                                Coins.WhiteCoin += Player2.WhiteCoin;
                                 Player2.WhiteCoin = 0;
                                 Player2.SpecialGoldCoin -= Player2.CoinReserve3[2];
                                 Coins.GoldCoin += Player2.CoinReserve3[2];
@@ -7590,8 +7869,10 @@ public class Main extends JFrame {
                             Player2.CoinReserve3[3] -= Player2.SpecialGreenCoin;
                             if (Player2.GreenCoin - Player2.CoinReserve3[3] >= 0) {
                                 Player2.GreenCoin -= Player2.CoinReserve3[3];
+                                Coins.GreenCoin += Player2.CoinReserve3[3];
                             } else {
                                 Player2.CoinReserve3[3] -= Player2.GreenCoin;
+                                Coins.GreenCoin += Player2.GreenCoin;
                                 Player2.GreenCoin = 0;
                                 Player2.SpecialGoldCoin -= Player2.CoinReserve3[3];
                                 Coins.GoldCoin += Player2.CoinReserve3[3];
@@ -7602,8 +7883,10 @@ public class Main extends JFrame {
                             Player2.CoinReserve3[4] -= Player2.SpecialBlackCoin;
                             if (Player2.BlackCoin - Player2.CoinReserve3[4] >= 0) {
                                 Player2.BlackCoin -= Player2.CoinReserve3[4];
+                                Coins.BlackCoin += Player2.CoinReserve3[4];
                             } else {
                                 Player2.CoinReserve3[4] -= Player2.BlackCoin;
+                                Coins.BlackCoin += Player2.BlackCoin;
                                 Player2.BlackCoin = 0;
                                 Player2.SpecialGoldCoin -= Player2.CoinReserve3[4];
                                 Coins.GoldCoin += Player2.CoinReserve3[4];
