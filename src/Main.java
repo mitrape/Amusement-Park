@@ -409,18 +409,22 @@ public class Main extends JFrame {
         JCheckBox Green2 = new JCheckBox("Green Slot Machine");
         JCheckBox Black2 = new JCheckBox("Black Slot Machine");
         JCheckBox White2 = new JCheckBox("White Slot Machine");
+        JButton finish = new JButton("finish");
+
 
         Red2.setEnabled(false);
         Blue2.setEnabled(false);
         Green2.setEnabled(false);
         Black2.setEnabled(false);
         White2.setEnabled(false);
+        finish.setEnabled(false);
 
         ThreeCoinSelection.add(Red2);
         ThreeCoinSelection.add(Blue2);
         ThreeCoinSelection.add(Green2);
         ThreeCoinSelection.add(Black2);
         ThreeCoinSelection.add(White2);
+        ThreeCoinSelection.add(finish);
 
         LeftPanel.add(ThreeCoinSelection);
 
@@ -434,37 +438,28 @@ public class Main extends JFrame {
                 Green2.setEnabled(true);
                 Black2.setEnabled(true);
                 White2.setEnabled(true);
+                finish.setEnabled(true);
                 count = 0;
-                Red2.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        count++;
-                    }
-                });
-                Blue2.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        count++;
-                    }
-                });
-                Green2.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        count++;
-                    }
-                });
-                Black2.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        count++;
-                    }
-                });
-                White2.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        count++;
-                    }
-                });
+            }
+        });
+        finish.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Red2.isSelected()){
+                    count ++;
+                }
+                if(Black2.isSelected()){
+                    count ++;
+                }
+                if(Blue2.isSelected()){
+                    count ++;
+                }
+                if(Green2.isSelected()){
+                    count++;
+                }
+                if(White2.isSelected()){
+                    count++;
+                }
                 sw = true ;
                 if(count!=3) {
                     showMessageDialog(null, "you can't pick these coins");
@@ -475,6 +470,7 @@ public class Main extends JFrame {
                     Green2.setEnabled(false);
                     Black2.setEnabled(false);
                     White2.setEnabled(false);
+                    finish.setEnabled(false);
                 }
                 else {
                     if(Red2.isSelected() && Coins.RedCoin == 0){
@@ -501,6 +497,7 @@ public class Main extends JFrame {
                         Green2.setEnabled(false);
                         Black2.setEnabled(false);
                         White2.setEnabled(false);
+                        finish.setEnabled(false);
                     }
                     else {
                         if(Red2.isSelected()){
@@ -561,6 +558,7 @@ public class Main extends JFrame {
                         Green2.setEnabled(false);
                         Black2.setEnabled(false);
                         White2.setEnabled(false);
+                        finish.setEnabled(false);
                         if (PlayerTurn) {
                             PlayerTurn = false;
                         }
