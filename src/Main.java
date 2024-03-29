@@ -211,7 +211,7 @@ public class Main extends JFrame {
                         }
                     }
                     else {
-                       showMessageDialog(null, "you can't buy this card");
+                        showMessageDialog(null, "you can't buy this card");
                     }
                 }
                 else{
@@ -6195,12 +6195,164 @@ public class Main extends JFrame {
         PlayerOneReserveCards.add(Player1.ReserveCard2);
         PlayerOneReserveCards.add(Player1.ReserveCard3);
 
-//        Player1.ReserveCard1.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//            }
-//        });
+        Player1.ReserveCard1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!PlayerTurn || Player1.SpecialCoinReserve1 == null){
+                    showMessageDialog(null,"you can't buy this card");
+                }
+                else {
+                    boolean sw = true;
+                    int CountGoldCoin = 0;
+                    if (Player1.CoinReserve1[0] != 0) {
+                        if (Player1.RedCoin + Player1.SpecialGoldCoin + Player1.SpecialRedCoin < Player1.CoinReserve1[0]) {
+                            sw = false;
+                        }
+                        if (Player1.RedCoin + Player1.SpecialGoldCoin + Player1.SpecialRedCoin >= Player1.CoinReserve1[0] &&
+                                Player1.RedCoin +Player1.SpecialRedCoin < Player1.CoinReserve1[0]) {
+                            CountGoldCoin += (Player1.CoinReserve1[0] - (Player1.RedCoin+Player1.SpecialRedCoin));
+                        }
+                    }
+
+                    if (Player1.CoinReserve1[1] != 0) {
+                        if (Player1.BlueCoin + Player1.SpecialGoldCoin + Player1.SpecialBlueCoin < Player1.CoinReserve1[1]) {
+                            sw = false;
+                        }
+                        if (Player1.BlueCoin + Player1.SpecialGoldCoin + Player1.SpecialBlueCoin >= Player1.CoinReserve1[1] &&
+                                Player1.BlueCoin + Player1.SpecialBlueCoin < Player1.CoinReserve1[1]) {
+                            CountGoldCoin += (Player1.CoinReserve1[1] - (Player1.BlueCoin + Player1.SpecialBlueCoin));
+                        }
+                    }
+
+                    if (Player1.CoinReserve1[2] != 0) {
+                        if (Player1.WhiteCoin + Player1.SpecialGoldCoin + Player1.SpecialWhiteCoin < Player1.CoinReserve1[2] ) {
+                            sw = false;
+                        }
+                        if (Player1.WhiteCoin + Player1.SpecialGoldCoin + Player1.SpecialWhiteCoin >= Player1.CoinReserve1[2]  &&
+                                Player1.WhiteCoin + Player1.SpecialWhiteCoin< Player1.CoinReserve1[2] ) {
+                            CountGoldCoin += (Player1.CoinReserve1[2] - (Player1.WhiteCoin + Player1.SpecialWhiteCoin));
+                        }
+                    }
+
+                    if (Player1.CoinReserve1[3] != 0) {
+                        if (Player1.GreenCoin + Player1.SpecialGoldCoin + Player1.SpecialGreenCoin < Player1.CoinReserve1[3]) {
+                            sw = false;
+                        }
+                        if (Player1.GreenCoin + Player1.SpecialGoldCoin + Player1.SpecialGreenCoin >= Player1.CoinReserve1[3] &&
+                                Player1.GreenCoin + Player1.SpecialGreenCoin < Player1.CoinReserve1[3]) {
+                            CountGoldCoin += (Player1.CoinReserve1[3] - (Player1.GreenCoin + Player1.SpecialGreenCoin ));
+                        }
+                    }
+
+                    if (Player1.CoinReserve1[4] != 0) {
+                        if (Player1.BlackCoin + Player1.SpecialGoldCoin + Player1.SpecialBlackCoin < Player1.CoinReserve1[4]) {
+                            sw = false;
+                        }
+                        if (Player1.BlackCoin + Player1.SpecialGoldCoin + Player1.SpecialBlackCoin>= Player1.CoinReserve1[4] &&
+                                Player1.BlackCoin + Player1.SpecialBlackCoin < Player1.CoinReserve1[4]) {
+                            CountGoldCoin += (Player1.CoinReserve1[4] - (Player1.BlackCoin + Player1.SpecialBlackCoin));
+                        }
+                    }
+
+
+                    if (!sw || CountGoldCoin > Player1.SpecialGoldCoin) {
+                        showMessageDialog(null, "you can't buy this card");
+                    }
+
+                    else {
+                        if (Player1.CoinReserve1[0] != 0) {
+                            Player1.CoinReserve1[0] -= Player1.SpecialRedCoin;
+                            if (Player1.RedCoin - Player1.CoinReserve1[0] >= 0){
+                                Player1.RedCoin -= Player1.CoinReserve1[0] ;
+                            }
+                            else {
+                                Player1.CoinReserve1[0] -= Player1.RedCoin;
+                                Player1.RedCoin = 0;
+                                Player1.SpecialGoldCoin -= Player1.CoinReserve1[0];
+                                Coins.GoldCoin += Player1.CoinReserve1[0];
+                            }
+                        }
+
+                        if (Player1.CoinReserve1[1] != 0) {
+                            Player1.CoinReserve1[1] -= Player1.SpecialBlueCoin ;
+                            if (Player1.BlueCoin - Player1.CoinReserve1[1] >= 0){
+                                Player1.BlueCoin -= Player1.CoinReserve1[1] ;
+                            }
+                            else {
+                                Player1.CoinReserve1[1] -= Player1.BlueCoin ;
+                                Player1.BlueCoin = 0;
+                                Player1.SpecialGoldCoin -= Player1.CoinReserve1[1];
+                                Coins.GoldCoin += Player1.CoinReserve1[1];
+                            }
+                        }
+
+                        if (Player1.CoinReserve1[2] != 0) {
+                            Player1.CoinReserve1[2] -= Player1.SpecialWhiteCoin ;
+                            if (Player1.WhiteCoin - Player1.CoinReserve1[2] >= 0){
+                                Player1.WhiteCoin -= Player1.CoinReserve1[2] ;
+                            }
+                            else {
+                                Player1.CoinReserve1[2] -= Player1.WhiteCoin;
+                                Player1.WhiteCoin = 0;
+                                Player1.SpecialGoldCoin -= Player1.CoinReserve1[2] ;
+                                Coins.GoldCoin += Player1.CoinReserve1[2];
+                            }
+
+                        }
+
+                        if (Player1.CoinReserve1[3] != 0) {
+                            Player1.CoinReserve1[3] -= Player1.SpecialGreenCoin;
+                            if(Player1.GreenCoin - Player1.CoinReserve1[3] >= 0){
+                                Player1.GreenCoin -= Player1.CoinReserve1[3] ;
+                            }
+                            else {
+                                Player1.CoinReserve1[3] -= Player1.GreenCoin;
+                                Player1.GreenCoin = 0;
+                                Player1.SpecialGoldCoin -= Player1.CoinReserve1[3] ;
+                                Coins.GoldCoin += Player1.CoinReserve1[3];
+                            }
+                        }
+
+                        if (Player1.CoinReserve1[4] != 0) {
+                            Player1.CoinReserve1[4] -= Player1.SpecialBlackCoin ;
+                            if(Player1.BlackCoin - Player1.CoinReserve1[4] >= 0){
+                                Player1.BlackCoin -= Player1.CoinReserve1[4] ;
+                            }
+                            else {
+                                Player1.CoinReserve1[4] -= Player1.BlackCoin;
+                                Player1.BlackCoin = 0;
+                                Player1.SpecialGoldCoin -= Player1.CoinReserve1[4];
+                                Coins.GoldCoin += Player1.CoinReserve1[4];
+                            }
+                        }
+
+                        Player1.Score += Player1.ScoreReserve1;
+
+                        if (Player1.SpecialCoinReserve1 == "Blue")
+                            Player1.SpecialBlueCoin++;
+                        else if (Player1.SpecialCoinReserve1 == "Red")
+                            Player1.SpecialRedCoin++;
+                        else if (Player1.SpecialCoinReserve1 == "Green")
+                            Player1.SpecialGreenCoin++;
+                        else if (Player1.SpecialCoinReserve1 == "White")
+                            Player1.SpecialWhiteCoin++;
+                        else
+                            Player1.SpecialBlackCoin++;
+
+                        Player1Score.setText(String.valueOf(Player1.Score));
+                        Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
+                                + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
+                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
+                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
+                                ",gold = " + Player1.SpecialGoldCoin);
+
+                        if (Player1.Score >= 15){
+                            showMessageDialog(null,"PLAYER ONE WON!");
+                            System.exit(0);
+                        }
+                    }
+                }
+            });
 
 
         Player1Table.add(player1);
@@ -6217,12 +6369,12 @@ public class Main extends JFrame {
 
 
 
-        JPanel Player2Table = new JPanel();
+            JPanel Player2Table = new JPanel();
         Player2Table.setLayout(new GridLayout(9,1));
         Player2Table.setBackground(Color.pink);
 
 
-        JLabel player2 = new JLabel("<PLAYER TWO>");
+            JLabel player2 = new JLabel("<PLAYER TWO>");
         player2.setHorizontalAlignment(SwingConstants.CENTER);
         player2.setFont(defaultFont);
         player2.setPreferredSize(new Dimension(200, 30));
@@ -6230,28 +6382,28 @@ public class Main extends JFrame {
         player2.setOpaque(true);
         player2.setBackground(Color.YELLOW);
 
-        JLabel Score2 = new JLabel("SCORE!");
+            JLabel Score2 = new JLabel("SCORE!");
         Score2.setFont(defaultFont);
         Score2.setPreferredSize(new Dimension(200, 30));
         Score2.setHorizontalAlignment(JLabel.CENTER);
         Score2.setOpaque(true);
         Score2.setBackground(Color.LIGHT_GRAY);
 
-        JLabel SpecialCoins2 = new JLabel("SPECIAL COIN'S COUNT");
+            JLabel SpecialCoins2 = new JLabel("SPECIAL COIN'S COUNT");
         SpecialCoins2.setFont(defaultFont);
         SpecialCoins2.setPreferredSize(new Dimension(200, 30));
         SpecialCoins2.setHorizontalAlignment(JLabel.CENTER);
         SpecialCoins2.setOpaque(true);
         SpecialCoins2.setBackground(Color.LIGHT_GRAY);
 
-        JLabel Coins2 = new JLabel("NORMAL COIN'S COUNT");
+            JLabel Coins2 = new JLabel("NORMAL COIN'S COUNT");
         Coins2.setFont(defaultFont);
         Coins2.setPreferredSize(new Dimension(200, 30));
         Coins2.setHorizontalAlignment(JLabel.CENTER);
         Coins2.setOpaque(true);
         Coins2.setBackground(Color.LIGHT_GRAY);
 
-        JLabel ReserveCards2 = new JLabel("RESERVE CARDS");
+            JLabel ReserveCards2 = new JLabel("RESERVE CARDS");
         ReserveCards2.setFont(defaultFont);
         ReserveCards2.setPreferredSize(new Dimension(200, 30));
         ReserveCards2.setHorizontalAlignment(JLabel.CENTER);
@@ -6281,11 +6433,169 @@ public class Main extends JFrame {
         Player2Score.setBackground(Color.WHITE);
 
 
-        JPanel PlayerTwoReserveCards = new JPanel(new FlowLayout());
+            JPanel PlayerTwoReserveCards = new JPanel(new FlowLayout());
         PlayerTwoReserveCards.add(Player2.ReserveCard1);
         PlayerTwoReserveCards.add(Player2.ReserveCard2);
         PlayerTwoReserveCards.add(Player2.ReserveCard3);
 
+        Player2.ReserveCard1.addActionListener(new ActionListener(){
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if(!PlayerTurn || Player2.SpecialCoinReserve1 == null){
+                        showMessageDialog(null,"you can't buy this card");
+                    }
+                    else {
+                        boolean sw = true;
+                        int CountGoldCoin = 0;
+                        if (Player2.CoinReserve1[0] != 0) {
+                            if (Player2.RedCoin + Player2.SpecialGoldCoin + Player2.SpecialRedCoin < Player2.CoinReserve1[0]) {
+                                sw = false;
+                            }
+                            if (Player2.RedCoin + Player2.SpecialGoldCoin + Player2.SpecialRedCoin >= Player2.CoinReserve1[0] &&
+                                    Player2.RedCoin +Player2.SpecialRedCoin < Player2.CoinReserve1[0]) {
+                                CountGoldCoin += (Player2.CoinReserve1[0] - (Player2.RedCoin+Player2.SpecialRedCoin));
+                            }
+                        }
+
+                        if (Player2.CoinReserve1[1] != 0) {
+                            if (Player2.BlueCoin + Player2.SpecialGoldCoin + Player2.SpecialBlueCoin < Player2.CoinReserve1[1]) {
+                                sw = false;
+                            }
+                            if (Player2.BlueCoin + Player2.SpecialGoldCoin + Player2.SpecialBlueCoin >= Player2.CoinReserve1[1] &&
+                                    Player2.BlueCoin + Player2.SpecialBlueCoin < Player2.CoinReserve1[1]) {
+                                CountGoldCoin += (Player2.CoinReserve1[1] - (Player2.BlueCoin + Player2.SpecialBlueCoin));
+                            }
+                        }
+
+                        if (Player2.CoinReserve1[2] != 0) {
+                            if (Player2.WhiteCoin + Player2.SpecialGoldCoin + Player2.SpecialWhiteCoin < Player2.CoinReserve1[2] ) {
+                                sw = false;
+                            }
+                            if (Player2.WhiteCoin + Player2.SpecialGoldCoin + Player2.SpecialWhiteCoin >= Player2.CoinReserve1[2]  &&
+                                    Player2.WhiteCoin + Player2.SpecialWhiteCoin< Player2.CoinReserve1[2] ) {
+                                CountGoldCoin += (Player2.CoinReserve1[2] - (Player2.WhiteCoin + Player2.SpecialWhiteCoin));
+                            }
+                        }
+
+                        if (Player2.CoinReserve1[3] != 0) {
+                            if (Player2.GreenCoin + Player2.SpecialGoldCoin + Player2.SpecialGreenCoin < Player2.CoinReserve1[3]) {
+                                sw = false;
+                            }
+                            if (Player2.GreenCoin + Player2.SpecialGoldCoin + Player2.SpecialGreenCoin >= Player2.CoinReserve1[3] &&
+                                    Player2.GreenCoin + Player2.SpecialGreenCoin < Player2.CoinReserve1[3]) {
+                                CountGoldCoin += (Player2.CoinReserve1[3] - (Player2.GreenCoin + Player2.SpecialGreenCoin ));
+                            }
+                        }
+
+                        if (Player2.CoinReserve1[4] != 0) {
+                            if (Player2.BlackCoin + Player2.SpecialGoldCoin + Player2.SpecialBlackCoin < Player2.CoinReserve1[4]) {
+                                sw = false;
+                            }
+                            if (Player2.BlackCoin + Player2.SpecialGoldCoin + Player2.SpecialBlackCoin>= Player2.CoinReserve1[4] &&
+                                    Player2.BlackCoin + Player2.SpecialBlackCoin < Player2.CoinReserve1[4]) {
+                                CountGoldCoin += (Player2.CoinReserve1[4] - (Player2.BlackCoin + Player2.SpecialBlackCoin));
+                            }
+                        }
+
+
+                        if (!sw || CountGoldCoin > Player2.SpecialGoldCoin) {
+                            showMessageDialog(null, "you can't buy this card");
+                        }
+
+                        else {
+                            if (Player2.CoinReserve1[0] != 0) {
+                                Player2.CoinReserve1[0] -= Player2.SpecialRedCoin;
+                                if (Player2.RedCoin - Player2.CoinReserve1[0] >= 0){
+                                    Player2.RedCoin -= Player2.CoinReserve1[0] ;
+                                }
+                                else {
+                                    Player2.CoinReserve1[0] -= Player2.RedCoin;
+                                    Player2.RedCoin = 0;
+                                    Player2.SpecialGoldCoin -= Player2.CoinReserve1[0];
+                                    Coins.GoldCoin += Player2.CoinReserve1[0];
+                                }
+                            }
+
+                            if (Player2.CoinReserve1[1] != 0) {
+                                Player2.CoinReserve1[1] -= Player2.SpecialBlueCoin ;
+                                if (Player2.BlueCoin - Player2.CoinReserve1[1] >= 0){
+                                    Player2.BlueCoin -= Player2.CoinReserve1[1] ;
+                                }
+                                else {
+                                    Player2.CoinReserve1[1] -= Player2.BlueCoin ;
+                                    Player2.BlueCoin = 0;
+                                    Player2.SpecialGoldCoin -= Player2.CoinReserve1[1];
+                                    Coins.GoldCoin += Player2.CoinReserve1[1];
+                                }
+                            }
+
+                            if (Player2.CoinReserve1[2] != 0) {
+                                Player2.CoinReserve1[2] -= Player2.SpecialWhiteCoin ;
+                                if (Player2.WhiteCoin - Player2.CoinReserve1[2] >= 0){
+                                    Player2.WhiteCoin -= Player2.CoinReserve1[2] ;
+                                }
+                                else {
+                                    Player2.CoinReserve1[2] -= Player2.WhiteCoin;
+                                    Player2.WhiteCoin = 0;
+                                    Player2.SpecialGoldCoin -= Player2.CoinReserve1[2] ;
+                                    Coins.GoldCoin += Player2.CoinReserve1[2];
+                                }
+
+                            }
+
+                            if (Player2.CoinReserve1[3] != 0) {
+                                Player2.CoinReserve1[3] -= Player2.SpecialGreenCoin;
+                                if(Player2.GreenCoin - Player2.CoinReserve1[3] >= 0){
+                                    Player2.GreenCoin -= Player2.CoinReserve1[3] ;
+                                }
+                                else {
+                                    Player2.CoinReserve1[3] -= Player2.GreenCoin;
+                                    Player2.GreenCoin = 0;
+                                    Player2.SpecialGoldCoin -= Player2.CoinReserve1[3] ;
+                                    Coins.GoldCoin += Player2.CoinReserve1[3];
+                                }
+                            }
+
+                            if (Player2.CoinReserve1[4] != 0) {
+                                Player2.CoinReserve1[4] -= Player2.SpecialBlackCoin ;
+                                if(Player2.BlackCoin - Player2.CoinReserve1[4] >= 0){
+                                    Player2.BlackCoin -= Player2.CoinReserve1[4] ;
+                                }
+                                else {
+                                    Player2.CoinReserve1[4] -= Player2.BlackCoin;
+                                    Player2.BlackCoin = 0;
+                                    Player2.SpecialGoldCoin -= Player2.CoinReserve1[4];
+                                    Coins.GoldCoin += Player2.CoinReserve1[4];
+                                }
+                            }
+
+                            Player2.Score += Player2.ScoreReserve1;
+
+                            if (Player2.SpecialCoinReserve1 == "Blue")
+                                Player2.SpecialBlueCoin++;
+                            else if (Player2.SpecialCoinReserve1 == "Red")
+                                Player2.SpecialRedCoin++;
+                            else if (Player2.SpecialCoinReserve1 == "Green")
+                                Player2.SpecialGreenCoin++;
+                            else if (Player2.SpecialCoinReserve1 == "White")
+                                Player2.SpecialWhiteCoin++;
+                            else
+                                Player2.SpecialBlackCoin++;
+
+                            Player2Score.setText(String.valueOf(Player2.Score));
+                            Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
+                                    + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
+                            Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
+                                    + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
+                                    ",gold = " + Player2.SpecialGoldCoin);
+
+                            if (Player2.Score >= 15){
+                                showMessageDialog(null,"PLAYER ONE WON!");
+                                System.exit(0);
+                            }
+                        }
+                    }
+                });
 
 
         Player2Table.add(player2);
@@ -6300,18 +6610,19 @@ public class Main extends JFrame {
 
         CenterPanel.add(Player2Table , BorderLayout.SOUTH);
 
-        add(CenterPanel , BorderLayout.CENTER);
-        setVisible(true);
+            add(CenterPanel , BorderLayout.CENTER);
+            setVisible(true);
 
 
 
+        }
+
+        public static void main(String[] args) {
+            new Main ();
+
+
+
+        }
     }
-    public static void main(String[] args) {
-        new Main ();
-
-
-
-    }
-}
 
 
