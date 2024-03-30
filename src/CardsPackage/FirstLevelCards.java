@@ -1,11 +1,6 @@
 package CardsPackage;
-
-import javax.swing.*;
-import java.awt.*;
-
-import static javax.swing.JOptionPane.showMessageDialog;
-
 public class FirstLevelCards {
+
     public final String [][]  ColorOfCoinFirst  = {{"RED","BLUE"},{"BLACK","WHITE"},{"GREEN","BLUE"},{"WHITE","RED"},{"GREEN","BLACK"},{"RED","BLUE"},
             {"BLUE","GREEN"},{"RED","BLUE"},{"BLACK","WHITE"},{"GREEN","BLUE"},{"WHITE","RED"},{"GREEN","BLACK"},{"RED","BLUE"},{"BLUE","GREEN"},{"BLUE","WHITE"}};
 
@@ -17,7 +12,7 @@ public class FirstLevelCards {
     public String CardFirst ;
     public String ColorSpecialCoinFirst; // for odd numbers is Green and for even numbers is blue
     public static int CountFirst = 0;
-    public static int CounterFirst1,CounterFirst2, CounterFirst3, CounterFirst4 ;
+    public static int CounterFirst1, CounterFirst2, CounterFirst3, CounterFirst4 ;
 
     public FirstLevelCards (){
         if ( ColorOfCoinFirst [CountFirst][0] == "RED") {
@@ -74,5 +69,6 @@ public class FirstLevelCards {
         CountFirst ++ ;
 
     }
+
 
 }
