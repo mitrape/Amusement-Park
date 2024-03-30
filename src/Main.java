@@ -428,6 +428,358 @@ public class Main extends JFrame {
 
         LeftPanel.add(ThreeCoinSelection);
 
+
+        JPanel ReturnCoin = new JPanel();
+        ReturnCoin.setLayout(new BoxLayout(ReturnCoin , BoxLayout.Y_AXIS));
+        ReturnCoin.setBackground(Color.pink);
+        ReturnCoin.setPreferredSize(new Dimension(50,500));
+
+        JLabel BlackCoin = new JLabel("Black Coin");
+        JPanel BlackOptions = new JPanel(new FlowLayout());
+        JRadioButton OneBlack = new JRadioButton("1");
+        JRadioButton TwoBlack = new JRadioButton("2");
+        JRadioButton ThreeBlack = new JRadioButton("3");
+        JRadioButton FourBlack = new JRadioButton("4");
+        ButtonGroup BlackGroup = new ButtonGroup() ;
+        BlackGroup.add(OneBlack);
+        BlackGroup.add(TwoBlack);
+        BlackGroup.add(ThreeBlack);
+        BlackGroup.add(FourBlack);
+        BlackOptions.add(OneBlack);
+        BlackOptions.add(TwoBlack);
+        BlackOptions.add(ThreeBlack);
+        BlackOptions.add(FourBlack);
+        ReturnCoin.add(BlackCoin);
+        ReturnCoin.add(BlackOptions);
+
+        JLabel RedCoin = new JLabel("Red Coin");
+        JPanel RedOptions = new JPanel(new FlowLayout());
+        JRadioButton OneRed = new JRadioButton("1");
+        JRadioButton TwoRed = new JRadioButton("2");
+        JRadioButton ThreeRed = new JRadioButton("3");
+        JRadioButton FourRed = new JRadioButton("4");
+        ButtonGroup RedGroup = new ButtonGroup() ;
+        RedGroup.add(OneRed);
+        RedGroup.add(TwoRed);
+        RedGroup.add(ThreeRed);
+        RedGroup.add(FourRed);
+        RedOptions.add(OneRed);
+        RedOptions.add(TwoRed);
+        RedOptions.add(ThreeRed);
+        RedOptions.add(FourRed);
+        ReturnCoin.add(RedCoin);
+        ReturnCoin.add(RedOptions);
+
+        JLabel BlueCoin = new JLabel("Blue Coin");
+        JPanel BlueOptions = new JPanel(new FlowLayout());
+        JRadioButton OneBlue = new JRadioButton("1");
+        JRadioButton TwoBlue = new JRadioButton("2");
+        JRadioButton ThreeBlue = new JRadioButton("3");
+        JRadioButton FourBlue = new JRadioButton("4");
+        ButtonGroup BlueGroup = new ButtonGroup() ;
+        BlueGroup.add(OneBlue);
+        BlueGroup.add(TwoBlue);
+        BlueGroup.add(ThreeBlue);
+        BlueGroup.add(FourBlue);
+        BlueOptions.add(OneBlue);
+        BlueOptions.add(TwoBlue);
+        BlueOptions.add(ThreeBlue);
+        BlueOptions.add(FourBlue);
+        ReturnCoin.add(BlueCoin);
+        ReturnCoin.add(BlueOptions);
+
+        JLabel GreenCoin = new JLabel("Green Coin");
+        JPanel GreenOptions = new JPanel(new FlowLayout());
+        JRadioButton OneGreen = new JRadioButton("1");
+        JRadioButton TwoGreen = new JRadioButton("2");
+        JRadioButton ThreeGreen = new JRadioButton("3");
+        JRadioButton FourGreen = new JRadioButton("4");
+        ButtonGroup GreenGroup = new ButtonGroup() ;
+        GreenGroup.add(OneGreen);
+        GreenGroup.add(TwoGreen);
+        GreenGroup.add(ThreeGreen);
+        GreenGroup.add(FourGreen);
+        GreenOptions.add(OneGreen);
+        GreenOptions.add(TwoGreen);
+        GreenOptions.add(ThreeGreen);
+        GreenOptions.add(FourGreen);
+        ReturnCoin.add(GreenCoin);
+        ReturnCoin.add(GreenOptions);
+
+        JLabel WhiteCoin = new JLabel("White Coin");
+        JPanel WhiteOptions = new JPanel(new FlowLayout());
+        JRadioButton OneWhite = new JRadioButton("1");
+        JRadioButton TwoWhite = new JRadioButton("2");
+        JRadioButton ThreeWhite = new JRadioButton("3");
+        JRadioButton FourWhite = new JRadioButton("4");
+        ButtonGroup WhiteGroup = new ButtonGroup() ;
+        WhiteGroup.add(OneWhite);
+        WhiteGroup.add(TwoWhite);
+        WhiteGroup.add(ThreeWhite);
+        WhiteGroup.add(FourWhite);
+        WhiteOptions.add(OneWhite);
+        WhiteOptions.add(TwoWhite);
+        WhiteOptions.add(ThreeWhite);
+        WhiteOptions.add(FourWhite);
+        ReturnCoin.add(WhiteCoin);
+        ReturnCoin.add(WhiteOptions);
+
+        LeftPanel.add(ReturnCoin);
+
+        OneBlack.setEnabled(false);
+        TwoBlack.setEnabled(false);
+        ThreeBlack.setEnabled(false);
+        FourBlack.setEnabled(false);
+        OneRed.setEnabled(false);
+        TwoRed.setEnabled(false);
+        ThreeRed.setEnabled(false);
+        FourRed.setEnabled(false);
+        OneBlue.setEnabled(false);
+        TwoBlue.setEnabled(false);
+        ThreeBlue.setEnabled(false);
+        FourBlue.setEnabled(false);
+        OneGreen.setEnabled(false);
+        TwoGreen.setEnabled(false);
+        ThreeGreen.setEnabled(false);
+        FourGreen.setEnabled(false);
+        OneWhite.setEnabled(false);
+        TwoWhite.setEnabled(false);
+        ThreeWhite.setEnabled(false);
+        FourWhite.setEnabled(false);
+
+        JButton FinishReturning = new JButton("finish");
+        FinishReturning.setEnabled(false);
+        LeftPanel.add(FinishReturning);
+        // this method would return possible coins and if it's not, it won't show any messages
+        FinishReturning.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(PlayerTurn){
+                    if(OneBlack.isSelected() && Player1.BlackCoin>=1){
+                        Player1.BlackCoin -- ;
+                        Coins.BlackCoin ++;
+                    }
+                    if(TwoBlack.isSelected() && Player1.BlackCoin>=2){
+                        Player1.BlackCoin -= 2;
+                        Coins.BlackCoin += 2;
+                    }
+                    if(ThreeBlack.isSelected() && Player1.BlackCoin>=3){
+                        Player1.BlackCoin -= 3;
+                        Coins.BlackCoin += 3;
+                    }
+                    if(FourBlack.isSelected() && Player1.BlackCoin==4){
+                        Player1.BlackCoin -= 4;
+                        Coins.BlackCoin += 4;
+                    }
+                    if(OneRed.isSelected() && Player1.RedCoin>=1){
+                        Player1.RedCoin -- ;
+                        Coins.RedCoin ++;
+                    }
+                    if(TwoRed.isSelected() && Player1.RedCoin>=2){
+                        Player1.RedCoin -= 2;
+                        Coins.RedCoin += 2;
+                    }
+                    if(ThreeRed.isSelected() && Player1.RedCoin>=3){
+                        Player1.RedCoin -= 3;
+                        Coins.RedCoin += 3;
+                    }
+                    if(FourRed.isSelected() && Player1.RedCoin==4){
+                        Player1.RedCoin -= 4;
+                        Coins.RedCoin += 4;
+                    }
+                    if(OneWhite.isSelected() && Player1.WhiteCoin>=1){
+                        Player1.WhiteCoin -- ;
+                        Coins.WhiteCoin ++;
+                    }
+                    if(TwoWhite.isSelected() && Player1.WhiteCoin>=2){
+                        Player1.WhiteCoin -= 2;
+                        Coins.WhiteCoin += 2;
+                    }
+                    if(ThreeWhite.isSelected() && Player1.WhiteCoin>=3){
+                        Player1.WhiteCoin -= 3;
+                        Coins.WhiteCoin += 3;
+                    }
+                    if(FourWhite.isSelected() && Player1.WhiteCoin==4){
+                        Player1.WhiteCoin -= 4;
+                        Coins.WhiteCoin += 4;
+                    }
+                    if(OneBlue.isSelected() && Player1.BlueCoin>=1){
+                        Player1.BlueCoin -- ;
+                        Coins.BlueCoin ++;
+                    }
+                    if(TwoBlue.isSelected() && Player1.BlueCoin>=2){
+                        Player1.BlueCoin -= 2;
+                        Coins.BlueCoin += 2;
+                    }
+                    if(ThreeBlue.isSelected() && Player1.BlueCoin>=3){
+                        Player1.BlueCoin -= 3;
+                        Coins.BlueCoin += 3;
+                    }
+                    if(FourBlue.isSelected() && Player1.BlueCoin==4){
+                        Player1.BlueCoin -= 4;
+                        Coins.BlueCoin += 4;
+                    }
+                    if(OneGreen.isSelected() && Player1.GreenCoin>=1){
+                        Player1.GreenCoin -- ;
+                        Coins.GreenCoin ++;
+                    }
+                    if(TwoGreen.isSelected() && Player1.GreenCoin>=2){
+                        Player1.GreenCoin -= 2;
+                        Coins.GreenCoin += 2;
+                    }
+                    if(ThreeGreen.isSelected() && Player1.GreenCoin>=3){
+                        Player1.GreenCoin -= 3;
+                        Coins.GreenCoin += 3;
+                    }
+                    if(FourGreen.isSelected() && Player1.GreenCoin==4){
+                        Player1.GreenCoin -= 4;
+                        Coins.GreenCoin += 4;
+                    }
+                    if(Player1.RedCoin + Player1.BlackCoin + Player1.BlueCoin + Player1.WhiteCoin + Player1.GreenCoin >10){
+                        showMessageDialog(null,"you still have more than 10 coins, you must return them");
+                    }
+                    else {
+
+                        OneBlack.setEnabled(true);
+                        TwoBlack.setEnabled(true);
+                        ThreeBlack.setEnabled(true);
+                        FourBlack.setEnabled(true);
+                        OneRed.setEnabled(true);
+                        TwoRed.setEnabled(true);
+                        ThreeRed.setEnabled(true);
+                        FourRed.setEnabled(true);
+                        OneBlue.setEnabled(true);
+                        TwoBlue.setEnabled(true);
+                        ThreeBlue.setEnabled(true);
+                        FourBlue.setEnabled(true);
+                        OneGreen.setEnabled(true);
+                        TwoGreen.setEnabled(true);
+                        ThreeGreen.setEnabled(true);
+                        FourGreen.setEnabled(true);
+                        OneWhite.setEnabled(true);
+                        TwoWhite.setEnabled(true);
+                        ThreeWhite.setEnabled(true);
+                        FourWhite.setEnabled(true);
+                        FinishReturning.setEnabled(true);
+                        PlayerTurn = false ;
+
+                    }
+                }
+                else {
+                    if(OneBlack.isSelected() && Player2.BlackCoin>=1){
+                        Player2.BlackCoin -- ;
+                        Coins.BlackCoin ++;
+                    }
+                    if(TwoBlack.isSelected() && Player2.BlackCoin>=2){
+                        Player2.BlackCoin -= 2;
+                        Coins.BlackCoin += 2;
+                    }
+                    if(ThreeBlack.isSelected() && Player2.BlackCoin>=3){
+                        Player2.BlackCoin -= 3;
+                        Coins.BlackCoin += 3;
+                    }
+                    if(FourBlack.isSelected() && Player2.BlackCoin==4){
+                        Player2.BlackCoin -= 4;
+                        Coins.BlackCoin += 4;
+                    }
+                    if(OneRed.isSelected() && Player2.RedCoin>=1){
+                        Player2.RedCoin -- ;
+                        Coins.RedCoin ++;
+                    }
+                    if(TwoRed.isSelected() && Player2.RedCoin>=2){
+                        Player2.RedCoin -= 2;
+                        Coins.RedCoin += 2;
+                    }
+                    if(ThreeRed.isSelected() && Player2.RedCoin>=3){
+                        Player2.RedCoin -= 3;
+                        Coins.RedCoin += 3;
+                    }
+                    if(FourRed.isSelected() && Player2.RedCoin==4){
+                        Player2.RedCoin -= 4;
+                        Coins.RedCoin += 4;
+                    }
+                    if(OneWhite.isSelected() && Player2.WhiteCoin>=1){
+                        Player2.WhiteCoin -- ;
+                        Coins.WhiteCoin ++;
+                    }
+                    if(TwoWhite.isSelected() && Player2.WhiteCoin>=2){
+                        Player2.WhiteCoin -= 2;
+                        Coins.WhiteCoin += 2;
+                    }
+                    if(ThreeWhite.isSelected() && Player2.WhiteCoin>=3){
+                        Player2.WhiteCoin -= 3;
+                        Coins.WhiteCoin += 3;
+                    }
+                    if(FourWhite.isSelected() && Player2.WhiteCoin==4){
+                        Player2.WhiteCoin -= 4;
+                        Coins.WhiteCoin += 4;
+                    }
+                    if(OneBlue.isSelected() && Player2.BlueCoin>=1){
+                        Player2.BlueCoin -- ;
+                        Coins.BlueCoin ++;
+                    }
+                    if(TwoBlue.isSelected() && Player2.BlueCoin>=2){
+                        Player2.BlueCoin -= 2;
+                        Coins.BlueCoin += 2;
+                    }
+                    if(ThreeBlue.isSelected() && Player2.BlueCoin>=3){
+                        Player2.BlueCoin -= 3;
+                        Coins.BlueCoin += 3;
+                    }
+                    if(FourBlue.isSelected() && Player2.BlueCoin==4){
+                        Player2.BlueCoin -= 4;
+                        Coins.BlueCoin += 4;
+                    }
+                    if(OneGreen.isSelected() && Player2.GreenCoin>=1){
+                        Player2.GreenCoin -- ;
+                        Coins.GreenCoin ++;
+                    }
+                    if(TwoGreen.isSelected() && Player2.GreenCoin>=2){
+                        Player2.GreenCoin -= 2;
+                        Coins.GreenCoin += 2;
+                    }
+                    if(ThreeGreen.isSelected() && Player2.GreenCoin>=3){
+                        Player2.GreenCoin -= 3;
+                        Coins.GreenCoin += 3;
+                    }
+                    if(FourGreen.isSelected() && Player2.GreenCoin==4){
+                        Player2.GreenCoin -= 4;
+                        Coins.GreenCoin += 4;
+                    }
+                    if(Player2.RedCoin + Player2.BlackCoin + Player2.BlueCoin + Player2.WhiteCoin + Player2.GreenCoin >10){
+                        showMessageDialog(null,"you still have more than 10 coins, you must return them");
+                    }
+                    else {
+                        OneBlack.setEnabled(true);
+                        TwoBlack.setEnabled(true);
+                        ThreeBlack.setEnabled(true);
+                        FourBlack.setEnabled(true);
+                        OneRed.setEnabled(true);
+                        TwoRed.setEnabled(true);
+                        ThreeRed.setEnabled(true);
+                        FourRed.setEnabled(true);
+                        OneBlue.setEnabled(true);
+                        TwoBlue.setEnabled(true);
+                        ThreeBlue.setEnabled(true);
+                        FourBlue.setEnabled(true);
+                        OneGreen.setEnabled(true);
+                        TwoGreen.setEnabled(true);
+                        ThreeGreen.setEnabled(true);
+                        FourGreen.setEnabled(true);
+                        OneWhite.setEnabled(true);
+                        TwoWhite.setEnabled(true);
+                        ThreeWhite.setEnabled(true);
+                        FourWhite.setEnabled(true);
+                        FinishReturning.setEnabled(true);
+                        PlayerTurn = true ;
+                    }
+                }
+        });
+
+
+
+
+
         ThreeCoin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -560,6 +912,10 @@ public class Main extends JFrame {
                         White2.setEnabled(false);
                         finish.setEnabled(false);
                         if (PlayerTurn) {
+                            if(Player1.RedCoin +Player1.BlueCoin+Player1.GreenCoin +Player1.WhiteCoin+Player1.BlackCoin > 10){
+                                showMessageDialog(null , "your coins are more than 10, you must return them!");
+
+                            }
                             PlayerTurn = false;
                         }
                         else {
