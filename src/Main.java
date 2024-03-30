@@ -26,7 +26,6 @@ public class Main extends JFrame {
 
 
 
-
     GridBagConstraints gbc = new GridBagConstraints();
     Player Player1 = new Player();
     Player Player2 = new Player();
@@ -56,7 +55,7 @@ public class Main extends JFrame {
 
     public JButton TwoCoin ;
     public JButton ThreeCoin ;
-    public JButton PrizeClaw1,PrizeClaw2,PrizeClaw3;
+    public JButton none,PrizeClaw1,PrizeClaw2,PrizeClaw3;
     public JButton FirstLevel1,FirstLevel2,FirstLevel3,FirstLevel4;
     public JButton SecondLevel1,SecondLevel2,SecondLevel3,SecondLevel4;
     public JButton ThirdLevel1,ThirdLevel2,ThirdLevel3,ThirdLevel4;
@@ -288,8 +287,40 @@ public class Main extends JFrame {
         TwoCoin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ThreeCoin.setEnabled(false);
+                FirstLevel1.setEnabled(false);
+                FirstLevel2.setEnabled(false);
+                FirstLevel3.setEnabled(false);
+                FirstLevel4.setEnabled(false);
+                SecondLevel1.setEnabled(false);
+                SecondLevel2.setEnabled(false);
+                SecondLevel3.setEnabled(false);
+                SecondLevel4.setEnabled(false);
+                ThirdLevel1.setEnabled(false);
+                ThirdLevel2.setEnabled(false);
+                ThirdLevel3.setEnabled(false);
+                ThirdLevel4.setEnabled(false);
+                ReserveCardFirst1.setEnabled(false);
+                ReserveCardFirst2.setEnabled(false);
+                ReserveCardFirst3.setEnabled(false);
+                ReserveCardFirst4.setEnabled(false);
+                ReserveCardSecond1.setEnabled(false);
+                ReserveCardSecond2.setEnabled(false);
+                ReserveCardSecond3.setEnabled(false);
+                ReserveCardSecond4.setEnabled(false);
+                ReserveCardThird1.setEnabled(false);
+                ReserveCardThird2.setEnabled(false);
+                ReserveCardThird3.setEnabled(false);
+                ReserveCardThird4.setEnabled(false);
                 TwoCoin.setEnabled(false);
+                ThreeCoin.setEnabled(false);
+                Player1.ReserveCard1.setEnabled(false);
+                Player1.ReserveCard2.setEnabled(false);
+                Player1.ReserveCard3.setEnabled(false);
+                Player2.ReserveCard1.setEnabled(false);
+                Player2.ReserveCard2.setEnabled(false);
+                Player2.ReserveCard3.setEnabled(false);
+
+
                 Red1.setEnabled(true);
                 Blue1.setEnabled(true);
                 Green1.setEnabled(true);
@@ -342,9 +373,6 @@ public class Main extends JFrame {
                             ThreeWhite.setEnabled(true);
                             FourWhite.setEnabled(true);
                             FinishReturning.setEnabled(true);
-                            PrizeClaw1.setEnabled(false);
-                            PrizeClaw2.setEnabled(false);
-                            PrizeClaw3.setEnabled(false);
                             FirstLevel1.setEnabled(false);
                             FirstLevel2.setEnabled(false);
                             FirstLevel3.setEnabled(false);
@@ -380,6 +408,38 @@ public class Main extends JFrame {
                         }
                         else {
                             PlayerTurn = false;
+                            FirstLevel1.setEnabled(true);
+                            FirstLevel2.setEnabled(true);
+                            FirstLevel3.setEnabled(true);
+                            FirstLevel4.setEnabled(true);
+                            SecondLevel1.setEnabled(true);
+                            SecondLevel2.setEnabled(true);
+                            SecondLevel3.setEnabled(true);
+                            SecondLevel4.setEnabled(true);
+                            ThirdLevel1.setEnabled(true);
+                            ThirdLevel2.setEnabled(true);
+                            ThirdLevel3.setEnabled(true);
+                            ThirdLevel4.setEnabled(true);
+                            ReserveCardFirst1.setEnabled(true);
+                            ReserveCardFirst2.setEnabled(true);
+                            ReserveCardFirst3.setEnabled(true);
+                            ReserveCardFirst4.setEnabled(true);
+                            ReserveCardSecond1.setEnabled(true);
+                            ReserveCardSecond2.setEnabled(true);
+                            ReserveCardSecond3.setEnabled(true);
+                            ReserveCardSecond4.setEnabled(true);
+                            ReserveCardThird1.setEnabled(true);
+                            ReserveCardThird2.setEnabled(true);
+                            ReserveCardThird3.setEnabled(true);
+                            ReserveCardThird4.setEnabled(true);
+                            TwoCoin.setEnabled(true);
+                            ThreeCoin.setEnabled(true);
+                            Player1.ReserveCard1.setEnabled(true);
+                            Player1.ReserveCard2.setEnabled(true);
+                            Player1.ReserveCard3.setEnabled(true);
+                            Player2.ReserveCard1.setEnabled(true);
+                            Player2.ReserveCard2.setEnabled(true);
+                            Player2.ReserveCard3.setEnabled(true);
                         }
 
                     }
@@ -423,9 +483,6 @@ public class Main extends JFrame {
                             ThreeWhite.setEnabled(true);
                             FourWhite.setEnabled(true);
                             FinishReturning.setEnabled(true);
-                            PrizeClaw1.setEnabled(false);
-                            PrizeClaw2.setEnabled(false);
-                            PrizeClaw3.setEnabled(false);
                             FirstLevel1.setEnabled(false);
                             FirstLevel2.setEnabled(false);
                             FirstLevel3.setEnabled(false);
@@ -461,6 +518,38 @@ public class Main extends JFrame {
                         }
                         else {
                             PlayerTurn = true;
+                            FirstLevel1.setEnabled(true);
+                            FirstLevel2.setEnabled(true);
+                            FirstLevel3.setEnabled(true);
+                            FirstLevel4.setEnabled(true);
+                            SecondLevel1.setEnabled(true);
+                            SecondLevel2.setEnabled(true);
+                            SecondLevel3.setEnabled(true);
+                            SecondLevel4.setEnabled(true);
+                            ThirdLevel1.setEnabled(true);
+                            ThirdLevel2.setEnabled(true);
+                            ThirdLevel3.setEnabled(true);
+                            ThirdLevel4.setEnabled(true);
+                            ReserveCardFirst1.setEnabled(true);
+                            ReserveCardFirst2.setEnabled(true);
+                            ReserveCardFirst3.setEnabled(true);
+                            ReserveCardFirst4.setEnabled(true);
+                            ReserveCardSecond1.setEnabled(true);
+                            ReserveCardSecond2.setEnabled(true);
+                            ReserveCardSecond3.setEnabled(true);
+                            ReserveCardSecond4.setEnabled(true);
+                            ReserveCardThird1.setEnabled(true);
+                            ReserveCardThird2.setEnabled(true);
+                            ReserveCardThird3.setEnabled(true);
+                            ReserveCardThird4.setEnabled(true);
+                            TwoCoin.setEnabled(true);
+                            ThreeCoin.setEnabled(true);
+                            Player1.ReserveCard1.setEnabled(true);
+                            Player1.ReserveCard2.setEnabled(true);
+                            Player1.ReserveCard3.setEnabled(true);
+                            Player2.ReserveCard1.setEnabled(true);
+                            Player2.ReserveCard2.setEnabled(true);
+                            Player2.ReserveCard3.setEnabled(true);
                         }
 
                     }
@@ -473,8 +562,40 @@ public class Main extends JFrame {
                     Green1.setEnabled(false);
                     Black1.setEnabled(false);
                     White1.setEnabled(false);
-                    ThreeCoin.setEnabled(true);
+
+                    FirstLevel1.setEnabled(true);
+                    FirstLevel2.setEnabled(true);
+                    FirstLevel3.setEnabled(true);
+                    FirstLevel4.setEnabled(true);
+                    SecondLevel1.setEnabled(true);
+                    SecondLevel2.setEnabled(true);
+                    SecondLevel3.setEnabled(true);
+                    SecondLevel4.setEnabled(true);
+                    ThirdLevel1.setEnabled(true);
+                    ThirdLevel2.setEnabled(true);
+                    ThirdLevel3.setEnabled(true);
+                    ThirdLevel4.setEnabled(true);
+                    ReserveCardFirst1.setEnabled(true);
+                    ReserveCardFirst2.setEnabled(true);
+                    ReserveCardFirst3.setEnabled(true);
+                    ReserveCardFirst4.setEnabled(true);
+                    ReserveCardSecond1.setEnabled(true);
+                    ReserveCardSecond2.setEnabled(true);
+                    ReserveCardSecond3.setEnabled(true);
+                    ReserveCardSecond4.setEnabled(true);
+                    ReserveCardThird1.setEnabled(true);
+                    ReserveCardThird2.setEnabled(true);
+                    ReserveCardThird3.setEnabled(true);
+                    ReserveCardThird4.setEnabled(true);
                     TwoCoin.setEnabled(true);
+                    ThreeCoin.setEnabled(true);
+                    Player1.ReserveCard1.setEnabled(true);
+                    Player1.ReserveCard2.setEnabled(true);
+                    Player1.ReserveCard3.setEnabled(true);
+                    Player2.ReserveCard1.setEnabled(true);
+                    Player2.ReserveCard2.setEnabled(true);
+                    Player2.ReserveCard3.setEnabled(true);
+
 
                 }
             }
@@ -526,9 +647,6 @@ public class Main extends JFrame {
                             ThreeWhite.setEnabled(true);
                             FourWhite.setEnabled(true);
                             FinishReturning.setEnabled(true);
-                            PrizeClaw1.setEnabled(false);
-                            PrizeClaw2.setEnabled(false);
-                            PrizeClaw3.setEnabled(false);
                             FirstLevel1.setEnabled(false);
                             FirstLevel2.setEnabled(false);
                             FirstLevel3.setEnabled(false);
@@ -564,6 +682,38 @@ public class Main extends JFrame {
                         }
                         else {
                             PlayerTurn = false;
+                            FirstLevel1.setEnabled(true);
+                            FirstLevel2.setEnabled(true);
+                            FirstLevel3.setEnabled(true);
+                            FirstLevel4.setEnabled(true);
+                            SecondLevel1.setEnabled(true);
+                            SecondLevel2.setEnabled(true);
+                            SecondLevel3.setEnabled(true);
+                            SecondLevel4.setEnabled(true);
+                            ThirdLevel1.setEnabled(true);
+                            ThirdLevel2.setEnabled(true);
+                            ThirdLevel3.setEnabled(true);
+                            ThirdLevel4.setEnabled(true);
+                            ReserveCardFirst1.setEnabled(true);
+                            ReserveCardFirst2.setEnabled(true);
+                            ReserveCardFirst3.setEnabled(true);
+                            ReserveCardFirst4.setEnabled(true);
+                            ReserveCardSecond1.setEnabled(true);
+                            ReserveCardSecond2.setEnabled(true);
+                            ReserveCardSecond3.setEnabled(true);
+                            ReserveCardSecond4.setEnabled(true);
+                            ReserveCardThird1.setEnabled(true);
+                            ReserveCardThird2.setEnabled(true);
+                            ReserveCardThird3.setEnabled(true);
+                            ReserveCardThird4.setEnabled(true);
+                            TwoCoin.setEnabled(true);
+                            ThreeCoin.setEnabled(true);
+                            Player1.ReserveCard1.setEnabled(true);
+                            Player1.ReserveCard2.setEnabled(true);
+                            Player1.ReserveCard3.setEnabled(true);
+                            Player2.ReserveCard1.setEnabled(true);
+                            Player2.ReserveCard2.setEnabled(true);
+                            Player2.ReserveCard3.setEnabled(true);
                         }
 
 
@@ -608,9 +758,6 @@ public class Main extends JFrame {
                             ThreeWhite.setEnabled(true);
                             FourWhite.setEnabled(true);
                             FinishReturning.setEnabled(true);
-                            PrizeClaw1.setEnabled(false);
-                            PrizeClaw2.setEnabled(false);
-                            PrizeClaw3.setEnabled(false);
                             FirstLevel1.setEnabled(false);
                             FirstLevel2.setEnabled(false);
                             FirstLevel3.setEnabled(false);
@@ -646,6 +793,38 @@ public class Main extends JFrame {
                         }
                         else {
                             PlayerTurn = true;
+                            FirstLevel1.setEnabled(true);
+                            FirstLevel2.setEnabled(true);
+                            FirstLevel3.setEnabled(true);
+                            FirstLevel4.setEnabled(true);
+                            SecondLevel1.setEnabled(true);
+                            SecondLevel2.setEnabled(true);
+                            SecondLevel3.setEnabled(true);
+                            SecondLevel4.setEnabled(true);
+                            ThirdLevel1.setEnabled(true);
+                            ThirdLevel2.setEnabled(true);
+                            ThirdLevel3.setEnabled(true);
+                            ThirdLevel4.setEnabled(true);
+                            ReserveCardFirst1.setEnabled(true);
+                            ReserveCardFirst2.setEnabled(true);
+                            ReserveCardFirst3.setEnabled(true);
+                            ReserveCardFirst4.setEnabled(true);
+                            ReserveCardSecond1.setEnabled(true);
+                            ReserveCardSecond2.setEnabled(true);
+                            ReserveCardSecond3.setEnabled(true);
+                            ReserveCardSecond4.setEnabled(true);
+                            ReserveCardThird1.setEnabled(true);
+                            ReserveCardThird2.setEnabled(true);
+                            ReserveCardThird3.setEnabled(true);
+                            ReserveCardThird4.setEnabled(true);
+                            TwoCoin.setEnabled(true);
+                            ThreeCoin.setEnabled(true);
+                            Player1.ReserveCard1.setEnabled(true);
+                            Player1.ReserveCard2.setEnabled(true);
+                            Player1.ReserveCard3.setEnabled(true);
+                            Player2.ReserveCard1.setEnabled(true);
+                            Player2.ReserveCard2.setEnabled(true);
+                            Player2.ReserveCard3.setEnabled(true);
                         }
                     }
                 }
@@ -657,8 +836,38 @@ public class Main extends JFrame {
                     Green1.setEnabled(false);
                     Black1.setEnabled(false);
                     White1.setEnabled(false);
-                    ThreeCoin.setEnabled(true);
+                    FirstLevel1.setEnabled(true);
+                    FirstLevel2.setEnabled(true);
+                    FirstLevel3.setEnabled(true);
+                    FirstLevel4.setEnabled(true);
+                    SecondLevel1.setEnabled(true);
+                    SecondLevel2.setEnabled(true);
+                    SecondLevel3.setEnabled(true);
+                    SecondLevel4.setEnabled(true);
+                    ThirdLevel1.setEnabled(true);
+                    ThirdLevel2.setEnabled(true);
+                    ThirdLevel3.setEnabled(true);
+                    ThirdLevel4.setEnabled(true);
+                    ReserveCardFirst1.setEnabled(true);
+                    ReserveCardFirst2.setEnabled(true);
+                    ReserveCardFirst3.setEnabled(true);
+                    ReserveCardFirst4.setEnabled(true);
+                    ReserveCardSecond1.setEnabled(true);
+                    ReserveCardSecond2.setEnabled(true);
+                    ReserveCardSecond3.setEnabled(true);
+                    ReserveCardSecond4.setEnabled(true);
+                    ReserveCardThird1.setEnabled(true);
+                    ReserveCardThird2.setEnabled(true);
+                    ReserveCardThird3.setEnabled(true);
+                    ReserveCardThird4.setEnabled(true);
                     TwoCoin.setEnabled(true);
+                    ThreeCoin.setEnabled(true);
+                    Player1.ReserveCard1.setEnabled(true);
+                    Player1.ReserveCard2.setEnabled(true);
+                    Player1.ReserveCard3.setEnabled(true);
+                    Player2.ReserveCard1.setEnabled(true);
+                    Player2.ReserveCard2.setEnabled(true);
+                    Player2.ReserveCard3.setEnabled(true);
 
                 }
             }
@@ -709,9 +918,6 @@ public class Main extends JFrame {
                             ThreeWhite.setEnabled(true);
                             FourWhite.setEnabled(true);
                             FinishReturning.setEnabled(true);
-                            PrizeClaw1.setEnabled(false);
-                            PrizeClaw2.setEnabled(false);
-                            PrizeClaw3.setEnabled(false);
                             FirstLevel1.setEnabled(false);
                             FirstLevel2.setEnabled(false);
                             FirstLevel3.setEnabled(false);
@@ -747,6 +953,38 @@ public class Main extends JFrame {
                         }
                         else {
                             PlayerTurn = false;
+                            FirstLevel1.setEnabled(true);
+                            FirstLevel2.setEnabled(true);
+                            FirstLevel3.setEnabled(true);
+                            FirstLevel4.setEnabled(true);
+                            SecondLevel1.setEnabled(true);
+                            SecondLevel2.setEnabled(true);
+                            SecondLevel3.setEnabled(true);
+                            SecondLevel4.setEnabled(true);
+                            ThirdLevel1.setEnabled(true);
+                            ThirdLevel2.setEnabled(true);
+                            ThirdLevel3.setEnabled(true);
+                            ThirdLevel4.setEnabled(true);
+                            ReserveCardFirst1.setEnabled(true);
+                            ReserveCardFirst2.setEnabled(true);
+                            ReserveCardFirst3.setEnabled(true);
+                            ReserveCardFirst4.setEnabled(true);
+                            ReserveCardSecond1.setEnabled(true);
+                            ReserveCardSecond2.setEnabled(true);
+                            ReserveCardSecond3.setEnabled(true);
+                            ReserveCardSecond4.setEnabled(true);
+                            ReserveCardThird1.setEnabled(true);
+                            ReserveCardThird2.setEnabled(true);
+                            ReserveCardThird3.setEnabled(true);
+                            ReserveCardThird4.setEnabled(true);
+                            TwoCoin.setEnabled(true);
+                            ThreeCoin.setEnabled(true);
+                            Player1.ReserveCard1.setEnabled(true);
+                            Player1.ReserveCard2.setEnabled(true);
+                            Player1.ReserveCard3.setEnabled(true);
+                            Player2.ReserveCard1.setEnabled(true);
+                            Player2.ReserveCard2.setEnabled(true);
+                            Player2.ReserveCard3.setEnabled(true);
                         }
 
                     }
@@ -790,9 +1028,6 @@ public class Main extends JFrame {
                             ThreeWhite.setEnabled(true);
                             FourWhite.setEnabled(true);
                             FinishReturning.setEnabled(true);
-                            PrizeClaw1.setEnabled(false);
-                            PrizeClaw2.setEnabled(false);
-                            PrizeClaw3.setEnabled(false);
                             FirstLevel1.setEnabled(false);
                             FirstLevel2.setEnabled(false);
                             FirstLevel3.setEnabled(false);
@@ -828,6 +1063,38 @@ public class Main extends JFrame {
                         }
                         else {
                             PlayerTurn = true;
+                            FirstLevel1.setEnabled(true);
+                            FirstLevel2.setEnabled(true);
+                            FirstLevel3.setEnabled(true);
+                            FirstLevel4.setEnabled(true);
+                            SecondLevel1.setEnabled(true);
+                            SecondLevel2.setEnabled(true);
+                            SecondLevel3.setEnabled(true);
+                            SecondLevel4.setEnabled(true);
+                            ThirdLevel1.setEnabled(true);
+                            ThirdLevel2.setEnabled(true);
+                            ThirdLevel3.setEnabled(true);
+                            ThirdLevel4.setEnabled(true);
+                            ReserveCardFirst1.setEnabled(true);
+                            ReserveCardFirst2.setEnabled(true);
+                            ReserveCardFirst3.setEnabled(true);
+                            ReserveCardFirst4.setEnabled(true);
+                            ReserveCardSecond1.setEnabled(true);
+                            ReserveCardSecond2.setEnabled(true);
+                            ReserveCardSecond3.setEnabled(true);
+                            ReserveCardSecond4.setEnabled(true);
+                            ReserveCardThird1.setEnabled(true);
+                            ReserveCardThird2.setEnabled(true);
+                            ReserveCardThird3.setEnabled(true);
+                            ReserveCardThird4.setEnabled(true);
+                            TwoCoin.setEnabled(true);
+                            ThreeCoin.setEnabled(true);
+                            Player1.ReserveCard1.setEnabled(true);
+                            Player1.ReserveCard2.setEnabled(true);
+                            Player1.ReserveCard3.setEnabled(true);
+                            Player2.ReserveCard1.setEnabled(true);
+                            Player2.ReserveCard2.setEnabled(true);
+                            Player2.ReserveCard3.setEnabled(true);
                         }
                     }
                 }
@@ -839,8 +1106,38 @@ public class Main extends JFrame {
                     Green1.setEnabled(false);
                     Black1.setEnabled(false);
                     White1.setEnabled(false);
-                    ThreeCoin.setEnabled(true);
+                    FirstLevel1.setEnabled(true);
+                    FirstLevel2.setEnabled(true);
+                    FirstLevel3.setEnabled(true);
+                    FirstLevel4.setEnabled(true);
+                    SecondLevel1.setEnabled(true);
+                    SecondLevel2.setEnabled(true);
+                    SecondLevel3.setEnabled(true);
+                    SecondLevel4.setEnabled(true);
+                    ThirdLevel1.setEnabled(true);
+                    ThirdLevel2.setEnabled(true);
+                    ThirdLevel3.setEnabled(true);
+                    ThirdLevel4.setEnabled(true);
+                    ReserveCardFirst1.setEnabled(true);
+                    ReserveCardFirst2.setEnabled(true);
+                    ReserveCardFirst3.setEnabled(true);
+                    ReserveCardFirst4.setEnabled(true);
+                    ReserveCardSecond1.setEnabled(true);
+                    ReserveCardSecond2.setEnabled(true);
+                    ReserveCardSecond3.setEnabled(true);
+                    ReserveCardSecond4.setEnabled(true);
+                    ReserveCardThird1.setEnabled(true);
+                    ReserveCardThird2.setEnabled(true);
+                    ReserveCardThird3.setEnabled(true);
+                    ReserveCardThird4.setEnabled(true);
                     TwoCoin.setEnabled(true);
+                    ThreeCoin.setEnabled(true);
+                    Player1.ReserveCard1.setEnabled(true);
+                    Player1.ReserveCard2.setEnabled(true);
+                    Player1.ReserveCard3.setEnabled(true);
+                    Player2.ReserveCard1.setEnabled(true);
+                    Player2.ReserveCard2.setEnabled(true);
+                    Player2.ReserveCard3.setEnabled(true);
 
                 }
             }
@@ -891,9 +1188,6 @@ public class Main extends JFrame {
                            ThreeWhite.setEnabled(true);
                            FourWhite.setEnabled(true);
                            FinishReturning.setEnabled(true);
-                           PrizeClaw1.setEnabled(false);
-                           PrizeClaw2.setEnabled(false);
-                           PrizeClaw3.setEnabled(false);
                            FirstLevel1.setEnabled(false);
                            FirstLevel2.setEnabled(false);
                            FirstLevel3.setEnabled(false);
@@ -929,6 +1223,38 @@ public class Main extends JFrame {
                        }
                        else {
                            PlayerTurn = false;
+                           FirstLevel1.setEnabled(true);
+                           FirstLevel2.setEnabled(true);
+                           FirstLevel3.setEnabled(true);
+                           FirstLevel4.setEnabled(true);
+                           SecondLevel1.setEnabled(true);
+                           SecondLevel2.setEnabled(true);
+                           SecondLevel3.setEnabled(true);
+                           SecondLevel4.setEnabled(true);
+                           ThirdLevel1.setEnabled(true);
+                           ThirdLevel2.setEnabled(true);
+                           ThirdLevel3.setEnabled(true);
+                           ThirdLevel4.setEnabled(true);
+                           ReserveCardFirst1.setEnabled(true);
+                           ReserveCardFirst2.setEnabled(true);
+                           ReserveCardFirst3.setEnabled(true);
+                           ReserveCardFirst4.setEnabled(true);
+                           ReserveCardSecond1.setEnabled(true);
+                           ReserveCardSecond2.setEnabled(true);
+                           ReserveCardSecond3.setEnabled(true);
+                           ReserveCardSecond4.setEnabled(true);
+                           ReserveCardThird1.setEnabled(true);
+                           ReserveCardThird2.setEnabled(true);
+                           ReserveCardThird3.setEnabled(true);
+                           ReserveCardThird4.setEnabled(true);
+                           TwoCoin.setEnabled(true);
+                           ThreeCoin.setEnabled(true);
+                           Player1.ReserveCard1.setEnabled(true);
+                           Player1.ReserveCard2.setEnabled(true);
+                           Player1.ReserveCard3.setEnabled(true);
+                           Player2.ReserveCard1.setEnabled(true);
+                           Player2.ReserveCard2.setEnabled(true);
+                           Player2.ReserveCard3.setEnabled(true);
                        }
 
 
@@ -973,9 +1299,6 @@ public class Main extends JFrame {
                            ThreeWhite.setEnabled(true);
                            FourWhite.setEnabled(true);
                            FinishReturning.setEnabled(true);
-                           PrizeClaw1.setEnabled(false);
-                           PrizeClaw2.setEnabled(false);
-                           PrizeClaw3.setEnabled(false);
                            FirstLevel1.setEnabled(false);
                            FirstLevel2.setEnabled(false);
                            FirstLevel3.setEnabled(false);
@@ -1011,6 +1334,38 @@ public class Main extends JFrame {
                        }
                        else {
                            PlayerTurn = true;
+                           FirstLevel1.setEnabled(true);
+                           FirstLevel2.setEnabled(true);
+                           FirstLevel3.setEnabled(true);
+                           FirstLevel4.setEnabled(true);
+                           SecondLevel1.setEnabled(true);
+                           SecondLevel2.setEnabled(true);
+                           SecondLevel3.setEnabled(true);
+                           SecondLevel4.setEnabled(true);
+                           ThirdLevel1.setEnabled(true);
+                           ThirdLevel2.setEnabled(true);
+                           ThirdLevel3.setEnabled(true);
+                           ThirdLevel4.setEnabled(true);
+                           ReserveCardFirst1.setEnabled(true);
+                           ReserveCardFirst2.setEnabled(true);
+                           ReserveCardFirst3.setEnabled(true);
+                           ReserveCardFirst4.setEnabled(true);
+                           ReserveCardSecond1.setEnabled(true);
+                           ReserveCardSecond2.setEnabled(true);
+                           ReserveCardSecond3.setEnabled(true);
+                           ReserveCardSecond4.setEnabled(true);
+                           ReserveCardThird1.setEnabled(true);
+                           ReserveCardThird2.setEnabled(true);
+                           ReserveCardThird3.setEnabled(true);
+                           ReserveCardThird4.setEnabled(true);
+                           TwoCoin.setEnabled(true);
+                           ThreeCoin.setEnabled(true);
+                           Player1.ReserveCard1.setEnabled(true);
+                           Player1.ReserveCard2.setEnabled(true);
+                           Player1.ReserveCard3.setEnabled(true);
+                           Player2.ReserveCard1.setEnabled(true);
+                           Player2.ReserveCard2.setEnabled(true);
+                           Player2.ReserveCard3.setEnabled(true);
                        }
                    }
                }
@@ -1022,8 +1377,38 @@ public class Main extends JFrame {
                    Green1.setEnabled(false);
                    Black1.setEnabled(false);
                    White1.setEnabled(false);
-                   ThreeCoin.setEnabled(true);
+                   FirstLevel1.setEnabled(true);
+                   FirstLevel2.setEnabled(true);
+                   FirstLevel3.setEnabled(true);
+                   FirstLevel4.setEnabled(true);
+                   SecondLevel1.setEnabled(true);
+                   SecondLevel2.setEnabled(true);
+                   SecondLevel3.setEnabled(true);
+                   SecondLevel4.setEnabled(true);
+                   ThirdLevel1.setEnabled(true);
+                   ThirdLevel2.setEnabled(true);
+                   ThirdLevel3.setEnabled(true);
+                   ThirdLevel4.setEnabled(true);
+                   ReserveCardFirst1.setEnabled(true);
+                   ReserveCardFirst2.setEnabled(true);
+                   ReserveCardFirst3.setEnabled(true);
+                   ReserveCardFirst4.setEnabled(true);
+                   ReserveCardSecond1.setEnabled(true);
+                   ReserveCardSecond2.setEnabled(true);
+                   ReserveCardSecond3.setEnabled(true);
+                   ReserveCardSecond4.setEnabled(true);
+                   ReserveCardThird1.setEnabled(true);
+                   ReserveCardThird2.setEnabled(true);
+                   ReserveCardThird3.setEnabled(true);
+                   ReserveCardThird4.setEnabled(true);
                    TwoCoin.setEnabled(true);
+                   ThreeCoin.setEnabled(true);
+                   Player1.ReserveCard1.setEnabled(true);
+                   Player1.ReserveCard2.setEnabled(true);
+                   Player1.ReserveCard3.setEnabled(true);
+                   Player2.ReserveCard1.setEnabled(true);
+                   Player2.ReserveCard2.setEnabled(true);
+                   Player2.ReserveCard3.setEnabled(true);
 
                }
            }
@@ -1074,9 +1459,6 @@ public class Main extends JFrame {
                            ThreeWhite.setEnabled(true);
                            FourWhite.setEnabled(true);
                            FinishReturning.setEnabled(true);
-                           PrizeClaw1.setEnabled(false);
-                           PrizeClaw2.setEnabled(false);
-                           PrizeClaw3.setEnabled(false);
                            FirstLevel1.setEnabled(false);
                            FirstLevel2.setEnabled(false);
                            FirstLevel3.setEnabled(false);
@@ -1112,6 +1494,38 @@ public class Main extends JFrame {
                        }
                        else {
                            PlayerTurn = false;
+                           FirstLevel1.setEnabled(true);
+                           FirstLevel2.setEnabled(true);
+                           FirstLevel3.setEnabled(true);
+                           FirstLevel4.setEnabled(true);
+                           SecondLevel1.setEnabled(true);
+                           SecondLevel2.setEnabled(true);
+                           SecondLevel3.setEnabled(true);
+                           SecondLevel4.setEnabled(true);
+                           ThirdLevel1.setEnabled(true);
+                           ThirdLevel2.setEnabled(true);
+                           ThirdLevel3.setEnabled(true);
+                           ThirdLevel4.setEnabled(true);
+                           ReserveCardFirst1.setEnabled(true);
+                           ReserveCardFirst2.setEnabled(true);
+                           ReserveCardFirst3.setEnabled(true);
+                           ReserveCardFirst4.setEnabled(true);
+                           ReserveCardSecond1.setEnabled(true);
+                           ReserveCardSecond2.setEnabled(true);
+                           ReserveCardSecond3.setEnabled(true);
+                           ReserveCardSecond4.setEnabled(true);
+                           ReserveCardThird1.setEnabled(true);
+                           ReserveCardThird2.setEnabled(true);
+                           ReserveCardThird3.setEnabled(true);
+                           ReserveCardThird4.setEnabled(true);
+                           TwoCoin.setEnabled(true);
+                           ThreeCoin.setEnabled(true);
+                           Player1.ReserveCard1.setEnabled(true);
+                           Player1.ReserveCard2.setEnabled(true);
+                           Player1.ReserveCard3.setEnabled(true);
+                           Player2.ReserveCard1.setEnabled(true);
+                           Player2.ReserveCard2.setEnabled(true);
+                           Player2.ReserveCard3.setEnabled(true);
                        }
                    }
                    else{
@@ -1154,9 +1568,6 @@ public class Main extends JFrame {
                            ThreeWhite.setEnabled(true);
                            FourWhite.setEnabled(true);
                            FinishReturning.setEnabled(true);
-                           PrizeClaw1.setEnabled(false);
-                           PrizeClaw2.setEnabled(false);
-                           PrizeClaw3.setEnabled(false);
                            FirstLevel1.setEnabled(false);
                            FirstLevel2.setEnabled(false);
                            FirstLevel3.setEnabled(false);
@@ -1192,6 +1603,38 @@ public class Main extends JFrame {
                        }
                        else {
                            PlayerTurn = true;
+                           FirstLevel1.setEnabled(true);
+                           FirstLevel2.setEnabled(true);
+                           FirstLevel3.setEnabled(true);
+                           FirstLevel4.setEnabled(true);
+                           SecondLevel1.setEnabled(true);
+                           SecondLevel2.setEnabled(true);
+                           SecondLevel3.setEnabled(true);
+                           SecondLevel4.setEnabled(true);
+                           ThirdLevel1.setEnabled(true);
+                           ThirdLevel2.setEnabled(true);
+                           ThirdLevel3.setEnabled(true);
+                           ThirdLevel4.setEnabled(true);
+                           ReserveCardFirst1.setEnabled(true);
+                           ReserveCardFirst2.setEnabled(true);
+                           ReserveCardFirst3.setEnabled(true);
+                           ReserveCardFirst4.setEnabled(true);
+                           ReserveCardSecond1.setEnabled(true);
+                           ReserveCardSecond2.setEnabled(true);
+                           ReserveCardSecond3.setEnabled(true);
+                           ReserveCardSecond4.setEnabled(true);
+                           ReserveCardThird1.setEnabled(true);
+                           ReserveCardThird2.setEnabled(true);
+                           ReserveCardThird3.setEnabled(true);
+                           ReserveCardThird4.setEnabled(true);
+                           TwoCoin.setEnabled(true);
+                           ThreeCoin.setEnabled(true);
+                           Player1.ReserveCard1.setEnabled(true);
+                           Player1.ReserveCard2.setEnabled(true);
+                           Player1.ReserveCard3.setEnabled(true);
+                           Player2.ReserveCard1.setEnabled(true);
+                           Player2.ReserveCard2.setEnabled(true);
+                           Player2.ReserveCard3.setEnabled(true);
                        }
                    }
                }
@@ -1203,8 +1646,38 @@ public class Main extends JFrame {
                    Green1.setEnabled(false);
                    Black1.setEnabled(false);
                    White1.setEnabled(false);
-                   ThreeCoin.setEnabled(true);
+                   FirstLevel1.setEnabled(true);
+                   FirstLevel2.setEnabled(true);
+                   FirstLevel3.setEnabled(true);
+                   FirstLevel4.setEnabled(true);
+                   SecondLevel1.setEnabled(true);
+                   SecondLevel2.setEnabled(true);
+                   SecondLevel3.setEnabled(true);
+                   SecondLevel4.setEnabled(true);
+                   ThirdLevel1.setEnabled(true);
+                   ThirdLevel2.setEnabled(true);
+                   ThirdLevel3.setEnabled(true);
+                   ThirdLevel4.setEnabled(true);
+                   ReserveCardFirst1.setEnabled(true);
+                   ReserveCardFirst2.setEnabled(true);
+                   ReserveCardFirst3.setEnabled(true);
+                   ReserveCardFirst4.setEnabled(true);
+                   ReserveCardSecond1.setEnabled(true);
+                   ReserveCardSecond2.setEnabled(true);
+                   ReserveCardSecond3.setEnabled(true);
+                   ReserveCardSecond4.setEnabled(true);
+                   ReserveCardThird1.setEnabled(true);
+                   ReserveCardThird2.setEnabled(true);
+                   ReserveCardThird3.setEnabled(true);
+                   ReserveCardThird4.setEnabled(true);
                    TwoCoin.setEnabled(true);
+                   ThreeCoin.setEnabled(true);
+                   Player1.ReserveCard1.setEnabled(true);
+                   Player1.ReserveCard2.setEnabled(true);
+                   Player1.ReserveCard3.setEnabled(true);
+                   Player2.ReserveCard1.setEnabled(true);
+                   Player2.ReserveCard2.setEnabled(true);
+                   Player2.ReserveCard3.setEnabled(true);
 
                }
            }
@@ -1364,9 +1837,7 @@ public class Main extends JFrame {
                         PlayerTurn = false;
                         Player1CoinCounter.setText("red = " + Player1.RedCoin + ",green = " + Player1.GreenCoin + ",blue = "
                                 + Player1.BlueCoin + ",white = " + Player1.WhiteCoin + ",black = " + Player1.BlackCoin);
-                        PrizeClaw1.setEnabled(true);
-                        PrizeClaw2.setEnabled(true);
-                        PrizeClaw3.setEnabled(true);
+
                         FirstLevel1.setEnabled(true);
                         FirstLevel2.setEnabled(true);
                         FirstLevel3.setEnabled(true);
@@ -1515,9 +1986,7 @@ public class Main extends JFrame {
                         PlayerTurn = true;
                         Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
                                 + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
-                        PrizeClaw1.setEnabled(true);
-                        PrizeClaw2.setEnabled(true);
-                        PrizeClaw3.setEnabled(true);
+
                         FirstLevel1.setEnabled(true);
                         FirstLevel2.setEnabled(true);
                         FirstLevel3.setEnabled(true);
@@ -1568,6 +2037,40 @@ public class Main extends JFrame {
                 White2.setEnabled(true);
                 finish.setEnabled(true);
                 count = 0;
+
+                FirstLevel1.setEnabled(false);
+                FirstLevel2.setEnabled(false);
+                FirstLevel3.setEnabled(false);
+                FirstLevel4.setEnabled(false);
+                SecondLevel1.setEnabled(false);
+                SecondLevel2.setEnabled(false);
+                SecondLevel3.setEnabled(false);
+                SecondLevel4.setEnabled(false);
+                ThirdLevel1.setEnabled(false);
+                ThirdLevel2.setEnabled(false);
+                ThirdLevel3.setEnabled(false);
+                ThirdLevel4.setEnabled(false);
+                ReserveCardFirst1.setEnabled(false);
+                ReserveCardFirst2.setEnabled(false);
+                ReserveCardFirst3.setEnabled(false);
+                ReserveCardFirst4.setEnabled(false);
+                ReserveCardSecond1.setEnabled(false);
+                ReserveCardSecond2.setEnabled(false);
+                ReserveCardSecond3.setEnabled(false);
+                ReserveCardSecond4.setEnabled(false);
+                ReserveCardThird1.setEnabled(false);
+                ReserveCardThird2.setEnabled(false);
+                ReserveCardThird3.setEnabled(false);
+                ReserveCardThird4.setEnabled(false);
+                TwoCoin.setEnabled(false);
+                ThreeCoin.setEnabled(false);
+                Player1.ReserveCard1.setEnabled(false);
+                Player1.ReserveCard2.setEnabled(false);
+                Player1.ReserveCard3.setEnabled(false);
+                Player2.ReserveCard1.setEnabled(false);
+                Player2.ReserveCard2.setEnabled(false);
+                Player2.ReserveCard3.setEnabled(false);
+
             }
         });
         finish.addActionListener(new ActionListener() {
@@ -1591,14 +2094,44 @@ public class Main extends JFrame {
                 sw = true ;
                 if(count!=3) {
                     showMessageDialog(null, "you can't pick these coins");
-                    ThreeCoin.setEnabled(true);
-                    TwoCoin.setEnabled(true);
                     Red2.setEnabled(false);
                     Blue2.setEnabled(false);
                     Green2.setEnabled(false);
                     Black2.setEnabled(false);
                     White2.setEnabled(false);
                     finish.setEnabled(false);
+                    FirstLevel1.setEnabled(true);
+                    FirstLevel2.setEnabled(true);
+                    FirstLevel3.setEnabled(true);
+                    FirstLevel4.setEnabled(true);
+                    SecondLevel1.setEnabled(true);
+                    SecondLevel2.setEnabled(true);
+                    SecondLevel3.setEnabled(true);
+                    SecondLevel4.setEnabled(true);
+                    ThirdLevel1.setEnabled(true);
+                    ThirdLevel2.setEnabled(true);
+                    ThirdLevel3.setEnabled(true);
+                    ThirdLevel4.setEnabled(true);
+                    ReserveCardFirst1.setEnabled(true);
+                    ReserveCardFirst2.setEnabled(true);
+                    ReserveCardFirst3.setEnabled(true);
+                    ReserveCardFirst4.setEnabled(true);
+                    ReserveCardSecond1.setEnabled(true);
+                    ReserveCardSecond2.setEnabled(true);
+                    ReserveCardSecond3.setEnabled(true);
+                    ReserveCardSecond4.setEnabled(true);
+                    ReserveCardThird1.setEnabled(true);
+                    ReserveCardThird2.setEnabled(true);
+                    ReserveCardThird3.setEnabled(true);
+                    ReserveCardThird4.setEnabled(true);
+                    TwoCoin.setEnabled(true);
+                    ThreeCoin.setEnabled(true);
+                    Player1.ReserveCard1.setEnabled(true);
+                    Player1.ReserveCard2.setEnabled(true);
+                    Player1.ReserveCard3.setEnabled(true);
+                    Player2.ReserveCard1.setEnabled(true);
+                    Player2.ReserveCard2.setEnabled(true);
+                    Player2.ReserveCard3.setEnabled(true);
                 }
                 else {
                     if(Red2.isSelected() && Coins.RedCoin == 0){
@@ -1618,14 +2151,44 @@ public class Main extends JFrame {
                     }
                     if(!sw){
                         showMessageDialog(null, "you can't pick these coins");
-                        ThreeCoin.setEnabled(true);
-                        TwoCoin.setEnabled(true);
                         Red2.setEnabled(false);
                         Blue2.setEnabled(false);
                         Green2.setEnabled(false);
                         Black2.setEnabled(false);
                         White2.setEnabled(false);
                         finish.setEnabled(false);
+                        FirstLevel1.setEnabled(true);
+                        FirstLevel2.setEnabled(true);
+                        FirstLevel3.setEnabled(true);
+                        FirstLevel4.setEnabled(true);
+                        SecondLevel1.setEnabled(true);
+                        SecondLevel2.setEnabled(true);
+                        SecondLevel3.setEnabled(true);
+                        SecondLevel4.setEnabled(true);
+                        ThirdLevel1.setEnabled(true);
+                        ThirdLevel2.setEnabled(true);
+                        ThirdLevel3.setEnabled(true);
+                        ThirdLevel4.setEnabled(true);
+                        ReserveCardFirst1.setEnabled(true);
+                        ReserveCardFirst2.setEnabled(true);
+                        ReserveCardFirst3.setEnabled(true);
+                        ReserveCardFirst4.setEnabled(true);
+                        ReserveCardSecond1.setEnabled(true);
+                        ReserveCardSecond2.setEnabled(true);
+                        ReserveCardSecond3.setEnabled(true);
+                        ReserveCardSecond4.setEnabled(true);
+                        ReserveCardThird1.setEnabled(true);
+                        ReserveCardThird2.setEnabled(true);
+                        ReserveCardThird3.setEnabled(true);
+                        ReserveCardThird4.setEnabled(true);
+                        TwoCoin.setEnabled(true);
+                        ThreeCoin.setEnabled(true);
+                        Player1.ReserveCard1.setEnabled(true);
+                        Player1.ReserveCard2.setEnabled(true);
+                        Player1.ReserveCard3.setEnabled(true);
+                        Player2.ReserveCard1.setEnabled(true);
+                        Player2.ReserveCard2.setEnabled(true);
+                        Player2.ReserveCard3.setEnabled(true);
                     }
                     else {
                         if(Red2.isSelected()){
@@ -1679,14 +2242,45 @@ public class Main extends JFrame {
                         Player2CoinCounter.setText("red = " + Player2.RedCoin + ",green = " + Player2.GreenCoin + ",blue = "
                                 + Player2.BlueCoin + ",white = " + Player2.WhiteCoin + ",black = " + Player2.BlackCoin);
 
-                        ThreeCoin.setEnabled(true);
-                        TwoCoin.setEnabled(true);
                         Red2.setEnabled(false);
                         Blue2.setEnabled(false);
                         Green2.setEnabled(false);
                         Black2.setEnabled(false);
                         White2.setEnabled(false);
                         finish.setEnabled(false);
+                        FirstLevel1.setEnabled(true);
+                        FirstLevel2.setEnabled(true);
+                        FirstLevel3.setEnabled(true);
+                        FirstLevel4.setEnabled(true);
+                        SecondLevel1.setEnabled(true);
+                        SecondLevel2.setEnabled(true);
+                        SecondLevel3.setEnabled(true);
+                        SecondLevel4.setEnabled(true);
+                        ThirdLevel1.setEnabled(true);
+                        ThirdLevel2.setEnabled(true);
+                        ThirdLevel3.setEnabled(true);
+                        ThirdLevel4.setEnabled(true);
+                        ReserveCardFirst1.setEnabled(true);
+                        ReserveCardFirst2.setEnabled(true);
+                        ReserveCardFirst3.setEnabled(true);
+                        ReserveCardFirst4.setEnabled(true);
+                        ReserveCardSecond1.setEnabled(true);
+                        ReserveCardSecond2.setEnabled(true);
+                        ReserveCardSecond3.setEnabled(true);
+                        ReserveCardSecond4.setEnabled(true);
+                        ReserveCardThird1.setEnabled(true);
+                        ReserveCardThird2.setEnabled(true);
+                        ReserveCardThird3.setEnabled(true);
+                        ReserveCardThird4.setEnabled(true);
+                        TwoCoin.setEnabled(true);
+                        ThreeCoin.setEnabled(true);
+                        Player1.ReserveCard1.setEnabled(true);
+                        Player1.ReserveCard2.setEnabled(true);
+                        Player1.ReserveCard3.setEnabled(true);
+                        Player2.ReserveCard1.setEnabled(true);
+                        Player2.ReserveCard2.setEnabled(true);
+                        Player2.ReserveCard3.setEnabled(true);
+
                         if (PlayerTurn) {
                             if(Player1.RedCoin +Player1.BlueCoin+Player1.GreenCoin +Player1.WhiteCoin+Player1.BlackCoin > 10){
                                 showMessageDialog(null , "your coins are more than 10, you must return them!");
@@ -1716,9 +2310,7 @@ public class Main extends JFrame {
                                 ThreeWhite.setEnabled(true);
                                 FourWhite.setEnabled(true);
                                 FinishReturning.setEnabled(true);
-                                PrizeClaw1.setEnabled(false);
-                                PrizeClaw2.setEnabled(false);
-                                PrizeClaw3.setEnabled(false);
+
                                 FirstLevel1.setEnabled(false);
                                 FirstLevel2.setEnabled(false);
                                 FirstLevel3.setEnabled(false);
@@ -1785,9 +2377,7 @@ public class Main extends JFrame {
                                 ThreeWhite.setEnabled(true);
                                 FourWhite.setEnabled(true);
                                 FinishReturning.setEnabled(true);
-                                PrizeClaw1.setEnabled(false);
-                                PrizeClaw2.setEnabled(false);
-                                PrizeClaw3.setEnabled(false);
+
                                 FirstLevel1.setEnabled(false);
                                 FirstLevel2.setEnabled(false);
                                 FirstLevel3.setEnabled(false);
@@ -1857,10 +2447,66 @@ public class Main extends JFrame {
         Store.setBackground(Color.WHITE);
         RightPanel.add(Store , gbc);
 
+        none = new JButton("NONE");
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        none.setPreferredSize(new Dimension(110 , 100));
+        RightPanel.add(none,gbc);
+
+        none.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(PlayerTurn){
+                    PlayerTurn = false;
+                }
+                else {
+                    PlayerTurn = true;
+                }
+                none.setEnabled(false);
+                PrizeClaw1.setEnabled(false);
+                PrizeClaw2.setEnabled(false);
+                PrizeClaw3.setEnabled(false);
+
+                FirstLevel1.setEnabled(true);
+                FirstLevel2.setEnabled(true);
+                FirstLevel3.setEnabled(true);
+                FirstLevel4.setEnabled(true);
+                SecondLevel1.setEnabled(true);
+                SecondLevel2.setEnabled(true);
+                SecondLevel3.setEnabled(true);
+                SecondLevel4.setEnabled(true);
+                ThirdLevel1.setEnabled(true);
+                ThirdLevel2.setEnabled(true);
+                ThirdLevel3.setEnabled(true);
+                ThirdLevel4.setEnabled(true);
+                ReserveCardFirst1.setEnabled(true);
+                ReserveCardFirst2.setEnabled(true);
+                ReserveCardFirst3.setEnabled(true);
+                ReserveCardFirst4.setEnabled(true);
+                ReserveCardSecond1.setEnabled(true);
+                ReserveCardSecond2.setEnabled(true);
+                ReserveCardSecond3.setEnabled(true);
+                ReserveCardSecond4.setEnabled(true);
+                ReserveCardThird1.setEnabled(true);
+                ReserveCardThird2.setEnabled(true);
+                ReserveCardThird3.setEnabled(true);
+                ReserveCardThird4.setEnabled(true);
+                TwoCoin.setEnabled(true);
+                ThreeCoin.setEnabled(true);
+                Player1.ReserveCard1.setEnabled(true);
+                Player1.ReserveCard2.setEnabled(true);
+                Player1.ReserveCard3.setEnabled(true);
+                Player2.ReserveCard1.setEnabled(true);
+                Player2.ReserveCard2.setEnabled(true);
+                Player2.ReserveCard3.setEnabled(true);
+
+            }
+        });
+
 
         Icon PrizeClaw = new ImageIcon("D:/programming projects/Amusement Park/image/PrizeClawCard.PNG");
         PrizeClaw1 = new JButton(PrizeClaw);
-        gbc.gridx = 0;
+        gbc.gridx = 1;
         gbc.gridy = 1;
         PrizeClaw1.setPreferredSize(new Dimension(110,100));
         PrizeClaw1.setBackground(Color.WHITE);
@@ -1887,17 +2533,47 @@ public class Main extends JFrame {
                 if (PlayerTurn){
                     //player1 turn
                     if(Player1.SpecialRedCoin >= 4 && Player1.SpecialWhiteCoin >= 4){
-                        if (Coins.GoldCoin > 0){
-                            Coins.GoldCoin -- ;
-                            Player1.SpecialGoldCoin++;
-                        }
                         Player1.Score += 3 ;
                         Player1Score.setText(String.valueOf(Player1.Score));
                         PrizeClaw1.setEnabled(false);
                         PlayerTurn=false;
-                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
-                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
-                                ",gold = " + Player1.SpecialGoldCoin);
+                        none.setEnabled(false);
+                        PrizeClaw1.setEnabled(false);
+                        PrizeClaw2.setEnabled(false);
+                        PrizeClaw3.setEnabled(false);
+
+                        FirstLevel1.setEnabled(true);
+                        FirstLevel2.setEnabled(true);
+                        FirstLevel3.setEnabled(true);
+                        FirstLevel4.setEnabled(true);
+                        SecondLevel1.setEnabled(true);
+                        SecondLevel2.setEnabled(true);
+                        SecondLevel3.setEnabled(true);
+                        SecondLevel4.setEnabled(true);
+                        ThirdLevel1.setEnabled(true);
+                        ThirdLevel2.setEnabled(true);
+                        ThirdLevel3.setEnabled(true);
+                        ThirdLevel4.setEnabled(true);
+                        ReserveCardFirst1.setEnabled(true);
+                        ReserveCardFirst2.setEnabled(true);
+                        ReserveCardFirst3.setEnabled(true);
+                        ReserveCardFirst4.setEnabled(true);
+                        ReserveCardSecond1.setEnabled(true);
+                        ReserveCardSecond2.setEnabled(true);
+                        ReserveCardSecond3.setEnabled(true);
+                        ReserveCardSecond4.setEnabled(true);
+                        ReserveCardThird1.setEnabled(true);
+                        ReserveCardThird2.setEnabled(true);
+                        ReserveCardThird3.setEnabled(true);
+                        ReserveCardThird4.setEnabled(true);
+                        TwoCoin.setEnabled(true);
+                        ThreeCoin.setEnabled(true);
+                        Player1.ReserveCard1.setEnabled(true);
+                        Player1.ReserveCard2.setEnabled(true);
+                        Player1.ReserveCard3.setEnabled(true);
+                        Player2.ReserveCard1.setEnabled(true);
+                        Player2.ReserveCard2.setEnabled(true);
+                        Player2.ReserveCard3.setEnabled(true);
                         if (Player1.Score >= 15){
                             showMessageDialog(null,"PLAYER ONE WON!");
                             System.exit(0);
@@ -1910,17 +2586,47 @@ public class Main extends JFrame {
                 else{
                     //player2 turn
                     if(Player2.SpecialRedCoin >= 4 && Player2.SpecialWhiteCoin >= 4){
-                        if (Coins.GoldCoin > 0){
-                            Coins.GoldCoin -- ;
-                            Player2.SpecialGoldCoin++;
-                        }
                         Player2.Score += 3 ;
                         Player2Score.setText(String.valueOf(Player2.Score));
                         PrizeClaw1.setEnabled(false);
                         PlayerTurn = true ;
-                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
-                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
-                                ",gold = " + Player2.SpecialGoldCoin);
+                        none.setEnabled(false);
+                        PrizeClaw1.setEnabled(false);
+                        PrizeClaw2.setEnabled(false);
+                        PrizeClaw3.setEnabled(false);
+
+                        FirstLevel1.setEnabled(true);
+                        FirstLevel2.setEnabled(true);
+                        FirstLevel3.setEnabled(true);
+                        FirstLevel4.setEnabled(true);
+                        SecondLevel1.setEnabled(true);
+                        SecondLevel2.setEnabled(true);
+                        SecondLevel3.setEnabled(true);
+                        SecondLevel4.setEnabled(true);
+                        ThirdLevel1.setEnabled(true);
+                        ThirdLevel2.setEnabled(true);
+                        ThirdLevel3.setEnabled(true);
+                        ThirdLevel4.setEnabled(true);
+                        ReserveCardFirst1.setEnabled(true);
+                        ReserveCardFirst2.setEnabled(true);
+                        ReserveCardFirst3.setEnabled(true);
+                        ReserveCardFirst4.setEnabled(true);
+                        ReserveCardSecond1.setEnabled(true);
+                        ReserveCardSecond2.setEnabled(true);
+                        ReserveCardSecond3.setEnabled(true);
+                        ReserveCardSecond4.setEnabled(true);
+                        ReserveCardThird1.setEnabled(true);
+                        ReserveCardThird2.setEnabled(true);
+                        ReserveCardThird3.setEnabled(true);
+                        ReserveCardThird4.setEnabled(true);
+                        TwoCoin.setEnabled(true);
+                        ThreeCoin.setEnabled(true);
+                        Player1.ReserveCard1.setEnabled(true);
+                        Player1.ReserveCard2.setEnabled(true);
+                        Player1.ReserveCard3.setEnabled(true);
+                        Player2.ReserveCard1.setEnabled(true);
+                        Player2.ReserveCard2.setEnabled(true);
+                        Player2.ReserveCard3.setEnabled(true);
                         if (Player2.Score >= 15){
                             showMessageDialog(null,"PLAYER TWO WON!");
                             System.exit(0);
@@ -1934,7 +2640,7 @@ public class Main extends JFrame {
         });
 
         PrizeClaw2 = new JButton(PrizeClaw);
-        gbc.gridx = 1;
+        gbc.gridx = 2;
         gbc.gridy = 1;
         PrizeClaw2.setPreferredSize(new Dimension(110,100));
         PrizeClaw2.setBackground(Color.WHITE);
@@ -1961,17 +2667,47 @@ public class Main extends JFrame {
                 if (PlayerTurn){
                     //player1 turn
                     if(Player1.SpecialBlueCoin >= 5 && Player1.SpecialGreenCoin >= 5){
-                        if (Coins.GoldCoin > 0){
-                            Coins.GoldCoin -- ;
-                            Player1.SpecialGoldCoin++;
-                        }
                         Player1.Score += 4 ;
                         Player1Score.setText(String.valueOf(Player1.Score));
                         PrizeClaw2.setEnabled(false);
                         PlayerTurn = false ;
-                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
-                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
-                                ",gold = " + Player1.SpecialGoldCoin);
+                        none.setEnabled(false);
+                        PrizeClaw1.setEnabled(false);
+                        PrizeClaw2.setEnabled(false);
+                        PrizeClaw3.setEnabled(false);
+
+                        FirstLevel1.setEnabled(true);
+                        FirstLevel2.setEnabled(true);
+                        FirstLevel3.setEnabled(true);
+                        FirstLevel4.setEnabled(true);
+                        SecondLevel1.setEnabled(true);
+                        SecondLevel2.setEnabled(true);
+                        SecondLevel3.setEnabled(true);
+                        SecondLevel4.setEnabled(true);
+                        ThirdLevel1.setEnabled(true);
+                        ThirdLevel2.setEnabled(true);
+                        ThirdLevel3.setEnabled(true);
+                        ThirdLevel4.setEnabled(true);
+                        ReserveCardFirst1.setEnabled(true);
+                        ReserveCardFirst2.setEnabled(true);
+                        ReserveCardFirst3.setEnabled(true);
+                        ReserveCardFirst4.setEnabled(true);
+                        ReserveCardSecond1.setEnabled(true);
+                        ReserveCardSecond2.setEnabled(true);
+                        ReserveCardSecond3.setEnabled(true);
+                        ReserveCardSecond4.setEnabled(true);
+                        ReserveCardThird1.setEnabled(true);
+                        ReserveCardThird2.setEnabled(true);
+                        ReserveCardThird3.setEnabled(true);
+                        ReserveCardThird4.setEnabled(true);
+                        TwoCoin.setEnabled(true);
+                        ThreeCoin.setEnabled(true);
+                        Player1.ReserveCard1.setEnabled(true);
+                        Player1.ReserveCard2.setEnabled(true);
+                        Player1.ReserveCard3.setEnabled(true);
+                        Player2.ReserveCard1.setEnabled(true);
+                        Player2.ReserveCard2.setEnabled(true);
+                        Player2.ReserveCard3.setEnabled(true);
 
                         if (Player1.Score >= 15){
                             showMessageDialog(null,"PLAYER ONE WON!");
@@ -1985,17 +2721,47 @@ public class Main extends JFrame {
                 else{
                     //player2 turn
                     if(Player2.SpecialBlueCoin >= 5 && Player2.SpecialGreenCoin >= 5){
-                        if (Coins.GoldCoin > 0){
-                            Coins.GoldCoin -- ;
-                            Player2.SpecialGoldCoin++;
-                        }
                         Player2.Score += 4 ;
                         Player2Score.setText(String.valueOf(Player2.Score));
                         PrizeClaw2.setEnabled(false);
                         PlayerTurn = true ;
-                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
-                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
-                                ",gold = " + Player2.SpecialGoldCoin);
+                        none.setEnabled(false);
+                        PrizeClaw1.setEnabled(false);
+                        PrizeClaw2.setEnabled(false);
+                        PrizeClaw3.setEnabled(false);
+
+                        FirstLevel1.setEnabled(true);
+                        FirstLevel2.setEnabled(true);
+                        FirstLevel3.setEnabled(true);
+                        FirstLevel4.setEnabled(true);
+                        SecondLevel1.setEnabled(true);
+                        SecondLevel2.setEnabled(true);
+                        SecondLevel3.setEnabled(true);
+                        SecondLevel4.setEnabled(true);
+                        ThirdLevel1.setEnabled(true);
+                        ThirdLevel2.setEnabled(true);
+                        ThirdLevel3.setEnabled(true);
+                        ThirdLevel4.setEnabled(true);
+                        ReserveCardFirst1.setEnabled(true);
+                        ReserveCardFirst2.setEnabled(true);
+                        ReserveCardFirst3.setEnabled(true);
+                        ReserveCardFirst4.setEnabled(true);
+                        ReserveCardSecond1.setEnabled(true);
+                        ReserveCardSecond2.setEnabled(true);
+                        ReserveCardSecond3.setEnabled(true);
+                        ReserveCardSecond4.setEnabled(true);
+                        ReserveCardThird1.setEnabled(true);
+                        ReserveCardThird2.setEnabled(true);
+                        ReserveCardThird3.setEnabled(true);
+                        ReserveCardThird4.setEnabled(true);
+                        TwoCoin.setEnabled(true);
+                        ThreeCoin.setEnabled(true);
+                        Player1.ReserveCard1.setEnabled(true);
+                        Player1.ReserveCard2.setEnabled(true);
+                        Player1.ReserveCard3.setEnabled(true);
+                        Player2.ReserveCard1.setEnabled(true);
+                        Player2.ReserveCard2.setEnabled(true);
+                        Player2.ReserveCard3.setEnabled(true);
                         if (Player2.Score >= 15){
                             showMessageDialog(null,"PLAYER TWO WON!");
                             System.exit(0);
@@ -2010,7 +2776,7 @@ public class Main extends JFrame {
 
 
         PrizeClaw3 = new JButton(PrizeClaw);
-        gbc.gridx = 2;
+        gbc.gridx = 3;
         gbc.gridy = 1;
         PrizeClaw3.setPreferredSize(new Dimension(110,100));
         PrizeClaw3.setBackground(Color.WHITE);
@@ -2032,23 +2798,59 @@ public class Main extends JFrame {
         PrizeClaw3.add(marks3);
         RightPanel.add(PrizeClaw3,gbc);
 
+        none.setEnabled(false);
+        PrizeClaw1.setEnabled(false);
+        PrizeClaw2.setEnabled(false);
+        PrizeClaw3.setEnabled(false);
+
+
         PrizeClaw3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (PlayerTurn){
                     //player1 turn
                     if(Player1.SpecialBlackCoin >= 6 && Player1.SpecialRedCoin >= 6){
-                        if (Coins.GoldCoin > 0){
-                            Coins.GoldCoin -- ;
-                            Player1.SpecialGoldCoin++;
-                        }
                         Player1.Score += 3 ;
                         Player1Score.setText(String.valueOf(Player1.Score));
                         PrizeClaw3.setEnabled(false);
                         PlayerTurn = false ;
-                        Player1SpecialCoinCounter.setText("red = " + Player1.SpecialRedCoin + ",green = " + Player1.SpecialGreenCoin + ",blue = "
-                                + Player1.SpecialBlueCoin + ",white = " + Player1.SpecialWhiteCoin + ",black = " + Player1.SpecialBlackCoin +
-                                ",gold = " + Player1.SpecialGoldCoin);
+                        none.setEnabled(false);
+                        PrizeClaw1.setEnabled(false);
+                        PrizeClaw2.setEnabled(false);
+                        PrizeClaw3.setEnabled(false);
+
+                        FirstLevel1.setEnabled(true);
+                        FirstLevel2.setEnabled(true);
+                        FirstLevel3.setEnabled(true);
+                        FirstLevel4.setEnabled(true);
+                        SecondLevel1.setEnabled(true);
+                        SecondLevel2.setEnabled(true);
+                        SecondLevel3.setEnabled(true);
+                        SecondLevel4.setEnabled(true);
+                        ThirdLevel1.setEnabled(true);
+                        ThirdLevel2.setEnabled(true);
+                        ThirdLevel3.setEnabled(true);
+                        ThirdLevel4.setEnabled(true);
+                        ReserveCardFirst1.setEnabled(true);
+                        ReserveCardFirst2.setEnabled(true);
+                        ReserveCardFirst3.setEnabled(true);
+                        ReserveCardFirst4.setEnabled(true);
+                        ReserveCardSecond1.setEnabled(true);
+                        ReserveCardSecond2.setEnabled(true);
+                        ReserveCardSecond3.setEnabled(true);
+                        ReserveCardSecond4.setEnabled(true);
+                        ReserveCardThird1.setEnabled(true);
+                        ReserveCardThird2.setEnabled(true);
+                        ReserveCardThird3.setEnabled(true);
+                        ReserveCardThird4.setEnabled(true);
+                        TwoCoin.setEnabled(true);
+                        ThreeCoin.setEnabled(true);
+                        Player1.ReserveCard1.setEnabled(true);
+                        Player1.ReserveCard2.setEnabled(true);
+                        Player1.ReserveCard3.setEnabled(true);
+                        Player2.ReserveCard1.setEnabled(true);
+                        Player2.ReserveCard2.setEnabled(true);
+                        Player2.ReserveCard3.setEnabled(true);
                         if (Player1.Score >= 15){
                             showMessageDialog(null,"PLAYER ONE WON!");
                             System.exit(0);
@@ -2061,17 +2863,47 @@ public class Main extends JFrame {
                 else{
                     //player2 turn
                     if(Player2.SpecialBlackCoin >= 6 && Player2.SpecialRedCoin >= 6){
-                        if (Coins.GoldCoin > 0){
-                            Coins.GoldCoin -- ;
-                            Player2.SpecialGoldCoin++;
-                        }
                         Player2.Score += 3 ;
                         Player2Score.setText(String.valueOf(Player2.Score));
                         PrizeClaw3.setEnabled(false);
                         PlayerTurn = true ;
-                        Player2SpecialCoinCounter.setText("red = " + Player2.SpecialRedCoin + ",green = " + Player2.SpecialGreenCoin + ",blue = "
-                                + Player2.SpecialBlueCoin + ",white = " + Player2.SpecialWhiteCoin + ",black = " + Player2.SpecialBlackCoin +
-                                ",gold = " + Player2.SpecialGoldCoin);
+                        none.setEnabled(false);
+                        PrizeClaw1.setEnabled(false);
+                        PrizeClaw2.setEnabled(false);
+                        PrizeClaw3.setEnabled(false);
+
+                        FirstLevel1.setEnabled(true);
+                        FirstLevel2.setEnabled(true);
+                        FirstLevel3.setEnabled(true);
+                        FirstLevel4.setEnabled(true);
+                        SecondLevel1.setEnabled(true);
+                        SecondLevel2.setEnabled(true);
+                        SecondLevel3.setEnabled(true);
+                        SecondLevel4.setEnabled(true);
+                        ThirdLevel1.setEnabled(true);
+                        ThirdLevel2.setEnabled(true);
+                        ThirdLevel3.setEnabled(true);
+                        ThirdLevel4.setEnabled(true);
+                        ReserveCardFirst1.setEnabled(true);
+                        ReserveCardFirst2.setEnabled(true);
+                        ReserveCardFirst3.setEnabled(true);
+                        ReserveCardFirst4.setEnabled(true);
+                        ReserveCardSecond1.setEnabled(true);
+                        ReserveCardSecond2.setEnabled(true);
+                        ReserveCardSecond3.setEnabled(true);
+                        ReserveCardSecond4.setEnabled(true);
+                        ReserveCardThird1.setEnabled(true);
+                        ReserveCardThird2.setEnabled(true);
+                        ReserveCardThird3.setEnabled(true);
+                        ReserveCardThird4.setEnabled(true);
+                        TwoCoin.setEnabled(true);
+                        ThreeCoin.setEnabled(true);
+                        Player1.ReserveCard1.setEnabled(true);
+                        Player1.ReserveCard2.setEnabled(true);
+                        Player1.ReserveCard3.setEnabled(true);
+                        Player2.ReserveCard1.setEnabled(true);
+                        Player2.ReserveCard2.setEnabled(true);
+                        Player2.ReserveCard3.setEnabled(true);
                         if (Player2.Score >= 15){
                             showMessageDialog(null,"PLAYER TWO WON!");
                             System.exit(0);
@@ -2293,7 +3125,43 @@ public class Main extends JFrame {
                             coinFirst1.setText(First[FirstLevelCards.CounterFirst1].CardFirst);
                             coinFirst1.setFont(defaultFont4);
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -2473,7 +3341,43 @@ public class Main extends JFrame {
                             coinFirst1.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -2794,7 +3698,43 @@ public class Main extends JFrame {
                             coinFirst2.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -2970,7 +3910,43 @@ public class Main extends JFrame {
                             coinFirst2.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -3295,7 +4271,43 @@ public class Main extends JFrame {
                             coinFirst3.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -3472,7 +4484,43 @@ public class Main extends JFrame {
                             coinFirst3.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -3798,7 +4846,43 @@ public class Main extends JFrame {
                             coinFirst4.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -3975,7 +5059,43 @@ public class Main extends JFrame {
                             coinFirst4.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -4299,7 +5419,43 @@ public class Main extends JFrame {
                             coinSecond1.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -4480,7 +5636,43 @@ public class Main extends JFrame {
                             coinSecond1.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -4807,7 +5999,43 @@ public class Main extends JFrame {
                             coinSecond2.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -4988,7 +6216,43 @@ public class Main extends JFrame {
                             coinSecond2.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -5312,7 +6576,43 @@ public class Main extends JFrame {
                             coinSecond3.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -5493,7 +6793,43 @@ public class Main extends JFrame {
                             coinSecond3.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -5816,7 +7152,43 @@ public class Main extends JFrame {
                             coinSecond4.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -5997,7 +7369,43 @@ public class Main extends JFrame {
                             coinSecond4.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -6321,7 +7729,43 @@ public class Main extends JFrame {
                             coinThird1.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -6502,7 +7946,43 @@ public class Main extends JFrame {
                             coinThird1.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -6826,7 +8306,43 @@ public class Main extends JFrame {
                             coinThird2.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -7007,7 +8523,43 @@ public class Main extends JFrame {
                             coinThird2.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -7330,7 +8882,43 @@ public class Main extends JFrame {
                             coinThird3.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -7511,7 +9099,43 @@ public class Main extends JFrame {
                             coinThird3.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
@@ -7834,7 +9458,43 @@ public class Main extends JFrame {
                             coinThird4.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = false;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
 
 
                     }
@@ -8015,7 +9675,43 @@ public class Main extends JFrame {
                             coinThird4.setFont(defaultFont4);
 
                         }
-                        PlayerTurn = true ;
+                        none.setEnabled(true);
+                        PrizeClaw1.setEnabled(true);
+                        PrizeClaw2.setEnabled(true);
+                        PrizeClaw3.setEnabled(true);
+
+                        FirstLevel1.setEnabled(false);
+                        FirstLevel2.setEnabled(false);
+                        FirstLevel3.setEnabled(false);
+                        FirstLevel4.setEnabled(false);
+                        SecondLevel1.setEnabled(false);
+                        SecondLevel2.setEnabled(false);
+                        SecondLevel3.setEnabled(false);
+                        SecondLevel4.setEnabled(false);
+                        ThirdLevel1.setEnabled(false);
+                        ThirdLevel2.setEnabled(false);
+                        ThirdLevel3.setEnabled(false);
+                        ThirdLevel4.setEnabled(false);
+                        ReserveCardFirst1.setEnabled(false);
+                        ReserveCardFirst2.setEnabled(false);
+                        ReserveCardFirst3.setEnabled(false);
+                        ReserveCardFirst4.setEnabled(false);
+                        ReserveCardSecond1.setEnabled(false);
+                        ReserveCardSecond2.setEnabled(false);
+                        ReserveCardSecond3.setEnabled(false);
+                        ReserveCardSecond4.setEnabled(false);
+                        ReserveCardThird1.setEnabled(false);
+                        ReserveCardThird2.setEnabled(false);
+                        ReserveCardThird3.setEnabled(false);
+                        ReserveCardThird4.setEnabled(false);
+                        TwoCoin.setEnabled(false);
+                        ThreeCoin.setEnabled(false);
+                        Player1.ReserveCard1.setEnabled(false);
+                        Player1.ReserveCard2.setEnabled(false);
+                        Player1.ReserveCard3.setEnabled(false);
+                        Player2.ReserveCard1.setEnabled(false);
+                        Player2.ReserveCard2.setEnabled(false);
+                        Player2.ReserveCard3.setEnabled(false);
                     }
 
                 }
