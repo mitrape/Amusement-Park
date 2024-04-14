@@ -3,6 +3,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+
 import static javax.swing.JOptionPane.showMessageDialog;
 
 import CardsPackage.FirstLevelCards;
@@ -12511,11 +12516,14 @@ public class Main extends JFrame {
 
         }
 
-        public static void main(String[] args) {
+        public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
             new Main ();
-
-
-
+            File file = new File("Music/Music.wav");
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioStream);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+            clip.start( );
         }
     }
 
